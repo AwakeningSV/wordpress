@@ -1,7 +1,7 @@
 {
   "name": "roots/bedrock",
   "type": "project",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
   "homepage": "https://roots.io/bedrock/",
   "authors": [
@@ -30,10 +30,50 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "git@ssh.dev.azure.com:v3/awakeningsv/azure-cdn-rewrite-plugin/azure-cdn-rewrite-plugin"
+    },
+    {
+      "type": "vcs",
+      "url": "git@ssh.dev.azure.com:v3/awakeningsv/remove-socialize-plugin/remove-socialize-plugin"
+    },
+    {
+      "type": "vcs",
+      "url": "git@ssh.dev.azure.com:v3/awakeningsv/teaching-plugin/teaching-plugin"
+    },
+    {
+      "type": "vcs",
+      "url": "git@ssh.dev.azure.com:v3/awakeningsv/the-events-calendar/the-events-calendar"
+    },
+    {
+      "type": "vcs",
+      "url": "git@ssh.dev.azure.com:v3/awakeningsv/oembed-image-plugin/oembed-image-plugin"
+    },
+    {
+      "type": "vcs",
+      "url": "git@ssh.dev.azure.com:v3/awakeningsv/leadership-plugin/leadership-plugin"
+    },
+    {
+      "type": "vcs",
+      "url": "git@ssh.dev.azure.com:v3/awakeningsv/wpbakery-page-builder-plugin/wpbakery-page-builder-plugin"
+    },
+    {
+      "type": "vcs",
+      "url": "git@ssh.dev.azure.com:v3/awakeningsv/revslider/revslider"
     }
   ],
   "require": {
     "php": ">=7.1",
+    "awakeningsv/azure-cdn-rewrite-plugin": "1.0.0",
+    "awakeningsv/remove-socialize-plugin": "1.0.0",
+    "awakeningsv/oembed-image-plugin": "1.0.0",
+    "awakeningsv/teaching-plugin": "1.0.0",
+    "awakeningsv/leadership-plugin": "1.0.0",
+    "awakeningsv/the-events-calendar": "4.6.21",
+    "awakeningsv/wpbakery-page-builder-plugin": "6.0.5",
+    "awakeningsv/revslider": "6.1.3",
     "composer/installers": "^1.4",
     "vlucas/phpdotenv": "^3.0.0",
     "oscarotero/env": "^1.1.0",
