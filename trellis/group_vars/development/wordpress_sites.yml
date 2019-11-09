@@ -3,11 +3,11 @@
 # Define accompanying passwords/secrets in group_vars/development/vault.yml
 
 wordpress_sites:
-  example.com:
+  awakeningchurch.com:
     site_hosts:
-      - canonical: privet.test
+      - canonical: awakeningchurch.test
         redirects:
-          - www.privet.test
+          - www.awakeningchurch.test
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
     admin_email: reid@awakeningchurch.com
     multisite:
