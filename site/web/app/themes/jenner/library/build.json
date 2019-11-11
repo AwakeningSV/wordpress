@@ -1,0 +1,11 @@
+{
+    "name": "jenner-css",
+    "builds": {
+        "style": {
+            "cssfiles": [
+                "pure.css",
+                "jenner.css"
+            ]
+        }
+    }
+}

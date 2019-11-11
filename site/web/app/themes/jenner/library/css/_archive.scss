@@ -1,0 +1,64 @@
+.archive-g {
+    @extend .pure-g;
+    max-width: 976px;
+}
+
+.archive-u {
+    @extend .jenner-u-1-2;
+    @extend .jenner-u-md-1-4;
+
+    p {
+        margin: 5px 0 0;
+        line-height: 1.2;
+    }
+}
+
+.teaching-u {
+    img {
+        max-height: 130px;
+    }
+}
+
+.archive-inner-u {
+    padding: 0 1em 2em 0;
+    position: relative;
+}
+
+.archive-h2 {
+    @extend h3;
+    a {
+        color: inherit;
+    }
+}
+
+.archive-date {
+    color: #555;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.archive-badge a {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 7px;
+    @extend .archive-date;
+    background: $accent_color;
+    color: #222;
+    line-height: 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.archive-badge-upcoming a {
+    /* Awakening Graphic Standards Sec. 4, Gray */
+    background: #58585B;
+    color: lighten(#58585B, 70);
+}
+
+.archive-badge-live a {
+    /* Awakening Graphic Standards Sec. 4, Red */
+    background: #EF4E33;
+    color: lighten(#EF4E33, 70);
+}

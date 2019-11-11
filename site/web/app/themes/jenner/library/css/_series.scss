@@ -1,0 +1,30 @@
+.series-g {
+    @extend .pure-g;
+    max-width: 976px;
+}
+
+.series-u {
+    @extend .jenner-u-1;
+    @extend .jenner-u-md-1-2;
+
+    p {
+        margin: 1em 0 0;
+    }
+}
+
+.series-inner-u {
+    padding: 0 1em 2em 0;
+}
+
+.series-h2 {
+    @extend h3;
+    a {
+        color: inherit;
+    }
+}
+
+.series-meta {
+    color: #555;
+    font-size: 14px;
+    line-height: 1;
+}

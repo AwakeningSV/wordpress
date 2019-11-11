@@ -1,0 +1,73 @@
+.home {
+
+    /* override menu border */
+    #content {
+        border: 0;
+    }
+
+    /* override content padding and width constraint */
+    #inner-content {
+        padding: 0;
+        &.wrap {
+            max-width: none;
+        }
+    }
+
+    /* override menu color */
+/*
+    #menu {
+
+        a {
+            color: #fff;
+        }
+
+        .pure-menu ul .sub-menu {
+            background: transparent;
+            border: 0;
+        }
+    }
+*/
+}
+
+.jumbotron-hero {
+    height: 720px;
+    background-color: #914718;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10% 100%;
+
+    position: relative;
+    p {
+        color: #fff;
+    }
+}
+
+.jumbotron-inner {
+    width: 900px;
+    padding: 1em;
+
+    h1, p {
+        margin: 20px;
+    }
+
+    .jumbotron-excerpt {
+        width: 400px;
+    }
+}
+
+.jumbotron-headline {
+    @extend .jenner-headline-overlay;
+    font-size: 4em;
+    line-height: 1;
+    color: #fff;
+}
+
+.jumbotron-cta-note {
+    display: block;
+    font-size: 90%;
+    margin: 0.5em 0;
+    a {
+        color: #fff;
+    }
+}

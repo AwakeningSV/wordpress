@@ -1,0 +1,63 @@
+.leaders-header {
+    h2 {
+        margin: 0;
+    }
+    margin: 0 0 1em 0;
+}
+
+.leaders-g {
+    @extend .pure-g;
+    max-width: 976px;
+}
+
+.leaders-u {
+    @extend .jenner-u-1;
+    @extend .jenner-u-md-1-2;
+
+    p {
+        margin: 1em 0 0;
+    }
+
+    p:first-child {
+        margin: 0;
+    }
+}
+
+.leaders-inner-u {
+    padding: 0 1em 2em 0;
+}
+
+.leaders-h2 {
+    @extend h3;
+    a {
+        color: inherit;
+    }
+}
+
+.leaders-meta {
+    color: #555;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.leader-no-photo {
+    border: 1px solid lighten(#58585B, 50);
+    margin-bottom: 9px;
+
+    p {
+        @extend .caps;
+        font-size: 20px;
+        padding: 10px;
+        color: #58585B;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .leader-no-photo {
+        height: 226px;
+        width: 235px;
+        p {
+            font-size: 40px;
+        }
+    }
+}

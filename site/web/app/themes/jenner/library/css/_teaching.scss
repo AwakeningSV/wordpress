@@ -1,0 +1,48 @@
+.teaching-inner-u {
+    padding: 0 1em 2em 0;
+}
+
+.teaching-meta {
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+        margin: 0 0 10px 0;
+    }
+
+    h2 {
+        @extend h3;
+        margin-bottom: 0;
+    }
+
+    p, ul {
+        padding-bottom: 10px;
+    }
+
+    .powerpress_player {
+        margin-top: 1em;
+    }
+}
+
+.teaching-podcast-meta {
+    display: block;
+    color: lighten(#58585B, 20);
+    font-size: 80%;
+    line-height: .9;
+}
+
+.teaching-notes-actions {
+    float: right;
+}
+
+@media print {
+    .teaching-more,
+    .teaching-meta,
+    .teaching-inner-u .vimeo,
+    .teaching-inner-u .video-js,
+    .teaching-notes-actions {
+        display: none;
+    }
+}

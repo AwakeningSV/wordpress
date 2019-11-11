@@ -1,0 +1,40 @@
+.footer {
+    background: #454545;
+    padding: 1em 0;
+    h2, p, li, address {
+        color: #efefef;
+    }
+    address {
+        font-style: normal;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        padding: .25em 2em;
+    }
+}
+
+.footer ul {
+    padding: 0;
+}
+
+.footer li {
+    list-style: none;
+}
+
+.inner-conclusion {
+    font-size: 90%;
+    padding: 0 1em 0 0;
+    word-wrap: break-word;
+}
+
+.copyright {
+    font-size: 80%;
+}
+
+@media print {
+    #conclusion {
+        display: none;
+    }
+}

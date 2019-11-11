@@ -1,0 +1,36 @@
+
+.article-header {
+     margin: 0;
+     color: #333;
+     padding: .25em 0 0;
+ }
+    .article-header h1 {
+        margin: 0.2em 0;
+        /* Not supported by the font stack. */
+        /* font-weight: 300; */
+    }
+     .article-header .byline {
+        /* Not supported by the font stack. */
+        /* font-weight: 300; */
+        color: #aaa;
+        padding: 0;
+        margin-top: 0;
+    }
+    .article-header a {
+        color: #000;
+    }
+
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #888;
+}
+
+article:not(.post-32) .entry-content {
+    max-width: 700px; /* for readability */
+}
+
+#inner-content img {
+    max-width: 100%;
+    height: auto;
+}
