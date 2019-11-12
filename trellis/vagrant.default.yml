@@ -10,6 +10,7 @@ vagrant_mount_type: 'rsync'
 
 vagrant_install_plugins: true
 vagrant_plugins:
+  - name: vagrant-scp
   - name: vagrant-trellis-sequel
   - name: vagrant-hostmanager
 

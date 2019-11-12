@@ -28,7 +28,7 @@
         args:
           chdir: "{{ project_current }}"
 
-      - name: PULL > Pull dump file from {{ env }} to development
+      - name: PULL > Pull dump file from {{ env }} to local
         fetch:
           src: "{{ project_current }}/{{ sync_file }}"
           dest: "{{ project_local_path }}/"
@@ -38,6 +38,10 @@
         file:
           state: absent
           path: "{{ project_current }}/{{ sync_file }}"
+
+      - name: PULL > Copy local dump file to development
+        connection: local
+        shell: vagrant scp {{ project_local_path }}/{{ sync_file }} :{{ project_current }}/{{ sync_file }} 
 
       - name: PULL > Backup development database
         connection: local
@@ -81,12 +85,16 @@
         connection: local
         shell: vagrant ssh -- 'cd {{ project_current }} && wp db export - | gzip > {{ sync_file }}'
 
-      - name: PUSH > Push dump file from development to {{ env }}
+      - name: PULL > Copy development dump file to local
+        connection: local
+        shell: vagrant scp :{{project_current}}/{{ sync_file }} {{ project_local_path }}/{{ sync_file }}
+
+      - name: PUSH > Push dump file from local to {{ env }}
         copy:
           src: "{{ project_local_path }}/{{ sync_file }}"
           dest: "{{ project_current }}/"
 
-      - name: PUSH > Delete dump file from development
+      - name: PUSH > Delete dump file from local
         connection: local
         file:
           state: absent
