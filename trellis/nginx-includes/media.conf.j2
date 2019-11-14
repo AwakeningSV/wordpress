@@ -5,9 +5,7 @@ server {
     listen [::]:80;
     server_name media.awakeningchurch.com;
 
-    location /podcast/ {
-        rewrite ^/podcast/(.*)$ https://awakeningmedia.azureedge.net/podcasts/$1 permanent;
-    }
+    include includes.d/awakeningchurch.com/podcast.conf;
 
     location / {
         return 404;
