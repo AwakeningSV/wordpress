@@ -1,0 +1,6 @@
+# {{ ansible_managed }}
+
+# Podcasts are served from Azure
+location /podcast/ {
+    rewrite ^/podcast/(.*)$ https://awakeningmedia.azureedge.net/podcasts/$1 permanent;
+}
