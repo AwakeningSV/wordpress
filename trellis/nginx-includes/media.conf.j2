@@ -1,0 +1,15 @@
+# {{ ansible_managed }}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name media.awakeningchurch.com;
+
+    location /podcast/ {
+        rewrite ^/podcast/(.*)$ https://awakeningmedia.azureedge.net/podcasts/$1 permanent;
+    }
+
+    location / {
+        return 404;
+    }
+}
