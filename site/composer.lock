@@ -90,7 +90,7 @@
             "source": {
                 "type": "git",
                 "url": "git@ssh.dev.azure.com:v3/awakeningsv/oembed-image-plugin/oembed-image-plugin",
-                "reference": "cf1fa01ecae70992e79615d7c0090acf4fb9812b"
+                "reference": "0de8dc52431dac02d1d492741731e50817024dd6"
             },
             "require": {
                 "php": ">=5.6"
@@ -108,7 +108,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2019-11-09T22:44:57+00:00"
+            "time": "2019-11-17T08:26:10+00:00"
         },
         {
             "name": "awakeningsv/remove-socialize-plugin",
