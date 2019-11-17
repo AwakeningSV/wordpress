@@ -28,7 +28,7 @@ Template Name: Home
                                     $show_live_video = false;
                                     if (has_shortcode($post->post_content, 'live')) {
                                         $live_start = (int) get_post_meta($post->ID, 'live_time', true);
-                                        $show_live_video = $live_start && $live_start < time();
+                                        $show_live_video = $live_start && ($live_start - 7200) < time();
                                     }
                                     if (!$show_live_video) :
                                 ?>
