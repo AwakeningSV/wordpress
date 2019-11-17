@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c516f80753cf61b43dc95c8e10d4e032",
+    "content-hash": "1056dfb316be040bc73ad905239cd677",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -83,6 +83,32 @@
                 "wordpress"
             ],
             "time": "2019-11-09T22:31:54+00:00"
+        },
+        {
+            "name": "awakeningsv/live-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@ssh.dev.azure.com:v3/awakeningsv/live-plugin/live-plugin",
+                "reference": "745266cc3cf7dcfafa9bd5f70e2b68350fd80757"
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "wordpress-plugin",
+            "authors": [
+                {
+                    "name": "Reid Burke",
+                    "homepage": "https://reidburke.com"
+                }
+            ],
+            "description": "Add [live] shortcode for live stream.",
+            "homepage": "https://dev.azure.com/awakeningsv/live-plugin",
+            "keywords": [
+                "plugin",
+                "wordpress"
+            ],
+            "time": "2019-11-17T08:44:20+00:00"
         },
         {
             "name": "awakeningsv/oembed-image-plugin",
@@ -1400,6 +1426,7 @@
         "awakeningsv/azure-cdn-rewrite-plugin": 20,
         "awakeningsv/remove-socialize-plugin": 20,
         "awakeningsv/oembed-image-plugin": 20,
+        "awakeningsv/live-plugin": 20,
         "awakeningsv/teaching-plugin": 20,
         "awakeningsv/leadership-plugin": 20,
         "awakeningsv/events-calendar-pro": 20,

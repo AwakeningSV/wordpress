@@ -41,6 +41,10 @@
     },
     {
       "type": "vcs",
+      "url": "git@ssh.dev.azure.com:v3/awakeningsv/live-plugin/live-plugin"
+    },
+    {
+      "type": "vcs",
       "url": "git@ssh.dev.azure.com:v3/awakeningsv/teaching-plugin/teaching-plugin"
     },
     {
@@ -73,6 +77,7 @@
     "awakeningsv/azure-cdn-rewrite-plugin": "dev-master",
     "awakeningsv/remove-socialize-plugin": "dev-master",
     "awakeningsv/oembed-image-plugin": "dev-master",
+    "awakeningsv/live-plugin": "dev-master",
     "awakeningsv/teaching-plugin": "dev-master",
     "awakeningsv/leadership-plugin": "dev-master",
     "awakeningsv/events-calendar-pro": "dev-master",
