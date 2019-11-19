@@ -32,6 +32,10 @@
       "url": "https://wpackagist.org"
     },
     {
+       "type": "vcs",
+       "url": "https://github.com/awakening-church/ApplicationInsights-WordPress.git"
+    },
+    {
       "type": "vcs",
       "url": "git@ssh.dev.azure.com:v3/awakeningsv/azure-cdn-rewrite-plugin/azure-cdn-rewrite-plugin"
     },
@@ -74,6 +78,7 @@
   ],
   "require": {
     "php": ">=7.1",
+    "awakening-church/applicationinsights-wordpress": "dev-master",
     "awakeningsv/azure-cdn-rewrite-plugin": "dev-master",
     "awakeningsv/remove-socialize-plugin": "dev-master",
     "awakeningsv/oembed-image-plugin": "dev-master",
