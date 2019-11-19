@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/awakening-church/ApplicationInsights-WordPress.git",
-                "reference": "0d92d63bd9eaef785fa1285cd97f79bff9864135"
+                "reference": "89698cbdc2dc4fd461c53bbe888ef38140b79853"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/awakening-church/ApplicationInsights-WordPress/zipball/0d92d63bd9eaef785fa1285cd97f79bff9864135",
-                "reference": "0d92d63bd9eaef785fa1285cd97f79bff9864135",
+                "url": "https://api.github.com/repos/awakening-church/ApplicationInsights-WordPress/zipball/89698cbdc2dc4fd461c53bbe888ef38140b79853",
+                "reference": "89698cbdc2dc4fd461c53bbe888ef38140b79853",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
             "support": {
                 "source": "https://github.com/awakening-church/ApplicationInsights-WordPress/tree/master"
             },
-            "time": "2019-11-19T07:06:16+00:00"
+            "time": "2019-11-19T07:40:44+00:00"
         },
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
