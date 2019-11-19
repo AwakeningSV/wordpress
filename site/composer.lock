@@ -988,15 +988,15 @@
         },
         {
             "name": "wpackagist-plugin/quick-featured-images",
-            "version": "13.3.5",
+            "version": "13.3.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/quick-featured-images/",
-                "reference": "tags/13.3.5"
+                "reference": "tags/13.3.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/quick-featured-images.13.3.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/quick-featured-images.13.3.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1096,15 +1096,15 @@
         },
         {
             "name": "wpackagist-plugin/windows-azure-storage",
-            "version": "4.1.1",
+            "version": "4.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/windows-azure-storage/",
-                "reference": "tags/4.1.1"
+                "reference": "tags/4.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/windows-azure-storage.4.1.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/windows-azure-storage.4.3.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
