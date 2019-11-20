@@ -24,7 +24,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,700,700i,800,800i|Oswald:400,500,600,700" rel="stylesheet">
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<meta name="msapplication-TileColor" content="#f01d4f">
