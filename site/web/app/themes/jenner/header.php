@@ -1,21 +1,13 @@
 <!doctype html>
-
-<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
-
+<html <?php language_attributes(); ?> class="no-js">
 	<head>
 		<meta charset="utf-8">
-
-		<?php // Google Chrome Frame for IE ?>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
         <?php if (is_front_page()): ?>
         <title>Welcome to <?php bloginfo('name') ?> - San Jose, CA</title>
         <meta name="description" content="<?php bloginfo('description'); ?>">
         <?php else: ?>
-       <title><?php wp_title(''); echo ' – ';  bloginfo( 'name' ); ?></title>
+        <title><?php wp_title(''); echo ' – ';  bloginfo( 'name' ); ?></title>
         <?php endif; ?>
 
 		<?php // mobile meta (hooray!) ?>
@@ -32,15 +24,8 @@
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 
-        <?php /* Load html5shiv for old IE.
-               * Conditional load possible to do with WP APIs, see https://core.trac.wordpress.org/ticket/16024#comment:59 */ ?>
-        <!--[if lt IE 9]>
-        <script src="<?php echo get_template_directory_uri(); ?>/library/js/html5shiv.js"></script>
-        <![endif]-->
-
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
-
 	</head>
 
 	<body <?php body_class(); ?>>
