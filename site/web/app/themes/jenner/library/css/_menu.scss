@@ -3,7 +3,7 @@ $menu_link_normal_color: #525252;
 
 /* Override _pure.scss. */
 .pure-menu li a {
-    padding: 4px 12px 1px;
+    padding: 4px 12px 4px;
 }
 
 /*
@@ -42,8 +42,8 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
     */
     #menu a {
         border: none;
-        /* Not supported by the font stack. */
-        /* font-weight: bold; */
+        font-weight: 400;
+        font-size: 14px;
         color: $menu_link_normal_color;
     }
 
@@ -60,7 +60,7 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
         */
         #menu .pure-menu li a:hover,
         #menu .pure-menu li a:focus {
-            background: lighten($accent_color, 40);
+            background: #f0f0f0; // Hellems, previously: lighten($accent_color, 40);
             color: #000;
         }
 
@@ -75,11 +75,18 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
         */
         #menu .current-menu-item > a {
             color: $menu_link_selected_color;
+            background: #f0f0f0; // Hellems
+        }
+
+        // Hellems
+        #menu .sub-menu .current-menu-item > a {
+            background: #fff;	
         }
 
     /*
     Triangle for the selected menu item and its parent.
     */
+    /* Disabled in Hellems
     #menu .current-menu-item > a:after,
     #menu .current-menu-parent > a:after {
         content: " ";
@@ -92,8 +99,10 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
         border-right: 5px solid transparent;
         border-bottom: 5px solid $sub_menu_background_color;
     }
+    */
 
     /* Show the triangle differently for sub-menu. */
+    /* Disabled in Hellems
     #menu .sub-menu .current-menu-item > a:after,
     #menu .sub-menu .current-menu-parent > a:after {
         left: 0;
@@ -103,6 +112,7 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
         border-bottom: 5px solid transparent;
         border-left: 5px solid $sub_menu_background_color;
     }
+    */
 
     /*
     This styles the menu heading.
@@ -124,9 +134,10 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
 #menu .pure-menu ul .sub-menu {
     top: 30px;
     left: 0;
-    border: 1px solid lighten($sub_menu_background_color, 30);
+    box-shadow: 0px 2px 3px lighten($sub_menu_background_color, 30); // Hellems was #aaa 
     border-width: 0 1px 1px;
     background: #fff;
+    padding: 15px;
 
     .sub-menu {
         border-width: 1px;
@@ -149,7 +160,7 @@ small screens.
 .main-menu-link {
     display: none; /* show this only on small screens */
     position: absolute;
-    top: 27px;
+    top: 20px;
     right: 208px; /* `#menu`'s width + pad, see also .active style */
     background: #000;
     background: rgba(0,0,0,0.7);
@@ -157,11 +168,12 @@ small screens.
     z-index: 501; /* appear over wpadminbar */
     width: 2em;
     height: 2em;
-    padding: 1em;
+    padding: 8px;
+    border: 1px solid #444;
 }
 
 .admin-bar .main-menu-link {
-    top: 73px; /* wpadminbar adds 46px, 46 + 27 */
+    top: 66px; /* wpadminbar adds 46px, 46 + 20 */
 }
 
     .main-menu-link:hover,

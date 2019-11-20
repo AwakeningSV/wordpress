@@ -1,18 +1,45 @@
 .footer {
-    background: #454545;
-    padding: 1em 0;
+    background: #222;
+    padding: 0;
+    font-size: 0.8em;
+    .wrap {
+        padding: 1em;
+    }
+    h2 {
+        font-weight: 400;
+        letter-spacing: 1px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #555;
+    }
     h2, p, li, address {
-        color: #efefef;
+        color: #ddd;
+    }
+    a {
+        color: #fff;
+    }
+    a:hover {
+        text-decoration: underline;
     }
     address {
         font-style: normal;
     }
+    
+    .copyright {
+        font-size: 80%;
+        color: #999;
+        border-top: 1px solid #555;
+        padding-top: 20px;
+        a {
+            color: #bbb;
+        }
+    }
 }
 
-@media (max-width: 767px) {
-    .footer {
-        padding: .25em 2em;
-    }
+// Hellems
+.footerwhite {
+    background: #f0f0f0;
+    text-align: center;
+    padding: 50px 0;
 }
 
 .footer ul {
@@ -27,10 +54,6 @@
     font-size: 90%;
     padding: 0 1em 0 0;
     word-wrap: break-word;
-}
-
-.copyright {
-    font-size: 80%;
 }
 
 @media print {

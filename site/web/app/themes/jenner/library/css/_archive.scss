@@ -3,13 +3,43 @@
     max-width: 976px;
 }
 
+.archive-blog {
+    @extend .jenner-u-1;
+    @extend .jenner-u-md-1;
+    @extend .jenner-u-lg-1;
+}
+
 .archive-u {
     @extend .jenner-u-1-2;
     @extend .jenner-u-md-1-4;
+}
 
+.archive-u p,
+.archive-blog p {
+    margin: 5px 0 0;
+    line-height: 1.2;
+}
+
+// Hellems
+.archive-blog {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
     p {
-        margin: 5px 0 0;
-        line-height: 1.2;
+        font-weight: 300;
+    }
+    h2 {
+        margin-bottom: 0;
+    }
+    img {
+        float: left;
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .archive-blog img {
+        float: none;
     }
 }
 
@@ -25,7 +55,7 @@
 }
 
 .archive-h2 {
-    @extend h3;
+    @extend h4;
     a {
         color: inherit;
     }
