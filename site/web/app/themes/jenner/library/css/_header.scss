@@ -5,16 +5,22 @@
     overflow: hidden;
 }
 
-/* Defined by branding guidelines, Section 2, Typography, Web */
+/* Defined by branding guidelines, Section 4, Colors, Gray */ 
+/* Deviates from branding guidelines, Section 2, Typography, Web */
 /* Be careful when changing */
-$accent_color: #D2BA39;
+$accent_color: #58585B;
 
 /* Used in _menu.scss to draw the selected item triangle. */
 $sub_menu_background_color: darken(#e9e9e9, 30); // Hellems derived, might be too bright
 
 a {
-    color: $accent_color;
+    color: #000;
     text-decoration: none;
+}
+
+p > a,
+li > a {
+    border-bottom: 1px solid $accent_color;
 }
 
 .button {
@@ -45,7 +51,7 @@ span.page-numbers {
     transition: all 0.5s;
     &.next, &.prev {
         /* override _pure.scss */
-        color: #333;
+        color: #fff;
         text-shadow: none;
     }
 }
@@ -55,6 +61,7 @@ span.page-numbers.current {
 }
 
 #logo a {
+    border: 0;
     background: url('../library/images/logo.png') no-repeat center center;
     width: 210px;
     display: block;
@@ -128,6 +135,7 @@ Live video announcement.
     }
 
     a {
+        border: 0;
         display: block;
         padding: 1em 1em 0.8em;
         color: #000;

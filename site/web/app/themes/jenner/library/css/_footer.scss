@@ -23,7 +23,7 @@
     address {
         font-style: normal;
     }
-    
+
     .copyright {
         font-size: 80%;
         color: #999;
@@ -31,6 +31,7 @@
         padding-top: 20px;
         a {
             color: #bbb;
+            border: 0;
         }
     }
 }
@@ -51,7 +52,10 @@
 }
 
 .inner-conclusion {
-    font-size: 90%;
+    font-size: .84em;
+    p, li, address {
+        line-height: 1.6;
+    }
     padding: 0 1em 0 0;
     word-wrap: break-word;
 }

@@ -2,6 +2,13 @@
     padding: 0 1em 2em 0;
 }
 
+.teaching-inner-u,
+.series-inner-u {
+    p {
+       font-size: .84em; 
+    }
+}
+
 .teaching-meta {
     ul {
         padding: 0;
@@ -29,8 +36,8 @@
 .teaching-podcast-meta {
     display: block;
     color: lighten(#58585B, 20);
-    font-size: 80%;
-    line-height: .9;
+    font-size: .6em;
+    padding-top: .3em;
 }
 
 .teaching-notes-actions {

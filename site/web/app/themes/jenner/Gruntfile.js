@@ -3,6 +3,13 @@
 var sass = require('node-sass');
 var path = require('path');
 
+var banner = '/*\n' +
+    'Copyright 2019 Reid Burke\n' +
+    'Copyright 2018 Awakening Church\n' +
+    'Copyright 2014 Brad Wrage and Reid Burke\n' +
+    'All rights reserved.\n' +
+    '*/';
+
 module.exports = function (grunt) {
     process.env.SASS_PATH = path.join(__dirname, 'library/css');
 
@@ -29,7 +36,7 @@ module.exports = function (grunt) {
         },
         cssmin: {
             options: {
-                banner: "/* Portions Copyright 2014 Brad Wrage and Reid Burke. All rights reserved. */"
+                banner: banner
             },
             minify: {
                 expand: true,
