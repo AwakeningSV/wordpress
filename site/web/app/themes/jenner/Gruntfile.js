@@ -1,4 +1,10 @@
+"use strict";
+
+var sass = require('node-sass');
+var path = require('path');
+
 module.exports = function (grunt) {
+    process.env.SASS_PATH = path.join(__dirname, 'library/css');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
@@ -14,7 +20,7 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 options: {
-                    loadPath: ["library/css"] // includePaths for native
+                    implementation: sass
                 },
                 files: {
                     "build/all.css": "library/css/main.scss"
@@ -36,7 +42,7 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.registerTask("default", ["sass:dist", "cssmin:minify"]);

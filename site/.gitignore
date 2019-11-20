@@ -9,6 +9,7 @@ web/app/uploads/*
 # WordPress
 web/wp
 web/.htaccess
+web/app/themes/jenner/node_modules
 
 # Dotenv
 .env
