@@ -33,7 +33,7 @@ Template Name: Home
                                     if (!$show_live_video) :
                                 ?>
                                     <?php if (has_post_thumbnail()): ?>
-                                        <a href="<?php the_permalink(); ?>">
+                                        <a href="<?php the_permalink(); ?>" class="alignwide">
                                             <?php the_post_thumbnail('awakening-1952'); ?>
                                         </a>
                                     <?php else: ?>

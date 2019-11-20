@@ -19,6 +19,7 @@ a {
 }
 
 p > a,
+.entry-content a,
 li > a,
 em > a {
     border-bottom: 1px solid $accent_color;
