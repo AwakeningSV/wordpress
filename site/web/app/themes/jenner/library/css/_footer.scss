@@ -60,6 +60,12 @@
     word-wrap: break-word;
 }
 
+@media (max-width: 767px) {
+    .inner-conclusion {
+        padding: 0;
+    }
+}
+
 @media print {
     #conclusion {
         display: none;
