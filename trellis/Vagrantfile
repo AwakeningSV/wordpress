@@ -130,8 +130,9 @@ Vagrant.configure('2') do |config|
   config.vm.provision provisioner do |ansible|
     if local_provisioning?
       ansible.install_mode = 'pip'
-      if Vagrant::VERSION >= '2.2.5'
+      if Vagrant::VERSION == '2.2.5'
         # Fix for https://github.com/hashicorp/vagrant/issues/10950
+        # Fixed in Vagrant 2.2.6: https://github.com/hashicorp/vagrant/commit/968a1264053f5c82111ebec6e0806e44551b2d90
         ansible.pip_install_cmd = 'curl https://bootstrap.pypa.io/get-pip.py | sudo python'
       end
       ansible.provisioning_path = provisioning_path
