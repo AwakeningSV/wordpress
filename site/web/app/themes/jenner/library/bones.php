@@ -211,7 +211,10 @@ function bones_theme_support() {
 	);
 
 	// wp menus
-	add_theme_support( 'menus' );
+    add_theme_support( 'menus' );
+    
+    // wide and full width images
+    add_theme_support( 'align-wide' );
 
 	// registering wp3+ menus
 	register_nav_menus(
