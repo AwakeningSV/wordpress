@@ -151,6 +151,9 @@ function bones_scripts_and_styles() {
     wp_register_script( 'countdown-js', get_stylesheet_directory_uri() . '/library/js/libs/countdown.min.js', array(), '2.3.4', true );
     wp_register_script( 'countdown-livestream', get_stylesheet_directory_uri() . '/library/js/countdown-livestream.js', array( 'jquery' ), '', true );
 
+    // https://planning.center/blog/2017/11/embedded-giving
+    wp_register_script( 'pcogiving', 'https://js.churchcenter.com/modal/v1', array(), '', true );
+
     // enqueue styles and scripts
     //wp_enqueue_script( 'bones-modernizr' );
     wp_enqueue_style( 'bones-stylesheet' );
@@ -169,6 +172,7 @@ function bones_scripts_and_styles() {
     wp_enqueue_script( 'menu-js' );
     wp_enqueue_script( 'countdown-js' );
     wp_enqueue_script( 'countdown-livestream' );
+    wp_enqueue_script( 'pcogiving' );
 
   }
 }
