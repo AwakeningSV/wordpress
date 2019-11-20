@@ -50,7 +50,7 @@
                     <p class="source-org copyright">
                         <span itemprop="name"><?php bloginfo( 'name' ); ?></span> exists to awaken this generation to new life in Jesus Christ.
                         &bull; &copy; <?php echo date('Y'); ?>
-						&bull; <a href="https://awakeningchurch.com/privacy/">Privacy Policy</a>
+						&bull; <a href="https://awakeningchurch.com/privacy/">Privacy</a>
                     </p>
 
 				</div> <?php // end #inner-footer ?>
