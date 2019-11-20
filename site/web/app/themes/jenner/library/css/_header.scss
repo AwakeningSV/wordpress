@@ -19,7 +19,8 @@ a {
 }
 
 p > a,
-li > a {
+li > a,
+em > a {
     border-bottom: 1px solid $accent_color;
 }
 
