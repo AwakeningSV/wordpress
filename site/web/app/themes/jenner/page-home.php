@@ -37,13 +37,8 @@ Template Name: Home
                                             <?php the_post_thumbnail('awakening-1952'); ?>
                                         </a>
                                     <?php else: ?>
-                                        <header class="article-header">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-                                            </a>
-                                        </header>
                                         <section class="entry-content clearfix" itemprop="articleBody">
-                                            <?php the_excerpt(); ?>
+                                            <?php the_content(); ?>
                                         </section> <?php // end article section ?>
                                     <?php endif; ?>
                                 <?php else: ?>
