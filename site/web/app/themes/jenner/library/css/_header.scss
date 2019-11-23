@@ -129,7 +129,7 @@ Live video announcement.
 */
 .announce {
     @extend .content;
-    margin-bottom: 1em;
+    padding: 0 .5em;
 
     b {
         @extend .caps;
@@ -138,25 +138,60 @@ Live video announcement.
     a {
         border: 0;
         display: block;
-        padding: 1em 1em 0.8em;
+        padding: 1em 0;
         color: #000;
     }
+
+    em { // Live teaching title
+        font-style: normal;
+        font-weight: bold;
+    }
+}
+
+.announce-u {
+    @extend .wrap;
+    padding: 0;
+    margin: 0 auto;
 }
 
 .announce-live {
-    a {
         /* Awakening Graphic Standards Sec. 4, Red */
         background: #EF4E33;
-        color: lighten(#EF4E33, 70);
-    }
+
+        a {
+            color: lighten(#EF4E33, 70);
+            display: flex;
+            align-items: center;
+        }
+
+        b { // Live Icon
+            background: lighten(#EF4E33, 70);
+            color: #EF4E33;
+            display: inline-block;
+            border-radius: 3px;
+            padding: .2em .5em;
+        }
+
+        span {
+            margin-left: .5em;
+            display: inline-block;
+
+            &.button { // Watch Now button
+                margin-left: auto;
+                @extend .pulse;
+                @extend .animated;
+                -webkit-animation-delay: 1s;
+                animation-delay: 1s;
+            }
+        }
 }
 
 .announce-upcoming {
-    a {
         /* Awakening Graphic Standards Sec. 4, Gray */
-        background: #58585B;
-        color: lighten(#58585B, 70);
-    }
+        background: darken(#58585B, 10);
+        a {
+            color: lighten(#58585B, 70);
+        }
 }
 
 @media (max-width: 767px) {
@@ -180,6 +215,11 @@ Live video announcement.
     #logo a {
         /* left margin should equal right margin of pure-menu-link */
         margin: 5px 0 0 1em;
+    }
+
+    // Hide Watch Now button on small screens
+    .announce-live span.button {
+        display: none;
     }
 }
 

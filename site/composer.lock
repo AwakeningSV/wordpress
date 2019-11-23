@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "963911727595c941f0f1d7723c483a23",
+    "content-hash": "cd2cc148465c991b01e607cf04d07247",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -1472,6 +1472,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/windows-azure-storage/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-webhooks",
+            "version": "1.1.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-webhooks/",
+                "reference": "tags/1.1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-webhooks.1.1.3.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-webhooks/"
         },
         {
             "name": "wpackagist-plugin/wpcustom-category-image",

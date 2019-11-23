@@ -189,6 +189,10 @@ if (z_get_zone('leaders-intern') == '') {
     global $zoninator;
     $zoninator->insert_zone( 'leaders-intern', 'Intern Leaders and Proteges', array('description' => 'Intern Leadership'));
 }
+if (z_get_zone('upcoming-livestream') == '') {
+    global $zoninator;
+    $zoninator->insert_zone( 'upcoming-livestream', 'Upcoming Livestream', array('description' => 'Upcoming live teaching'));
+}
 
 function ac_add_zoninator_post_types() {
         $available_post_types = array_values(get_post_types(array('public' => true), 'names'));
@@ -197,6 +201,81 @@ function ac_add_zoninator_post_types() {
         }
 }
 add_action('zoninator_pre_init', 'ac_add_zoninator_post_types');
+
+/** WEBHOOKS **/
+function ac_stream_end($actions) {
+    $actions[] = ac_stream_end_content();
+    return $actions;
+}
+add_filter('wpwhpro/webhooks/get_webhooks_actions', 'ac_stream_end', 20);
+
+function ac_stream_end_content() {
+    $parameter = array();
+    $returns = array(
+        'success'        => array( 'short_description' => WPWHPRO()->helpers->translate( '(Bool) True if the action was successful, false if not. E.g. array( \'success\' => true )', 'action-stream_end-content' ) ),
+        'msg'        => array( 'short_description' => WPWHPRO()->helpers->translate( '(string) A message with more information about the current request. E.g. array( \'msg\' => "This action was successful." )', 'action-stream_end-content' ) ),
+    );
+    ob_start();
+    ?>
+    <pre>
+    $return_args = array(
+        'success' => false,
+        'msg' => 'This is a test message'
+    );
+    </pre>
+    <?php
+        $returns_code = ob_get_clean();
+        ob_start();
+    ?>
+        <p>
+            <?php echo WPWHPRO()->helpers->translate('When this hook fires, metadata is updated on the live teaching post to advance the service time.', 'ac-stream_end-content' ); ?>
+        </p>
+    <?php
+    $description = ob_get_clean();
+    return array(
+        'action'            => 'stream_end', //required
+        'parameter'         => $parameter,
+        'returns'           => $returns,
+        'returns_code'      => $returns_code,
+        'short_description' => WPWHPRO()->helpers->translate('Notifies the upcoming teaching post the stream has ended.', 'ac-stream_end-content' ),
+        'description'       => $description
+    );
+}
+
+function ac_perform_stream_completion() {
+    $announcements = z_get_posts_in_zone('upcoming-livestream', array(
+        'posts_per_page' => 1,
+        'post_type' => 'teaching',
+        'post_status' => 'publish'
+    ), false);
+
+    if (!isset($announcements[0])) return;
+    
+    $announcement = $announcements[0];
+
+    $finishes = (int) get_post_meta($announcement->ID, 'stream-completed', true);
+
+    update_post_meta($announcement->ID, 'stream-completed', $finishes + 1, $finishes);
+}
+
+function ac_add_webhook_actions($action, $webhook, $api_key) {
+    switch ($action) {
+        case 'stream_end':
+            $response_body = WPWHPRO()->helpers->get_response_body();
+			$return_args = array(
+				'success' => false
+            );
+
+            ac_perform_stream_completion();
+            
+            $return_args['msg'] = WPWHPRO()->helpers->translate("Acknowledged, thank you!", 'ac-stream_end-success');
+            $return_args['success'] = true;
+            WPWHPRO()->webhook->echo_response_data( $return_args );
+			die();
+    }
+}
+
+add_action('wpwhpro/webhooks/add_webhooks_actions', 'ac_add_webhook_actions', 20, 3);
 
 /* Exclude videos on the blog page. */
 

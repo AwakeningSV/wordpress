@@ -55,23 +55,44 @@
 				</div> <?php // end #inner-header ?>
 
             </header> <?php // end header ?>
-
         <?php
             $announcements = z_get_posts_in_zone('upcoming-livestream', array(
                 'posts_per_page' => 1,
-                'post_type' => 'any',
+                'post_type' => 'teaching',
                 'post_status' => 'publish'
             ), false);
 
-            foreach($announcements as $announcement) :
+            foreach($announcements as $announcement): 
+                $teaching_date = (int) get_post_meta($announcement->ID, 'teaching-date', true);
 
-                $live_start = (int) get_post_meta($announcement->ID, 'live_time', true);
+                if (!$teaching_date) continue;
+                
+                $teaching_gmt = new DateTime();
+                $teaching_gmt->setTimestamp($teaching_date);
+                $teaching_day = $teaching_gmt->format('Y-m-d');
+                $teaching_local = new DateTime($teaching_day, new DateTimeZone('America/Los_Angeles'));
+
+                $completes = (int) get_post_meta($announcement->ID, 'stream-completed', true);
+
+                if ($completes == 0) {
+                    $teaching_local->modify('+9 hours');
+                    $teaching_local->modify('+30 minutes');
+                    $live_start = $teaching_local->getTimestamp();
+                } else if ($completes == 1) {
+                    $teaching_local->modify('+11 hours');
+                    $teaching_local->modify('+15 minutes');
+                    $live_start = $teaching_local->getTimestamp(); 
+                } else {
+                    // No more for this post.
+                    continue;
+                }
+
                 if (!$live_start || $live_start > time()) :
         ?>
-            <div class="wrap clearfix">
-            <p class="announce announce-upcoming" data-livestart="<?php echo $live_start; ?>">
+            <div class="announce announce-upcoming" data-livestart="<?php echo $live_start; ?>">
+                <p class="announce-u">
                     <a href="<?php echo esc_html(get_permalink($announcement)); ?>">
-                    <b>Upcoming Live Stream</b>&nbsp;&mdash; &ldquo;<?php echo esc_html(get_the_title($announcement)); ?>&rdquo; service broadcast begins <span class="announce-when">soon</span>
+                        <b>Upcoming Live Stream</b><br><?php echo esc_html(get_the_title($announcement)); ?> begins <span class="announce-when">soon</span>
                     </a>
                 </p>
             </div>
@@ -80,13 +101,14 @@
                 // If live video is not embedded, hide this message
                 // if (!has_shortcode($announcement->post_content, 'live')) :
 			?>
-	            <div class="wrap clearfix">
-	                <p class="announce announce-live">
-	                    <a href="<?php echo esc_html(get_permalink($announcements[0])); ?>">
-	                    <b>Watch Live Now</b>&nbsp;&mdash; &ldquo;<?php echo esc_html(get_the_title($announcements[0])); ?>&rdquo; service broadcast live from San Jose, CA
-	                    </a>
-	                </p>
-	            </div>
+                <div class="announce announce-live">
+                    <p class="announce-u">
+                        <a href="<?php echo esc_html(get_permalink($announcements[0])); ?>">
+                            <b>Live</b> <span><em><?php echo esc_html(get_the_title($announcements[0])); ?></em> streaming live</span>
+                            <span class="button button-arrow">Watch Now</span>
+                        </a>
+                    </p>
+                </div>
 	        <?php // endif; ?>
         <?php endif; ?>
         <?php endforeach; wp_reset_postdata(); ?>
