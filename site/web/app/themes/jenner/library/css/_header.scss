@@ -135,6 +135,10 @@ Live video announcement.
         @extend .caps;
     }
 
+    i { // .announce-when
+        font-style: normal;
+    }
+
     a {
         border: 0;
         display: block;
@@ -173,8 +177,8 @@ Live video announcement.
         }
 
         span {
-            margin-left: .5em;
             display: inline-block;
+            margin-left: .5em;
 
             &.button { // Watch Now button
                 margin-left: auto;

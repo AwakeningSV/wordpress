@@ -66,7 +66,7 @@
                 $teaching_date = (int) get_post_meta($announcement->ID, 'teaching-date', true);
 
                 if (!$teaching_date) continue;
-                
+
                 $teaching_gmt = new DateTime();
                 $teaching_gmt->setTimestamp($teaching_date);
                 $teaching_day = $teaching_gmt->format('Y-m-d');
@@ -92,7 +92,7 @@
             <div class="announce announce-upcoming" data-livestart="<?php echo $live_start; ?>">
                 <p class="announce-u">
                     <a href="<?php echo esc_html(get_permalink($announcement)); ?>">
-                        <b>Upcoming Live Stream</b><br><?php echo esc_html(get_the_title($announcement)); ?> begins <span class="announce-when">soon</span>
+                        <b>Upcoming Live Stream</b><br><span><?php echo esc_html(get_the_title($announcement)); ?> begins <i class="announce-when">soon</i></span>
                     </a>
                 </p>
             </div>

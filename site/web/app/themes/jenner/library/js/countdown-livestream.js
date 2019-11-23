@@ -21,7 +21,7 @@ jQuery(document).ready(function ($) {
                     stream
                         .removeClass('announce-upcoming')
                         .addClass('announce-live');
-                    stream.find('b:first').html('Watch Live Now');
+                    stream.find('b:first').html('Live');
                     stream.find('.announce-when:first').html('now');
                 }
             }
