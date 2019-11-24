@@ -71,7 +71,7 @@
 $tz = date_default_timezone_get();
 date_default_timezone_set('America/Los_Angeles');
 ?>
-                                                        <?php printf('<time class="presented" datetime="%1$s">%2$s</time>', date('Y-m-j', $live_time), date('ga', $live_time) . ' PT'); ?>
+                                                        <?php printf('<time class="presented" datetime="%1$s">%2$s</time>', date('Y-m-j', $live_time), date('g:ia', $live_time) . ' PT'); ?>
 <?php
 date_default_timezone_set($tz);
 ?>
