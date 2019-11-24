@@ -18,6 +18,7 @@
                                         <?php the_terms( $post->ID, 'series', 'Part of ', ', ', ' &mdash; ' ); ?>
                                         <?php the_terms( $post->ID, 'teachers', 'Presented by ', ', ', ' &mdash; ' ); ?>
                                         <?php $event_presented_date = get_post_meta($post->ID, 'teaching-date', true); ?>
+                                        <?php $live_time = ac_get_teaching_live_time($post); ?>
                                         <?php printf('<time class="presented" datetime="%1$s">%2$s</time>', date('Y-m-j', $event_presented_date), date(get_option('date_format'), $event_presented_date)); ?>
                                     </p>
 
@@ -37,13 +38,10 @@
 									<div class="jenner-u-1 jenner-u-md-3-4">
 										<section class="teaching-inner-u" itemprop="articleBody">
 											<?php if ($post->content == '') : ?>
-		                                        <?php if ($event_presented_date > time()) : ?>
-<?php if (get_post_meta($post->ID, 'live_time', true)): ?>
+		                                        <?php if ($event_presented_date > time() && $live_time) : ?>
 													<p>This event will be presented
 		                                            <?php printf('<time class="presented" datetime="%1$s">%2$s</time>', date('Y-m-j', $event_presented_date), date(get_option('date_format'), $event_presented_date)); ?>.
 													Check back here to watch live online or <a href="/visit/">plan a visit</a>.</p>
-<?php endif; ?>
-												<?php else : ?>
 												<?php endif; ?>
 											<?php endif; ?>
 											<?php the_content(); ?>
