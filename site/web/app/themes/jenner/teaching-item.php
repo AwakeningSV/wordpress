@@ -18,11 +18,10 @@
                                             <?php
                                                 $event_presented_date = get_post_meta($post->ID, 'teaching-date', true);
                                                 $event_content = get_post_field('post_content', $post->ID, 'raw');
-												$live_time = get_post_meta($post->ID, 'live_time');
+												$live_time = ac_get_teaching_live_time($post);
                                                 $event_is_live = false;
                                                 $event_is_over = false;
 												if ($live_time) {
-													$live_time = $live_time[0];
 													$event_is_live = $live_time < time();
 													if ($event_is_live) {
 														$event_is_over = !has_shortcode($event_content, 'live');
@@ -50,7 +49,7 @@
                                                     <?php printf('<time class="presented" datetime="%1$s">%2$s</time>', date('Y-m-j', $event_presented_date), date(get_option('date_format'), $event_presented_date)); ?>
                                                 </p>
                                             <?php else : ?>
-                                                <?php if ($event_is_over): ?>
+                                                <?php if (!$live_time): ?>
                                                     <?php if (!jenner_post_has_oembed($post->ID)) : ?>
                                                         <p class="archive-badge archive-badge-upcoming">
                                                             <a href="<?php the_permalink(); ?>">
@@ -58,13 +57,13 @@
                                                             </a>
                                                         </p>
                                                     <?php endif; ?>
-                                                <?php elseif ($event_is_live) : ?>
+                                                <?php elseif ($event_is_live && !$event_is_over) : ?>
                                                     <p class="archive-badge archive-badge-live">
                                                         <a href="<?php the_permalink(); ?>">
                                                             Watch Live Now
                                                         </a>
                                                     </p>
-                                            	<?php elseif ($live_time): ?>
+                                            	<?php elseif (!$event_is_over) : ?>
                                                 <p class="archive-badge archive-badge-upcoming">
                                                     <a href="<?php the_permalink(); ?>" style="background: #24BFD0;">
                                                         <!-- Tomorrow -->

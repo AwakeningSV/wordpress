@@ -277,6 +277,32 @@ function ac_add_webhook_actions($action, $webhook, $api_key) {
 
 add_action('wpwhpro/webhooks/add_webhooks_actions', 'ac_add_webhook_actions', 20, 3);
 
+function ac_get_teaching_live_time($teaching) {
+    $teaching_date = (int) get_post_meta($teaching->ID, 'teaching-date', true);
+
+    if (!$teaching_date) return false;
+
+    $teaching_gmt = new DateTime();
+    $teaching_gmt->setTimestamp($teaching_date);
+    $teaching_day = $teaching_gmt->format('Y-m-d');
+    $teaching_local = new DateTime($teaching_day, new DateTimeZone('America/Los_Angeles'));
+
+    $completes = (int) get_post_meta($teaching->ID, 'stream-completed', true);
+
+    if ($completes == 0) {
+        $teaching_local->modify('+9 hours');
+        $teaching_local->modify('+30 minutes');
+        return $teaching_local->getTimestamp();
+    } else if ($completes == 1) {
+        $teaching_local->modify('+11 hours');
+        $teaching_local->modify('+15 minutes');
+        return $teaching_local->getTimestamp(); 
+    } else {
+        // No more for this post.
+        return false;
+    }
+}
+
 /* Exclude videos on the blog page. */
 
 function awakening_exclude_videos_on_blog_index( $query ) {

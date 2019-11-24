@@ -63,31 +63,11 @@
             ), false);
 
             foreach($announcements as $announcement): 
-                $teaching_date = (int) get_post_meta($announcement->ID, 'teaching-date', true);
+                $live_start = ac_get_teaching_live_time($announcement);
 
-                if (!$teaching_date) continue;
+                if (!$live_start) continue;
 
-                $teaching_gmt = new DateTime();
-                $teaching_gmt->setTimestamp($teaching_date);
-                $teaching_day = $teaching_gmt->format('Y-m-d');
-                $teaching_local = new DateTime($teaching_day, new DateTimeZone('America/Los_Angeles'));
-
-                $completes = (int) get_post_meta($announcement->ID, 'stream-completed', true);
-
-                if ($completes == 0) {
-                    $teaching_local->modify('+9 hours');
-                    $teaching_local->modify('+30 minutes');
-                    $live_start = $teaching_local->getTimestamp();
-                } else if ($completes == 1) {
-                    $teaching_local->modify('+11 hours');
-                    $teaching_local->modify('+15 minutes');
-                    $live_start = $teaching_local->getTimestamp(); 
-                } else {
-                    // No more for this post.
-                    continue;
-                }
-
-                if (!$live_start || $live_start > time()) :
+                if ($live_start > time()):
         ?>
             <div class="announce announce-upcoming" data-livestart="<?php echo $live_start; ?>">
                 <p class="announce-u">
