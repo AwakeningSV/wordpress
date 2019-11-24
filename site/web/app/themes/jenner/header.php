@@ -85,7 +85,9 @@
                     <p class="announce-u">
                         <a href="<?php echo esc_html(get_permalink($announcements[0])); ?>">
                             <b>Live</b> <span><em><?php echo esc_html(get_the_title($announcements[0])); ?></em> streaming live</span>
-                            <span class="button button-arrow">Watch Now</span>
+                            <?php if (get_queried_object_id() !== $announcement->ID) : ?>
+                                <span class="button button-arrow">Watch Now</span>
+                            <?php endif; ?>
                         </a>
                     </p>
                 </div>
