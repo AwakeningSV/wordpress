@@ -103,7 +103,13 @@
 														<li><?php echo $reference->name; ?></li>
 													<?php endforeach; ?>
 												</ul>
-											<?php endif; ?>
+                                            <?php endif; ?>
+                                            <a href="https://awakening.churchcenter.com/people/forms/12659?open-in-church-center-modal=true" class="button">Get Prayer</a>
+                                            <p>Our staff would love to
+                                                <a href="https://awakening.churchcenter.com/people/forms/12659?open-in-church-center-modal=true">pray for you</a>
+                                                or answer any
+                                                <a href="https://awakening.churchcenter.com/people/forms/10660?open-in-church-center-modal=true">questions</a>
+                                                you may have.</p>
 										</div>
 									</div>
 								</div>
