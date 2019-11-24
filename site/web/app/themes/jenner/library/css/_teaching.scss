@@ -24,6 +24,11 @@
         margin-bottom: 0;
     }
 
+    h2:first-child {
+        /* Match .fve-video-wrapper margin visually */
+        margin-top: 0.2em;
+    }
+
     p, ul {
         padding-bottom: 10px;
     }
