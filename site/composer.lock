@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd2cc148465c991b01e607cf04d07247",
+    "content-hash": "b5aa4a0211143569b8313e11d6b07903",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -72,32 +72,6 @@
                 "wordpress"
             ],
             "time": "2019-11-09T22:42:30+00:00"
-        },
-        {
-            "name": "awakeningsv/events-calendar-pro",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/events-calendar-pro/events-calendar-pro",
-                "reference": "4f2425dbd5a6683f0643ead534f171d3f6a3413e"
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Modern Tribe, Inc.",
-                    "homepage": "http://m.tri.be/20"
-                }
-            ],
-            "description": "The Events Calendar PRO, a premium add-on to the open source The Events Calendar plugin (required), enables recurring events, custom attributes, venue pages, new widgets and a host of other premium features.",
-            "homepage": "https://dev.azure.com/awakeningsv/events-calendar-pro",
-            "keywords": [
-                "plugin",
-                "wordpress"
-            ],
-            "time": "2019-11-09T23:42:44+00:00"
         },
         {
             "name": "awakeningsv/leadership-plugin",
@@ -280,32 +254,6 @@
                 "wordpress"
             ],
             "time": "2019-11-09T23:45:39+00:00"
-        },
-        {
-            "name": "awakeningsv/wpbakery-page-builder-plugin",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/wpbakery-page-builder-plugin/wpbakery-page-builder-plugin",
-                "reference": "19fd0e203914bbe87623c73bf87ec3c227006a85"
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Michael M - WPBakery.com",
-                    "homepage": "https://wpbakery.com"
-                }
-            ],
-            "description": "Drag and drop page builder for WordPress. Take full control over your WordPress site, build any layout you can imagine – no programming knowledge required.",
-            "homepage": "https://dev.azure.com/awakeningsv/wpbakery-page-builder-plugin",
-            "keywords": [
-                "plugin",
-                "wordpress"
-            ],
-            "time": "2019-11-09T22:13:00+00:00"
         },
         {
             "name": "composer/installers",
@@ -1204,24 +1152,6 @@
             "homepage": "https://wordpress.org/plugins/autodescription/"
         },
         {
-            "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.1.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.1.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.5.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/contact-form-7/"
-        },
-        {
             "name": "wpackagist-plugin/fluid-video-embeds",
             "version": "1.2.9",
             "source": {
@@ -1238,24 +1168,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/fluid-video-embeds/"
-        },
-        {
-            "name": "wpackagist-plugin/forget-about-shortcode-buttons",
-            "version": "2.1.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/forget-about-shortcode-buttons/",
-                "reference": "tags/2.1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/forget-about-shortcode-buttons.2.1.2.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/forget-about-shortcode-buttons/"
         },
         {
             "name": "wpackagist-plugin/manual-image-crop",
@@ -1436,24 +1348,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/simple-history/"
-        },
-        {
-            "name": "wpackagist-plugin/the-events-calendar",
-            "version": "4.9.12",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/the-events-calendar/",
-                "reference": "tags/4.9.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.9.12.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/the-events-calendar/"
         },
         {
             "name": "wpackagist-plugin/windows-azure-storage",
@@ -1809,9 +1703,7 @@
         "awakeningsv/live-plugin": 20,
         "awakeningsv/teaching-plugin": 20,
         "awakeningsv/leadership-plugin": 20,
-        "awakeningsv/events-calendar-pro": 20,
         "awakeningsv/upcoming-events-plugin": 20,
-        "awakeningsv/wpbakery-page-builder-plugin": 20,
         "awakeningsv/revslider": 20,
         "roave/security-advisories": 20
     },
