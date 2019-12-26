@@ -290,11 +290,12 @@ function ac_get_teaching_live_time($teaching) {
     $completes = (int) get_post_meta($teaching->ID, 'stream-completed', true);
 
     if ($completes == 0) {
-        $teaching_local->modify('+16 hours');
+        $teaching_local->modify('+9 hours');
+        $teaching_local->modify('+30 minutes');
         return $teaching_local->getTimestamp();
     } else if ($completes == 1) {
-        $teaching_local->modify('+17 hours');
-        $teaching_local->modify('+30 minutes');
+        $teaching_local->modify('+11 hours');
+        $teaching_local->modify('+15 minutes');
         return $teaching_local->getTimestamp(); 
     } else {
         // No more for this post.
