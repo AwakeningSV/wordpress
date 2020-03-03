@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47ac97f15ba55c1f68bf16baab27534f",
+    "content-hash": "59214a693d35a35fb30bf135e379bbe2",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -652,16 +652,16 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "100a25207566930efd926cf205542946aa692e01"
+                "reference": "77f7c4d2e65413aff5b5a8cc8b3caf7a28d81959"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/100a25207566930efd926cf205542946aa692e01",
-                "reference": "100a25207566930efd926cf205542946aa692e01",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/77f7c4d2e65413aff5b5a8cc8b3caf7a28d81959",
+                "reference": "77f7c4d2e65413aff5b5a8cc8b3caf7a28d81959",
                 "shasum": ""
             },
             "require": {
@@ -703,7 +703,7 @@
                 "php",
                 "type"
             ],
-            "time": "2019-12-14T13:46:39+00:00"
+            "time": "2019-12-15T19:35:24+00:00"
         },
         {
             "name": "psr/http-message",
@@ -797,16 +797,16 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.3.1",
+            "version": "5.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.3.1"
+                "reference": "5.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.1",
-                "reference": "5.3.1"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2",
+                "reference": "5.3.2"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -830,7 +830,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-12-12T20:52:07+00:00"
+            "time": "2019-12-18T22:19:57+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
@@ -1194,15 +1194,15 @@
         },
         {
             "name": "wpackagist-plugin/oa-social-login",
-            "version": "5.5.1",
+            "version": "5.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/oa-social-login/",
-                "reference": "tags/5.5.1"
+                "reference": "tags/5.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/oa-social-login.5.5.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/oa-social-login.5.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1248,15 +1248,15 @@
         },
         {
             "name": "wpackagist-plugin/powerpress",
-            "version": "8.0.3",
+            "version": "8.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/powerpress/",
-                "reference": "tags/8.0.3"
+                "reference": "tags/8.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/powerpress.8.0.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/powerpress.8.1.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1284,15 +1284,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.5.1",
+            "version": "4.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/4.5.1"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.4.5.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1578293412"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1338,15 +1338,15 @@
         },
         {
             "name": "wpackagist-plugin/simple-history",
-            "version": "2.33",
+            "version": "2.33.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/simple-history/",
-                "reference": "tags/2.33"
+                "reference": "tags/2.33.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simple-history.2.33.zip"
+                "url": "https://downloads.wordpress.org/plugin/simple-history.2.33.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1374,15 +1374,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-webhooks",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-webhooks/",
-                "reference": "tags/1.1.4"
+                "reference": "tags/1.1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-webhooks.1.1.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-webhooks.1.1.5.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1434,12 +1434,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e4ee2c8e4ccd908debc64069faf023c684a76760"
+                "reference": "67ac6ea8f4a078c3c9b7aec5d7ae70f098c37389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e4ee2c8e4ccd908debc64069faf023c684a76760",
-                "reference": "e4ee2c8e4ccd908debc64069faf023c684a76760",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/67ac6ea8f4a078c3c9b7aec5d7ae70f098c37389",
+                "reference": "67ac6ea8f4a078c3c9b7aec5d7ae70f098c37389",
                 "shasum": ""
             },
             "conflict": {
@@ -1460,7 +1460,7 @@
                 "composer/composer": "<=1-alpha.11",
                 "contao-components/mediaelement": ">=2.14.2,<2.21.1",
                 "contao/core": ">=2,<3.5.39",
-                "contao/core-bundle": ">=4,<4.4.39|>=4.5,<4.7.5",
+                "contao/core-bundle": ">=4,<4.4.46|>=4.5,<4.8.6",
                 "contao/listing-bundle": ">=4,<4.4.8",
                 "datadog/dd-trace": ">=0.30,<0.30.2",
                 "david-garcia/phpwhois": "<=4.3.1",
@@ -1474,8 +1474,9 @@
                 "doctrine/mongodb-odm-bundle": ">=2,<3.0.1",
                 "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1",
                 "dompdf/dompdf": ">=0.6,<0.6.2",
-                "drupal/core": ">=7,<7.67|>=8,<8.6.16|>=8.7,<8.7.1|>8.7.3,<8.7.5",
-                "drupal/drupal": ">=7,<7.67|>=8,<8.6.16|>=8.7,<8.7.1|>8.7.3,<8.7.5",
+                "drupal/core": ">=7,<7.69|>=8,<8.7.11|>=8.8,<8.8.1",
+                "drupal/drupal": ">=7,<7.69|>=8,<8.7.11|>=8.8,<8.8.1",
+                "endroid/qr-code-bundle": "<3.4.2",
                 "erusev/parsedown": "<1.7.2",
                 "ezsystems/ezplatform-admin-ui": ">=1.3,<1.3.5|>=1.4,<1.4.4",
                 "ezsystems/ezpublish-kernel": ">=5.3,<5.3.12.1|>=5.4,<5.4.13.1|>=6,<6.7.9.1|>=6.8,<6.13.5.1|>=7,<7.2.4.1|>=7.3,<7.3.2.1",
@@ -1507,7 +1508,7 @@
                 "league/commonmark": "<0.18.3",
                 "magento/magento1ce": "<1.9.4.3",
                 "magento/magento1ee": ">=1,<1.14.4.3",
-                "magento/product-community-edition": ">=2,<2.2.10|>=2.3,<2.3.2",
+                "magento/product-community-edition": ">=2,<2.2.10|>=2.3,<2.3.2-p.2",
                 "monolog/monolog": ">=1.8,<1.12",
                 "namshi/jose": "<2.2",
                 "onelogin/php-saml": "<2.10.4",
@@ -1530,6 +1531,7 @@
                 "pusher/pusher-php-server": "<2.2.1",
                 "robrichards/xmlseclibs": ">=1,<3.0.4",
                 "sabre/dav": ">=1.6,<1.6.99|>=1.7,<1.7.11|>=1.8,<1.8.9",
+                "scheb/two-factor-bundle": ">=0,<3.26|>=4,<4.11",
                 "sensiolabs/connect": "<4.2.3",
                 "serluck/phpwhois": "<=4.2.6",
                 "shopware/shopware": "<5.3.7",
@@ -1589,8 +1591,8 @@
                 "titon/framework": ">=0,<9.9.99",
                 "truckersmp/phpwhois": "<=4.3.1",
                 "twig/twig": "<1.38|>=2,<2.7",
-                "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.32|>=8,<8.7.27|>=9,<9.5.8",
-                "typo3/cms-core": ">=8,<8.7.27|>=9,<9.5.8",
+                "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.32|>=8,<8.7.30|>=9,<9.5.12|>=10,<10.2.1",
+                "typo3/cms-core": ">=8,<8.7.30|>=9,<9.5.12|>=10,<10.2.1",
                 "typo3/flow": ">=1,<1.0.4|>=1.1,<1.1.1|>=2,<2.0.1|>=2.3,<2.3.16|>=3,<3.0.10|>=3.1,<3.1.7|>=3.2,<3.2.7|>=3.3,<3.3.5",
                 "typo3/neos": ">=1.1,<1.1.3|>=1.2,<1.2.13|>=2,<2.0.4",
                 "typo3/phar-stream-wrapper": ">=1,<2.1.1|>=3,<3.1.1",
@@ -1644,7 +1646,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2019-12-02T13:03:15+00:00"
+            "time": "2020-01-06T19:16:46+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
