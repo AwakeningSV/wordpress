@@ -55,7 +55,7 @@
 								</div>
 
 								<?php if ($teacher->term_id) : ?>
-									<h3>Teaching by <?php echo $teacher->name; ?></h3>
+									<h3>Sermons by <?php echo $teacher->name; ?></h3>
 									<?php
 
 									$teaching_query = new WP_Query(array(
@@ -87,7 +87,7 @@
 									<p>
 										<a class="button button-arrow"
 											href="<?php echo esc_url(get_term_link($teacher)); ?>">
-											More Teaching by <?php echo $teacher->name; ?>
+											More Sermons by <?php echo $teacher->name; ?>
 										</a>
 									</p>
 								<?php endif; ?>

@@ -209,7 +209,7 @@
             "source": {
                 "type": "git",
                 "url": "git@ssh.dev.azure.com:v3/awakeningsv/teaching-plugin/teaching-plugin",
-                "reference": "59db8853409e02bc013645cc1732a5e606d4df2c"
+                "reference": "40d0d85fb0bdd5c9a0147e7e880ea6dfb26b5b90"
             },
             "require": {
                 "php": ">=5.6"
@@ -227,7 +227,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2019-11-17T07:16:18+00:00"
+            "time": "2020-03-03T17:07:14+00:00"
         },
         {
             "name": "awakeningsv/upcoming-events-plugin",

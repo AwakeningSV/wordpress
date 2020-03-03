@@ -117,7 +117,7 @@ foreach(array_chunk($zone_posts, 4) as $posts):
 
                             <div class="home-section">
                                 <div class="home-section-header">
-                                    <h2>Sunday Gatherings</h2>
+                                    <h2>Sunday Sermons</h2>
                                 </div>
 <?php
 foreach(array_chunk($teaching_latest_posts, 4) as $posts):

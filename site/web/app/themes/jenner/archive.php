@@ -53,7 +53,7 @@
                                     if ('teachers' === get_query_var('taxonomy')) {
                                 ?>
                                         <h1 class="archive-title h2">
-                                            <span><?php _e('Teaching By', 'bonestheme'); ?> <?php echo $term->name; ?></span>
+                                            <span><?php _e('Sermons By', 'bonestheme'); ?> <?php echo $term->name; ?></span>
                                         </h1>
                                 <?php } else { ?>
                                         <h1 class="archive-title h2">
