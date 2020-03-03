@@ -5,20 +5,7 @@
                     <div class="pure-g-r" id="conclusion">
                         <div class="pure-u-9-24">
                             <div class="inner-conclusion">
-                                <h2>Location</h2>
-                                <address>
-                                    <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
-                                        <meta itemprop="name" content="Del Mar High School">
-                                        <span itemprop="streetAddress">1224 Del Mar Ave</span><br>
-                                        <span itemprop="addressLocality">San Jose</span> <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95128</span>
-                                    </span>
-                                </address>
-                                <p><a href="https://www.google.com/maps/dir/''/awakening+church/@37.3039004,-121.9985404,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x808e34cbdc02f7d9:0xedd7bd09158f4a80!2m2!1d-121.9285004!2d37.303921">Map</a></p>
-                            </div>
-                        </div>
-                        <div class="pure-u-9-24">
-                            <div class="inner-conclusion">
-                                <h2>Gatherings</h2>
+                                <h2>Services</h2>
                                 <ul>
                                     <li>Sundays 9:30am</li>
                                     <li>Sundays 11:15am</li>
@@ -28,6 +15,28 @@
 									<li><a href="/visit/families/">Preschool</a> at 11:15am</li>
                                 </ul>
                                 <p><a href="/visit/">Visit Us</a> or <a href="/live/">Watch Online</a></p>
+                            </div>
+                        </div>
+                        <div class="pure-u-9-24">
+                            <div class="inner-conclusion">
+                                <h2>Service Location</h2>
+                                <address>
+                                    <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
+                                        <meta itemprop="name" content="Del Mar High School">
+                                        <span itemprop="streetAddress">1224 Del Mar Ave</span><br>
+                                        <span itemprop="addressLocality">San Jose</span> <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95128</span>
+                                    </span>
+                                </address>
+                                <p><a href="https://www.google.com/maps/dir/''/awakening+church/@37.3039004,-121.9985404,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x808e34cbdc02f7d9:0xedd7bd09158f4a80!2m2!1d-121.9285004!2d37.303921">Directions</a></p>
+                                <h2>Awakening Office</h2>
+                                <address>
+                                    <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
+                                        <meta itemprop="name" content="Awakening Church Office">
+                                        <span itemprop="streetAddress">1210 S Bascom Ave Suite 127</span><br>
+                                        <span itemprop="addressLocality">San Jose</span> <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95128</span>
+                                    </span>
+                                </address>
+                                <p><a href="https://goo.gl/maps/CoxEExVWaz4LSuC67">Directions to Awakening Office</a></p>
                             </div>
                         </div>
                         <div class="pure-u-6-24">
