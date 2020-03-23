@@ -7,36 +7,18 @@
                             <div class="inner-conclusion">
                                 <h2>Services</h2>
                                 <ul>
-                                    <li>Sundays 9:30am</li>
-                                    <li>Sundays 11:15am</li>
+                                    <li>Sundays 9:30 AM</li>
+                                    <li>Sundays 11:15 AM</li>
+                                    <li>Wednesdays 7 PM</li>
                                 </ul>
-                                <ul>
-                                    <li><a href="/visit/families/">Kids &amp; Youth programs</a> at 9:30am</li>
-									<li><a href="/visit/families/">Preschool</a> at 11:15am</li>
-                                </ul>
-                                <p><a href="/visit/">Visit Us</a> or <a href="/live/">Watch Online</a></p>
+                                <p><a href="/live/">Visit Church Online</a></p>
                             </div>
                         </div>
                         <div class="pure-u-9-24">
                             <div class="inner-conclusion">
                                 <h2>Service Location</h2>
-                                <address>
-                                    <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
-                                        <meta itemprop="name" content="Del Mar High School">
-                                        <span itemprop="streetAddress">1224 Del Mar Ave</span><br>
-                                        <span itemprop="addressLocality">San Jose</span> <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95128</span>
-                                    </span>
-                                </address>
-                                <p><a href="https://www.google.com/maps/dir/''/awakening+church/@37.3039004,-121.9985404,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x808e34cbdc02f7d9:0xedd7bd09158f4a80!2m2!1d-121.9285004!2d37.303921">Directions</a></p>
-                                <h2>Awakening Office</h2>
-                                <address>
-                                    <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
-                                        <meta itemprop="name" content="Awakening Church Office">
-                                        <span itemprop="streetAddress">1210 S Bascom Ave Suite 127</span><br>
-                                        <span itemprop="addressLocality">San Jose</span> <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95128</span>
-                                    </span>
-                                </address>
-                                <p><a href="https://goo.gl/maps/CoxEExVWaz4LSuC67">Directions to Awakening Office</a></p>
+                                <p><a href="/live">Join our online services</a> every Wednesday and Sunday.</p>
+                                <p>We are not hosting in-person gatherings right now. <a href="/covid-19/">Learn more about our response to coronavirus (COVID-19).</a></p>
                             </div>
                         </div>
                         <div class="pure-u-6-24">
@@ -48,7 +30,8 @@
                                         <span itemprop="addressLocality">San Jose</span> <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95155</span>
                                     </span>
                                 </address>
-                                <p><a itemprop="email" href="mailto:ask@awakeningchurch.com">ask@awakeningchurch.com</a></p>
+                                <p><a href="https://awakening.churchcenter.com/people/forms/10660" data-open-in-church-center-modal="true">Contact Us</a></p>
+                                <p>Email <a itemprop="email" href="mailto:ask@awakeningchurch.com">ask@awakeningchurch.com</a></p>
                             </div>
                         </div>
                                            </div>
