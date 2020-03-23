@@ -131,7 +131,7 @@ foreach(array_chunk($teaching_latest_posts, 4) as $posts):
                                 </div>
 <?php endforeach; ?>
                             </div>
-
+<?php if(count($event_posts) > 0): ?>
                             <div class="home-section">
                                 <div class="home-section-header">
                                     <h2>Upcoming Events</h2>
@@ -148,6 +148,7 @@ foreach(array_chunk($event_posts, 4) as $posts):
                                 </div>
 <?php endforeach; ?>
                             </div>
+<?php endif; ?>
 <?php wp_reset_postdata(); ?>
 
 						</div> <?php // end #main ?>
