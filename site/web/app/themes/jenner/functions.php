@@ -289,14 +289,30 @@ function ac_get_teaching_live_time($teaching) {
 
     $completes = (int) get_post_meta($teaching->ID, 'stream-completed', true);
 
+    $is_sunday = $teaching_local->format('D') == 'Sun';
+
     if ($completes == 0) {
-        $teaching_local->modify('+9 hours');
-        $teaching_local->modify('+30 minutes');
-        return $teaching_local->getTimestamp();
+        if ($is_sunday) {
+            $teaching_local->modify('+9 hours');
+            $teaching_local->modify('+30 minutes');
+            return $teaching_local->getTimestamp();
+        } else {
+            $teaching_local->modify('+19 hours'); // 7 PM
+            return $teaching_local->getTimestamp();
+        }
     } else if ($completes == 1) {
-        $teaching_local->modify('+11 hours');
-        $teaching_local->modify('+15 minutes');
-        return $teaching_local->getTimestamp(); 
+        if ($is_sunday) {
+            $teaching_local->modify('+11 hours');
+            $teaching_local->modify('+15 minutes');
+            return $teaching_local->getTimestamp();
+        } else {
+            // No more for this post.
+            return false;
+        }
+    } else if ($completes == 2 && $teaching_day == '2020-04-12') {
+        // Special 3rd Easter service.
+        $teaching_local->modify('+13 hours'); // 1 PM
+        return $teaching_local->getTimestamp();
     } else {
         // No more for this post.
         return false;
