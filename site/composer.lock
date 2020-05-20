@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30659bff9c9127514beb3afb27728b1c",
+    "content-hash": "b2605013a1dd8a280a059a5c837e1703",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -1184,6 +1184,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/fluid-video-embeds/"
+        },
+        {
+            "name": "wpackagist-plugin/getwid",
+            "version": "1.5.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/getwid/",
+                "reference": "tags/1.5.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/getwid.1.5.4.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/getwid/"
         },
         {
             "name": "wpackagist-plugin/manual-image-crop",
