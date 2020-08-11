@@ -9,7 +9,6 @@
                                 <ul>
                                     <li>Sundays 9:30 AM</li>
                                     <li>Sundays 11:15 AM</li>
-                                    <li>Wednesdays 7 PM</li>
                                 </ul>
                                 <p><a href="/live/">Visit Church Online</a></p>
                             </div>
@@ -17,7 +16,7 @@
                         <div class="pure-u-9-24">
                             <div class="inner-conclusion">
                                 <h2>Service Location</h2>
-                                <p><a href="/live">Join our online services</a> every Wednesday and Sunday.</p>
+                                <p><a href="/live">Join our online services</a> every Sunday.</p>
                                 <p>We are not hosting in-person gatherings right now. <a href="/covid-19/">Learn more about our response to coronavirus (COVID-19).</a></p>
                             </div>
                         </div>
