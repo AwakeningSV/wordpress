@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2605013a1dd8a280a059a5c837e1703",
+    "content-hash": "27a9931fa6bf4c5f55b962a0623ff5aa",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -813,16 +813,16 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.4.2",
+            "version": "5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.4.2"
+                "reference": "5.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4.2",
-                "reference": "5.4.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.5",
+                "reference": "5.5"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -856,7 +856,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-06-10T21:43:59+00:00"
+            "time": "2020-08-11T18:48:01+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
