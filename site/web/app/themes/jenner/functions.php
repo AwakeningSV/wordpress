@@ -309,9 +309,9 @@ function ac_get_teaching_live_time($teaching) {
             // No more for this post.
             return false;
         }
-    } else if ($completes == 2 && $teaching_day == '2020-04-12') {
-        // Special 3rd Easter service.
-        $teaching_local->modify('+13 hours'); // 1 PM
+    } else if ($completes == 0 && $teaching_day == '2020-12-24') {
+        // Special Christmas Eve service.
+        $teaching_local->modify('+15 hours'); // 3 PM
         return $teaching_local->getTimestamp();
     } else {
         // No more for this post.
