@@ -71,7 +71,7 @@
         ?>
             <div class="announce announce-upcoming" data-livestart="<?php echo $live_start; ?>">
                 <p class="announce-u">
-                    <a href="<?php echo esc_html(get_permalink($announcement)); ?>">
+                    <a href="https://www.youtube.com/awakeningsv">
                         <b>Upcoming Live Stream</b><br><span><?php echo esc_html(get_the_title($announcement)); ?> begins <i class="announce-when">soon</i></span>
                     </a>
                 </p>
