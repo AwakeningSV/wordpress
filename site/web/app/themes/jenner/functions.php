@@ -297,7 +297,8 @@ function ac_get_teaching_live_time($teaching) {
             $teaching_local->modify('+30 minutes');
             return $teaching_local->getTimestamp();
         } else {
-            $teaching_local->modify('+19 hours'); // 7 PM
+            $teaching_local->modify('+18 hours');
+            $teaching_local->modify('+30 minutes'); // 6:30 PM
             return $teaching_local->getTimestamp();
         }
     } else if ($completes == 1) {
