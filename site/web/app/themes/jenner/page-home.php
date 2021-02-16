@@ -74,7 +74,7 @@ $event_query = new WP_Query(array(
     'meta_query' => array(
         array(
             'key' => 'event-end-date',
-            'value' => strtotime('-1 day'),
+            'value' => strtotime('-2 days'),
             'compare' => '>='
         )
     ),
