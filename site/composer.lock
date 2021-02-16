@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da3009184e3efd6967b2150fba2537d6",
+    "content-hash": "0cfb2dda510da83f17098e71a6eef41e",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -52,7 +52,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/azure-cdn-rewrite-plugin/azure-cdn-rewrite-plugin",
+                "url": "https://awakeningsv@dev.azure.com/awakeningsv/azure-cdn-rewrite-plugin/_git/azure-cdn-rewrite-plugin",
                 "reference": "7458ff8eb2c45ac1ead6d417a7098353d200be5a"
             },
             "require": {
@@ -78,7 +78,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/leadership-plugin/leadership-plugin",
+                "url": "https://awakeningsv@dev.azure.com/awakeningsv/leadership-plugin/_git/leadership-plugin",
                 "reference": "070558e13533a582b7b285b87365815c6b1990f2"
             },
             "require": {
@@ -104,7 +104,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/live-plugin/live-plugin",
+                "url": "https://awakeningsv@dev.azure.com/awakeningsv/live-plugin/_git/live-plugin",
                 "reference": "745266cc3cf7dcfafa9bd5f70e2b68350fd80757"
             },
             "require": {
@@ -130,7 +130,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/oembed-image-plugin/oembed-image-plugin",
+                "url": "https://awakeningsv@dev.azure.com/awakeningsv/oembed-image-plugin/_git/oembed-image-plugin",
                 "reference": "0de8dc52431dac02d1d492741731e50817024dd6"
             },
             "require": {
@@ -156,7 +156,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/remove-socialize-plugin/remove-socialize-plugin",
+                "url": "https://awakeningsv@dev.azure.com/awakeningsv/remove-socialize-plugin/_git/remove-socialize-plugin",
                 "reference": "b6c3d7afd6304eee128f45d7461ff0b7ecd90bb4"
             },
             "require": {
@@ -182,7 +182,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/revslider/revslider",
+                "url": "https://awakeningsv@dev.azure.com/awakeningsv/revslider/_git/revslider",
                 "reference": "db9658edb2de881f73e80686cb4967367ad82358"
             },
             "require": {
@@ -208,7 +208,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/teaching-plugin/teaching-plugin",
+                "url": "https://awakeningsv@dev.azure.com/awakeningsv/teaching-plugin/_git/teaching-plugin",
                 "reference": "40d0d85fb0bdd5c9a0147e7e880ea6dfb26b5b90"
             },
             "require": {
@@ -234,7 +234,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/upcoming-events-plugin/upcoming-events-plugin",
+                "url": "https://awakeningsv@dev.azure.com/awakeningsv/upcoming-events-plugin/_git/upcoming-events-plugin",
                 "reference": "19126a2f3717187aa1440e996a7f0d60ad656713"
             },
             "require": {
@@ -830,16 +830,16 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.6",
+            "version": "5.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.6"
+                "reference": "5.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.6",
-                "reference": "5.6"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.6.1",
+                "reference": "5.6.1"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -873,7 +873,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-12-08T22:15:57+00:00"
+            "time": "2021-02-03T21:15:13+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
