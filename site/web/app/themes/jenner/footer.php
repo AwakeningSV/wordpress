@@ -7,17 +7,23 @@
                             <div class="inner-conclusion">
                                 <h2>Services</h2>
                                 <ul>
-                                    <li>Sundays 9:30 AM</li>
-                                    <li>Sundays 11:15 AM</li>
+                                    <li>Sundays 9:30 AM <a href="/live/">online</a></li>
+                                    <li>Sundays 11:00 AM <a href="https://awakening.churchcenter.com/registrations">at Del Mar</a></li>
                                 </ul>
-                                <p><a href="/live/">Visit Church Online</a></p>
                             </div>
                         </div>
                         <div class="pure-u-9-24">
                             <div class="inner-conclusion">
-                                <h2>Service Location</h2>
+                                <h2>Services</h2>
                                 <p><a href="/live">Join our online services</a> every Sunday.</p>
-                                <p>We are not hosting in-person gatherings right now. <a href="/covid-19/">Learn more about our response to coronavirus (COVID-19).</a></p>
+                                <p><a href="https://awakening.churchcenter.com/registrations">Registration is required</a> for Del Mar services.</p>
+                                <address>
+                                    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                        Del Mar High School<br>
+                                        <span itemprop="streetAddress">1224 Del Mar Ave</span><br>
+                                        <span itemprop="addressLocality">San Jose</span> <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95128</span>
+                                    </span>
+                                </address>
                             </div>
                         </div>
                         <div class="pure-u-6-24">
