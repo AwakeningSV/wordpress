@@ -98,8 +98,6 @@ $teaching_latest_query = new WP_Query(array(
 
 $teaching_latest_posts = $teaching_latest_query->posts;
 
-$teaching_latest_posts = array_reverse($teaching_latest_posts);
-
 $home_posts = array();
 
 foreach(array_chunk($zone_posts, 4) as $posts):
