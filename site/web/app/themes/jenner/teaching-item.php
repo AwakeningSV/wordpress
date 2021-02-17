@@ -47,7 +47,7 @@
 
                                             <?php if (!is_tax('series')) : ?>
                                                 <p class="archive-date">
-                                                    Part X of <?php the_terms( $post->ID, 'series', '', ', ', ' ' ); ?>
+                                                    <?php the_terms( $post->ID, 'series', 'Part of ', ', ', ' ' ); ?>
                                                 </p>
                                             <?php endif; ?>
                                             <p class="archive-date">
