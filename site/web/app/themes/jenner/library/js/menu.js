@@ -35,8 +35,6 @@
     $('#menu a + .sub-menu').each(function (i, subMenu) {
         var a,
             li,
-            timeout,
-            menu = $('#menu'),
             OPEN = 'sub-menu-open';
 
         subMenu = $(subMenu);
@@ -47,34 +45,16 @@
         li = a.parent();
 
         function transitionMenu(ev) {
-
-            if (timeout) {
-                clearTimeout(timeout);
-                timeout = null;
-            }
-
-            var removeTime = ev.type === 'click' ? 0 : 350;
-
-            if (ev.relatedTarget && menu.has(ev.relatedTarget).size()) {
-                removeTime = 0;
-            }
-
             if (!subMenu.hasClass(OPEN)) {
                 ev.preventDefault();
+                $('.sub-menu-open').each(function (j, otherMenu) {
+                    $(otherMenu).removeClass(OPEN);
+                });
                 subMenu.addClass(OPEN);
-            } else if (
-                ev.type === 'mouseleave' &&
-                !li.has(ev.relatedTarget).size() // mouseleave outside this li
-            ) {
-                timeout = setTimeout(function () {
-                    subMenu.removeClass(OPEN);
-                }, removeTime);
             }
         }
 
         li.delegate('a, .sub-menu', 'click', transitionMenu);
-        li.delegate('a, .sub-menu', 'mouseenter', transitionMenu);
-        li.delegate('a, .sub-menu', 'mouseleave', transitionMenu);
     });
 
 }(this, this.document, this.jQuery));

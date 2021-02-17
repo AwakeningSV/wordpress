@@ -16,6 +16,22 @@
                                         </p>
                                         <?php if (get_post_type() === 'teaching') : ?>
                                             <?php
+
+                                                $series = get_the_terms($post->ID, 'series');
+
+                                                if ($series) {
+
+                                                    $query = new WP_Query( array(
+                                                        'series' => $series[0], 
+                                                        'posts_per_page' => -1, 
+                                                        'post_status' => 'publish',
+                                                        'orderby' => 'date', // be sure posts are ordered by date
+                                                        'order' => 'ASC', // be sure order is ascending
+                                                        'fields' => 'ids' // get only post ids
+                                                    ));
+                                                }
+                                            
+
                                                 $event_presented_date = get_post_meta($post->ID, 'teaching-date', true);
                                                 $event_content = get_post_field('post_content', $post->ID, 'raw');
 												$live_time = ac_get_teaching_live_time($post);
@@ -31,7 +47,7 @@
 
                                             <?php if (!is_tax('series')) : ?>
                                                 <p class="archive-date">
-                                                    <?php the_terms( $post->ID, 'series', 'Part of ', ', ', ' ' ); ?>
+                                                    Part X of <?php the_terms( $post->ID, 'series', '', ', ', ' ' ); ?>
                                                 </p>
                                             <?php endif; ?>
                                             <p class="archive-date">
