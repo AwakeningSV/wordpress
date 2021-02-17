@@ -73,7 +73,8 @@
         }
 
         li.delegate('a, .sub-menu', 'click', transitionMenu);
-        li.delegate('a, .sub-menu', 'hover', transitionMenu);
+        li.delegate('a, .sub-menu', 'mouseenter', transitionMenu);
+        li.delegate('a, .sub-menu', 'mouseleave', transitionMenu);
     });
 
 }(this, this.document, this.jQuery));
