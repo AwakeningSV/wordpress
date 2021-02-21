@@ -293,11 +293,11 @@ function ac_is_sunday_teaching_active($teaching) {
         return false;
     }
 
-    $teaching_local->modify('+9 hours');
+    $teaching_local->modify('+8 hours');
     $teaching_begin = $teaching_local->getTimestamp();
 
-    $teaching_local->modify('+3 hours');
-    $teaching_local->modify('+30 minutes');
+    $teaching_local->modify('+4 hours');
+    $teaching_local->modify('+30 minutes'); // 12:30 PM
     $teaching_end = $teaching_local->getTimestamp();
 
     return ($teaching_begin < time()) && ($teaching_end > time());
