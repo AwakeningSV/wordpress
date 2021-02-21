@@ -92,7 +92,7 @@
         <?php if ($is_active_sunday_item): ?>
             <div class="announce announce-sunday announce-sunday-notes">
                 <p class="announce-u">
-                    <a href="<?php echo esc_html(get_permalink($announcements[0])); ?>">
+                    <a href="<?php echo esc_html(get_permalink($announcements[0])); ?>#teaching-notes">
                         <b>Sermon Notes</b> <span>Read <em><?php echo esc_html(get_the_title($announcements[0])); ?></em> notes and scripture</span>
                         <?php if (get_queried_object_id() !== $announcement->ID) : ?>
                             <span class="button button-arrow">Read Now</span>

@@ -49,10 +49,12 @@
 												$teaching_notes = get_post_meta($post->ID, 'teaching-notes', true);
 											?>
 											<?php if ($teaching_notes) : ?>
-												<h2>Teaching Notes</h2>
-												<div class="teaching-notes-actions">
-													<a class="button" onclick="window.print(); return false;" href="#">Print</a>
-												</div>
+                                                <section id="teaching-notes">
+                                                    <h2>Teaching Notes</h2>
+                                                    <div class="teaching-notes-actions">
+                                                        <a class="button" onclick="window.print(); return false;" href="#">Print</a>
+                                                    </div>
+                                                </section>
 												<?php echo wpautop($teaching_notes); ?>
 											<?php endif; ?>
 		                                </section> <?php // end article section ?>

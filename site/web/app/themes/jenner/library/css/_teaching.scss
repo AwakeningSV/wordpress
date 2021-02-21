@@ -50,6 +50,11 @@
 }
 
 @media print {
+    /* Video div */
+    .teaching-inner-u > div,
+    .announce,
+    .footer,
+    .sidebar,
     .teaching-more,
     .teaching-meta,
     .teaching-inner-u .vimeo,
