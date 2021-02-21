@@ -72,7 +72,7 @@
         ?>
             <div class="announce announce-upcoming" data-livestart="<?php echo $live_start; ?>">
                 <p class="announce-u">
-                    <a href="https://www.youtube.com/awakeningsv">
+                    <a href="https://www.youtube.com/awakeningsv" target="_blank">
                         <b>Upcoming Live Stream</b><br><span><?php echo esc_html(get_the_title($announcement)); ?> begins <i class="announce-when">soon</i></span>
                     </a>
                 </p>
@@ -80,7 +80,7 @@
         <?php elseif (ac_is_sunday_teaching_live($announcement)): ?>
             <div class="announce announce-sunday announce-sunday-live">
                 <p class="announce-u">
-                    <a href="https://www.youtube.com/awakeningsv">
+                    <a href="https://www.youtube.com/awakeningsv" target="_blank">
                         <b>Live</b> <span><em><?php echo esc_html(get_the_title($announcement)); ?></em> streaming live</span>
                         <?php if (get_queried_object_id() !== $announcement->ID) : ?>
                             <span class="button button-arrow">Watch Now</span>
