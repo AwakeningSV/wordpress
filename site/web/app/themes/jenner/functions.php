@@ -301,7 +301,13 @@ function ac_get_teaching_live_time($teaching) {
             $teaching_local->modify('+30 minutes'); // 6:30 PM
             return $teaching_local->getTimestamp();
         }
-    } else if ($completes == 1) {
+    }
+
+    // No more for this post.
+    return false;
+
+    /*
+    if ($completes == 1) {
         if ($is_sunday) {
             $teaching_local->modify('+11 hours');
             $teaching_local->modify('+15 minutes');
@@ -318,6 +324,7 @@ function ac_get_teaching_live_time($teaching) {
         // No more for this post.
         return false;
     }
+    */
 }
 
 /* Exclude videos on the blog page. */
