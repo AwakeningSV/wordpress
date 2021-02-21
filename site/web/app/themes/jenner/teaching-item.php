@@ -38,9 +38,8 @@
                                                     ));
 
                                                     $series_position = array_search($post->ID, $query->posts) + 1;
-                                                    $series_total = $query->post_count;
+                                                    // $series_total = $query->post_count;
                                                 }
-
 
                                                 $event_presented_date = get_post_meta($post->ID, 'teaching-date', true);
                                                 $event_content = get_post_field('post_content', $post->ID, 'raw');
@@ -50,7 +49,7 @@
                                             ?>
                                             <?php if ($series) : ?>
                                                 <p class="archive-date">
-                                                    Part <? echo $series_position ?> of <?php echo $series_total ?> of 
+                                                    Part <? echo $series_position ?> of
                                                     <?php the_terms( $post->ID, 'series', '', ', ', ' ' ); ?>
                                                 </p>
                                             <?php endif; ?>
