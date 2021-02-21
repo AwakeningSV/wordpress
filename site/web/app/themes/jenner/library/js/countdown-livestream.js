@@ -20,7 +20,8 @@ jQuery(document).ready(function ($) {
                     clearInterval(interval);
                     stream
                         .removeClass('announce-upcoming')
-                        .addClass('announce-live');
+                        .addClass('announce-sunday')
+                        .addClass('announce-sunday-live');
                     stream.find('b:first').html('Live');
                     stream.find('.announce-when:first').html('now');
                 }
