@@ -18,19 +18,29 @@
                                             <?php
 
                                                 $series = get_the_terms($post->ID, 'series');
+                                                $series = $series[0];
 
                                                 if ($series) {
-
-                                                    $query = new WP_Query( array(
-                                                        'series' => $series[0], 
-                                                        'posts_per_page' => -1, 
+                                                    $query = new WP_Query(array(
+                                                        'series' => $series->slug,
+                                                        'posts_per_page' => -1,
                                                         'post_status' => 'publish',
                                                         'orderby' => 'date', // be sure posts are ordered by date
                                                         'order' => 'ASC', // be sure order is ascending
+                                                        'date_query' => array(
+                                                            // Series may repeat by year, so only count
+                                                            // posts in this year. This will not work if
+                                                            // series continue over a year boundary,
+                                                            // but this is unlikely to ever occur.
+                                                            'year' => get_the_date('Y', $post->ID)
+                                                        ),
                                                         'fields' => 'ids' // get only post ids
                                                     ));
+
+                                                    $series_position = array_search($post->ID, $query->posts) + 1;
+                                                    $series_total = $query->post_count;
                                                 }
-                                            
+
 
                                                 $event_presented_date = get_post_meta($post->ID, 'teaching-date', true);
                                                 $event_content = get_post_field('post_content', $post->ID, 'raw');
@@ -44,10 +54,10 @@
 													}
 												}
                                             ?>
-
-                                            <?php if (!is_tax('series')) : ?>
+                                            <?php if ($series) : ?>
                                                 <p class="archive-date">
-                                                    <?php the_terms( $post->ID, 'series', 'Part of ', ', ', ' ' ); ?>
+                                                    Part <? echo $series_position ?> of <?php echo $series_total ?> of 
+                                                    <?php the_terms( $post->ID, 'series', '', ', ', ' ' ); ?>
                                                 </p>
                                             <?php endif; ?>
                                             <p class="archive-date">
