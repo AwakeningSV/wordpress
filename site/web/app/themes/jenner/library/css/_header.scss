@@ -145,10 +145,36 @@ Live video announcement.
         padding: 1em 0;
         color: #000;
     }
+}
 
+.announce-sunday {
     em { // Live teaching title
         font-style: normal;
         font-weight: bold;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+    }
+
+    span {
+        display: inline-block;
+        margin-left: .5em;
+
+        &.button { // Watch Now button
+            margin-left: auto;
+            @extend .pulse;
+            @extend .animated;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+    }
+
+    b { // Live Icon
+        display: inline-block;
+        border-radius: 3px;
+        padding: .2em .5em;
     }
 }
 
@@ -158,44 +184,38 @@ Live video announcement.
     margin: 0 auto;
 }
 
-.announce-live {
-        /* Awakening Graphic Standards Sec. 4, Red */
-        background: #EF4E33;
+.announce-sunday-live {
+    /* Awakening Graphic Standards Sec. 4, Red */
+    background: #EF4E33;
 
-        a {
-            color: lighten(#EF4E33, 70);
-            display: flex;
-            align-items: center;
-        }
+    a {
+        color: lighten(#EF4E33, 70);
+    }
 
-        b { // Live Icon
-            background: lighten(#EF4E33, 70);
-            color: #EF4E33;
-            display: inline-block;
-            border-radius: 3px;
-            padding: .2em .5em;
-        }
+    b { // Live Icon
+        background: lighten(#EF4E33, 70);
+        color: #EF4E33;
+    }
+}
 
-        span {
-            display: inline-block;
-            margin-left: .5em;
 
-            &.button { // Watch Now button
-                margin-left: auto;
-                @extend .pulse;
-                @extend .animated;
-                -webkit-animation-delay: 1s;
-                animation-delay: 1s;
-            }
-        }
+.announce-sunday-notes {
+    background: #457b9d;
+    a {
+        color: lighten(#457b9d, 70);
+    }
+    b { // Live Icon
+        background: lighten(#457b9d, 70);
+        color: #457b9d;
+    }
 }
 
 .announce-upcoming {
-        /* Awakening Graphic Standards Sec. 4, Gray */
-        background: darken(#58585B, 10);
-        a {
-            color: lighten(#58585B, 70);
-        }
+    /* Awakening Graphic Standards Sec. 4, Gray */
+    background: darken(#58585B, 10);
+    a {
+        color: lighten(#58585B, 70);
+    }
 }
 
 @media (max-width: 767px) {
@@ -222,7 +242,7 @@ Live video announcement.
     }
 
     // Hide Watch Now button on small screens
-    .announce-live span.button {
+    .announce-sunday span.button {
         display: none;
     }
 }

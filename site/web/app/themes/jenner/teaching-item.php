@@ -45,14 +45,8 @@
                                                 $event_presented_date = get_post_meta($post->ID, 'teaching-date', true);
                                                 $event_content = get_post_field('post_content', $post->ID, 'raw');
 												$live_time = ac_get_teaching_live_time($post);
-                                                $event_is_live = false;
-                                                $event_is_over = false;
-												if ($live_time) {
-													$event_is_live = $live_time < time();
-													if ($event_is_live) {
-														$event_is_over = !has_shortcode($event_content, 'live');
-													}
-												}
+                                                $event_is_live = ac_is_sunday_teaching_live($post);
+                                                $event_is_over = !$event_is_live && $live_time < time();
                                             ?>
                                             <?php if ($series) : ?>
                                                 <p class="archive-date">

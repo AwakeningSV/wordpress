@@ -277,6 +277,59 @@ function ac_add_webhook_actions($action, $webhook, $api_key) {
 
 add_action('wpwhpro/webhooks/add_webhooks_actions', 'ac_add_webhook_actions', 20, 3);
 
+function ac_is_sunday_teaching_active($teaching) {
+    $teaching_date = (int) get_post_meta($teaching->ID, 'teaching-date', true);
+
+    if (!$teaching_date) return false;
+
+    $teaching_gmt = new DateTime();
+    $teaching_gmt->setTimestamp($teaching_date);
+    $teaching_day = $teaching_gmt->format('Y-m-d');
+    $teaching_local = new DateTime($teaching_day, new DateTimeZone('America/Los_Angeles'));
+
+    $is_sunday = $teaching_local->format('D') == 'Sun';
+
+    if (!$is_sunday) {
+        return false;
+    }
+
+    $teaching_local->modify('+9 hours');
+    $teaching_begin = $teaching_local->getTimestamp();
+
+    $teaching_local->modify('+3 hours');
+    $teaching_local->modify('+30 minutes');
+    $teaching_end = $teaching_local->getTimestamp();
+
+    return ($teaching_begin < time()) && ($teaching_end > time());
+}
+
+function ac_is_sunday_teaching_live($teaching) {
+    $teaching_date = (int) get_post_meta($teaching->ID, 'teaching-date', true);
+
+    if (!$teaching_date) return false;
+
+    $teaching_gmt = new DateTime();
+    $teaching_gmt->setTimestamp($teaching_date);
+    $teaching_day = $teaching_gmt->format('Y-m-d');
+    $teaching_local = new DateTime($teaching_day, new DateTimeZone('America/Los_Angeles'));
+
+    $is_sunday = $teaching_local->format('D') == 'Sun';
+
+    if (!$is_sunday) {
+        return false;
+    }
+
+    $teaching_local->modify('+9 hours');
+    $teaching_local->modify('+30 minutes');
+    $teaching_begin = $teaching_local->getTimestamp();
+
+    $teaching_local->modify('+1 hours');
+    $teaching_local->modify('+15 minutes');
+    $teaching_end = $teaching_local->getTimestamp();
+
+    return ($teaching_begin < time()) && ($teaching_end > time());
+}
+
 function ac_get_teaching_live_time($teaching) {
     $teaching_date = (int) get_post_meta($teaching->ID, 'teaching-date', true);
 

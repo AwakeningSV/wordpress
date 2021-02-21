@@ -64,6 +64,7 @@
 
             foreach($announcements as $announcement): 
                 $live_start = ac_get_teaching_live_time($announcement);
+                $is_active_sunday_item = ac_is_sunday_teaching_active($announcement);
 
                 if (!$live_start) continue;
 
@@ -76,21 +77,28 @@
                     </a>
                 </p>
             </div>
-        <?php else: ?>
-			<?php
-                // If live video is not embedded, hide this message
-                // if (!has_shortcode($announcement->post_content, 'live')) :
-			?>
-                <div class="announce announce-live">
-                    <p class="announce-u">
-                        <a href="<?php echo esc_html(get_permalink($announcements[0])); ?>">
-                            <b>Live</b> <span><em><?php echo esc_html(get_the_title($announcements[0])); ?></em> streaming live</span>
-                            <?php if (get_queried_object_id() !== $announcement->ID) : ?>
-                                <span class="button button-arrow">Watch Now</span>
-                            <?php endif; ?>
-                        </a>
-                    </p>
-                </div>
-	        <?php // endif; ?>
+        <?php elseif (ac_is_sunday_teaching_live($announcement)): ?>
+            <div class="announce announce-sunday announce-sunday-live">
+                <p class="announce-u">
+                    <a href="https://www.youtube.com/awakeningsv">
+                        <b>Live</b> <span><em><?php echo esc_html(get_the_title($announcement)); ?></em> streaming live</span>
+                        <?php if (get_queried_object_id() !== $announcement->ID) : ?>
+                            <span class="button button-arrow">Watch Now</span>
+                        <?php endif; ?>
+                    </a>
+                </p>
+            </div>
+        <?php endif; ?>
+        <?php if ($is_active_sunday_item): ?>
+            <div class="announce announce-sunday announce-sunday-notes">
+                <p class="announce-u">
+                    <a href="<?php echo esc_html(get_permalink($announcements[0])); ?>">
+                        <b>Sermon Notes</b> <span>Read <em><?php echo esc_html(get_the_title($announcements[0])); ?></em> notes and scripture</span>
+                        <?php if (get_queried_object_id() !== $announcement->ID) : ?>
+                            <span class="button button-arrow">Read Now</span>
+                        <?php endif; ?>
+                    </a>
+                </p>
+            </div>
         <?php endif; ?>
         <?php endforeach; wp_reset_postdata(); ?>
