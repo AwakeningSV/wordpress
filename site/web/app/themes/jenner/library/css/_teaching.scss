@@ -49,6 +49,11 @@
     float: right;
 }
 
+.youtube {
+    /* overrides Fluid Video Embeds padding */
+    padding-bottom: 56.3% !important;
+}
+
 @media print {
     /* Video div */
     .teaching-inner-u > div,
