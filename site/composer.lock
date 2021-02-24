@@ -235,7 +235,7 @@
             "source": {
                 "type": "git",
                 "url": "git@ssh.dev.azure.com:v3/awakeningsv/upcoming-events-plugin/upcoming-events-plugin",
-                "reference": "19126a2f3717187aa1440e996a7f0d60ad656713"
+                "reference": "786de1af27cf1f8424f809953dd567d5ec34dda2"
             },
             "require": {
                 "php": ">=5.6"
@@ -253,7 +253,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2019-11-09T23:45:39+00:00"
+            "time": "2021-02-24T05:57:51+00:00"
         },
         {
             "name": "composer/installers",
