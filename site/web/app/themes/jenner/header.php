@@ -5,7 +5,6 @@
 
         <?php if (is_front_page()): ?>
         <title>Welcome to <?php bloginfo('name') ?> - San Jose, CA</title>
-        <meta name="description" content="<?php bloginfo('description'); ?>">
         <?php else: ?>
         <title><?php wp_title(''); echo ' – ';  bloginfo( 'name' ); ?></title>
         <?php endif; ?>
