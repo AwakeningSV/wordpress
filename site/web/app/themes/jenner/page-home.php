@@ -151,8 +151,6 @@ foreach(array_chunk($event_posts, 4) as $posts):
 
 						</div> <?php // end #main ?>
 
-						<?php get_sidebar(); ?>
-
 				</div> <?php // end #inner-content ?>
 
 			</div> <?php // end #content ?>

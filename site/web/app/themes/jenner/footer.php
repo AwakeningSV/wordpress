@@ -1,5 +1,9 @@
             <footer class="footer" role="contentinfo">
-<div class="footerwhite"><div class="wrap"><?php echo do_shortcode('[aps-social id="1"]')?></div></div>
+                <div class="footerwhite">
+                    <div class="wrap">
+                        <?php get_sidebar() ?>
+                    </div>
+                </div>
                 <div id="inner-footer" class="wrap clearfix" itemscope itemtype="http://schema.org/NGO">
 
                     <div class="pure-g-r" id="conclusion">

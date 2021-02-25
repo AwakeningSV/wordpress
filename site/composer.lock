@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91178d0ba533d0b79bcd71e8049ac1ff",
+    "content-hash": "c6178125faa9e24388cd74d71ff757f1",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -1191,24 +1191,6 @@
             "time": "2021-01-20T14:39:46+00:00"
         },
         {
-            "name": "wpackagist-plugin/accesspress-social-icons",
-            "version": "1.8.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/accesspress-social-icons/",
-                "reference": "tags/1.8.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/accesspress-social-icons.1.8.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/accesspress-social-icons/"
-        },
-        {
             "name": "wpackagist-plugin/akismet",
             "version": "4.1.8",
             "source": {
@@ -1243,6 +1225,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/autodescription/"
+        },
+        {
+            "name": "wpackagist-plugin/block-widget",
+            "version": "0.1.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/block-widget/",
+                "reference": "tags/0.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/block-widget.0.1.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/block-widget/"
         },
         {
             "name": "wpackagist-plugin/fluid-video-embeds",

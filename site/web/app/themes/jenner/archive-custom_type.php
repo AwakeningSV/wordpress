@@ -64,8 +64,6 @@
 
 						</div> <?php // end #main ?>
 
-						<?php get_sidebar(); ?>
-
 								</div> <?php // end #inner-content ?>
 
 			</div> <?php // end #content ?>
