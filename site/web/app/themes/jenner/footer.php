@@ -14,7 +14,7 @@
                         </div>
                         <div class="pure-u-9-24">
                             <div class="inner-conclusion">
-                                <h2>Services</h2>
+                                <h2>Location</h2>
                                 <p><a href="/live">Join our online services</a> every Sunday.</p>
                                 <p><a href="https://awakening.churchcenter.com/registrations">Registration is required</a> for Del Mar services.</p>
                                 <address>
