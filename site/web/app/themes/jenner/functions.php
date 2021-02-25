@@ -80,8 +80,18 @@ you like. Enjoy!
 function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'bonestheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
+		'name' => __( 'Social Icons', 'bonestheme' ),
+		'description' => __( 'The place for social icons above the footer.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+    register_sidebar(array(
+		'id' => 'footer',
+		'name' => __( 'Footer', 'bonestheme' ),
+		'description' => __( 'The place for the page footer.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',

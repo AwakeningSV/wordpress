@@ -52,8 +52,7 @@
     list-style: none;
 }
 
-.inner-conclusion {
-    font-size: .84em;
+.footer .widget {
     p, li, address {
         line-height: 1.6;
     }
@@ -62,7 +61,7 @@
 }
 
 @media (max-width: 767px) {
-    .inner-conclusion {
+    .footer .widget {
         padding: 0;
     }
 }
