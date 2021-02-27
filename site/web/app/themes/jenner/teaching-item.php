@@ -25,8 +25,9 @@
                                                         'series' => $series->slug,
                                                         'posts_per_page' => -1,
                                                         'post_status' => 'publish',
-                                                        'orderby' => 'date', // be sure posts are ordered by date
-                                                        'order' => 'ASC', // be sure order is ascending
+                                                        'meta_key' => 'teaching-date',
+                                                        'orderby' => 'meta_value_num',
+                                                        'order' => 'ASC',
                                                         'date_query' => array(
                                                             // Series may repeat by year, so only count
                                                             // posts in this year. This will not work if
