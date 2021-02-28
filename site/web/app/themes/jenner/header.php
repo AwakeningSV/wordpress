@@ -83,7 +83,7 @@
             <div class="announce announce-upcoming" data-livestart="<?php echo $live_start; ?>">
                 <p class="announce-u">
                     <a href="<?php echo esc_html($video_url); ?>">
-                        <b>Upcoming Live Stream</b><br><span><?php echo esc_html(get_the_title($announcement)); ?> begins <i class="announce-when">soon</i></span>
+                        <b>Sunday Service Live Stream</b><br><span><i class="announce-when">happening soon</i></span>
                     </a>
                 </p>
             </div>
