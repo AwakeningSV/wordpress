@@ -333,8 +333,8 @@ function ac_is_sunday_teaching_live($teaching) {
     $teaching_local->modify('+30 minutes');
     $teaching_begin = $teaching_local->getTimestamp();
 
-    $teaching_local->modify('+1 hours');
-    $teaching_local->modify('+15 minutes');
+    // Allow for 1 hour 15 minutes after last service: 12:30 PM
+    $teaching_local->modify('+3 hours');
     $teaching_end = $teaching_local->getTimestamp();
 
     return ($teaching_begin < time()) && ($teaching_end > time());
@@ -362,6 +362,12 @@ function ac_get_teaching_live_time($teaching) {
         } else {
             $teaching_local->modify('+18 hours');
             $teaching_local->modify('+30 minutes'); // 6:30 PM
+            return $teaching_local->getTimestamp();
+        }
+    } else if ($completes == 1) {
+        if ($is_sunday) {
+            $teaching_local->modify('+11 hours');
+            $teaching_local->modify('+15 minutes');
             return $teaching_local->getTimestamp();
         }
     }
