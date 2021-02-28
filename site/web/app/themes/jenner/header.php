@@ -90,21 +90,19 @@
         <?php elseif (ac_is_sunday_teaching_live($announcement) && get_queried_object_id() !== $announcement->ID): ?>
             <div class="announce announce-sunday announce-sunday-live">
                 <p class="announce-u">
-                    <a href="<?php echo esc_html($video_url) ?>" target="_blank">
+                    <a href="<?php echo esc_html($video_url) ?>">
                         <b>Live</b> <span><em><?php echo esc_html(get_the_title($announcement)); ?></em> streaming live</span>
                         <span class="button button-arrow">Watch Now</span>
                     </a>
                 </p>
             </div>
         <?php endif; ?>
-        <?php if ($is_active_sunday_item): ?>
+        <?php if ($is_active_sunday_item && get_queried_object_id() !== $announcement->ID): ?>
             <div class="announce announce-sunday announce-sunday-notes">
                 <p class="announce-u">
                     <a href="<?php echo esc_html(get_permalink($announcement)); ?>#teaching-notes">
                         <b>Sermon Notes</b> <span>Read <em><?php echo esc_html(get_the_title($announcement)); ?></em> notes and scripture</span>
-                        <?php if (get_queried_object_id() !== $announcement->ID) : ?>
-                            <span class="button button-arrow">Read Now</span>
-                        <?php endif; ?>
+                        <span class="button button-arrow">Read Now</span>
                     </a>
                 </p>
             </div>
