@@ -29,7 +29,8 @@
       dest: /etc/mysql/conf.d
       owner: root
       group: root
-    when: mysql_binary_logging_disabled
+      mode: '0644'
+    when: mysql_binary_logging_disabled | bool
     notify: restart mysql server
 
   - name: Set root user password
@@ -39,6 +40,7 @@
       password: "{{ mysql_root_password }}"
       check_implicit_admin: yes
       state: present
+    no_log: true
     with_items:
       - "{{ inventory_hostname }}"
       - 127.0.0.1
@@ -51,13 +53,14 @@
       dest: ~/.my.cnf
       owner: root
       group: root
-      mode: 0600
+      mode: '0600'
 
   - name: Delete anonymous MySQL server users
     mysql_user:
       user: ""
       host: "{{ item }}"
       state: absent
+    no_log: true
     with_items:
       - localhost
       - "{{ inventory_hostname }}"
@@ -67,5 +70,6 @@
     mysql_db:
       name: test
       state: absent
+    no_log: true
 
   when: not sites_using_remote_db | count
