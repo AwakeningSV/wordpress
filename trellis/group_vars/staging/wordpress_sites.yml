@@ -16,22 +16,8 @@ wordpress_sites:
       enabled: false
     ssl:
       enabled: true 
-      provider: letsencrypt
-    cache:
-      enabled: false
-  hellems.awakeningchurch.com:
-    site_hosts:
-      - canonical: hellems.awakeningchurch.com
-        # redirects:
-        #   - otherdomain.com
-    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
-    repo: git@github.com:AwakeningSV/wordpress.git
-    repo_subtree_path: site # relative path to your Bedrock/WP directory in your repo
-    branch: master
-    multisite:
-      enabled: false
-    ssl:
-      enabled: true 
-      provider: letsencrypt
+      # OCSP stapling must be disabled for cloudflare-origin-ca
+      stapling_enabled: false
+      provider: cloudflare-origin-ca
     cache:
       enabled: false
