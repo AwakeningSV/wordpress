@@ -121,7 +121,7 @@
           path: "{{ project_current }}/{{ sync_file }}"
 
       - name: PUSH > Replace urls "{{ url_dev }}" => "{{ url_env }}" on {{ env }}
-        command: wp search-replace '{{ url_dev }}' '{{ url_env }}'--recurse-objects --skip-columns=guid --skip-tables=wp_users
+        command: wp search-replace '{{ url_dev }}' '{{ url_env }}' --recurse-objects --skip-columns=guid --skip-tables=wp_users
         args:
           chdir: "{{ project_current }}"
 
