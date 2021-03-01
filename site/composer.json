@@ -53,10 +53,6 @@
     },
     {
       "type": "vcs",
-      "url": "git@ssh.dev.azure.com:v3/awakeningsv/events-calendar-pro/events-calendar-pro"
-    },
-    {
-      "type": "vcs",
       "url": "git@ssh.dev.azure.com:v3/awakeningsv/upcoming-events-plugin/upcoming-events-plugin"
     },
     {
@@ -66,14 +62,6 @@
     {
       "type": "vcs",
       "url": "git@ssh.dev.azure.com:v3/awakeningsv/leadership-plugin/leadership-plugin"
-    },
-    {
-      "type": "vcs",
-      "url": "git@ssh.dev.azure.com:v3/awakeningsv/wpbakery-page-builder-plugin/wpbakery-page-builder-plugin"
-    },
-    {
-      "type": "vcs",
-      "url": "git@ssh.dev.azure.com:v3/awakeningsv/revslider/revslider"
     }
   ],
   "require": {
