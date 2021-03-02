@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7127b959ee5f318c4658b61eb63fa88d",
+    "content-hash": "1d93f864a472cb70f41bbee0df04384d",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -1297,6 +1297,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/manual-image-crop/"
+        },
+        {
+            "name": "wpackagist-plugin/matomo",
+            "version": "4.2.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/matomo/",
+                "reference": "tags/4.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/matomo.4.2.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/matomo/"
         },
         {
             "name": "wpackagist-plugin/newspack-newsletters",
