@@ -2,7 +2,7 @@
 # List each machine only once per [group], even if it will host multiple sites.
 
 [production]
-ac-www-production.westus2.cloudapp.azure.com
+production.virtual.awakeningchurch.com
 
 [web]
-ac-www-production.westus2.cloudapp.azure.com
+production.virtual.awakeningchurch.com
