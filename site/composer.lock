@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6178125faa9e24388cd74d71ff757f1",
+    "content-hash": "7127b959ee5f318c4658b61eb63fa88d",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -1299,6 +1299,24 @@
             "homepage": "https://wordpress.org/plugins/manual-image-crop/"
         },
         {
+            "name": "wpackagist-plugin/newspack-newsletters",
+            "version": "1.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/newspack-newsletters/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/newspack-newsletters.zip?timestamp=1613432019"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/newspack-newsletters/"
+        },
+        {
             "name": "wpackagist-plugin/oa-social-login",
             "version": "5.7",
             "source": {
@@ -1945,5 +1963,5 @@
         "php": ">=7.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
