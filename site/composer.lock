@@ -4,19 +4,19 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bad0c1df1e301003bab392691de1c77",
+    "content-hash": "f653f41b7d3aedbf7be6dc37f0272999",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/awakening-church/ApplicationInsights-WordPress.git",
+                "url": "https://github.com/AwakeningSV/ApplicationInsights-WordPress.git",
                 "reference": "89698cbdc2dc4fd461c53bbe888ef38140b79853"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/awakening-church/ApplicationInsights-WordPress/zipball/89698cbdc2dc4fd461c53bbe888ef38140b79853",
+                "url": "https://api.github.com/repos/AwakeningSV/ApplicationInsights-WordPress/zipball/89698cbdc2dc4fd461c53bbe888ef38140b79853",
                 "reference": "89698cbdc2dc4fd461c53bbe888ef38140b79853",
                 "shasum": ""
             },
@@ -24,6 +24,7 @@
                 "microsoft/application-insights": ">=0.4.3",
                 "php": ">=5.4.2"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
                 "psr-4": {
@@ -43,7 +44,7 @@
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/awakening-church/ApplicationInsights-WordPress/tree/master"
+                "source": "https://github.com/AwakeningSV/ApplicationInsights-WordPress/tree/master"
             },
             "time": "2019-11-19T07:40:44+00:00"
         },
@@ -58,6 +59,7 @@
             "require": {
                 "php": ">=5.6"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "authors": [
                 {
@@ -84,6 +86,7 @@
             "require": {
                 "php": ">=5.6"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "authors": [
                 {
@@ -110,6 +113,7 @@
             "require": {
                 "php": ">=5.6"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "authors": [
                 {
@@ -136,6 +140,7 @@
             "require": {
                 "php": ">=5.6"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "authors": [
                 {
@@ -162,6 +167,7 @@
             "require": {
                 "php": ">=5.6"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "authors": [
                 {
@@ -178,32 +184,6 @@
             "time": "2019-11-09T22:47:13+00:00"
         },
         {
-            "name": "awakeningsv/revslider",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/revslider/revslider",
-                "reference": "db9658edb2de881f73e80686cb4967367ad82358"
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "ThemePunch",
-                    "homepage": "https://themepunch.com"
-                }
-            ],
-            "description": "Slider Revolution - Premium responsive slider",
-            "homepage": "https://dev.azure.com/awakeningsv/revslider",
-            "keywords": [
-                "plugin",
-                "wordpress"
-            ],
-            "time": "2019-11-09T22:20:59+00:00"
-        },
-        {
             "name": "awakeningsv/teaching-plugin",
             "version": "dev-master",
             "source": {
@@ -214,6 +194,7 @@
             "require": {
                 "php": ">=5.6"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "authors": [
                 {
@@ -240,6 +221,7 @@
             "require": {
                 "php": ">=5.6"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "authors": [
                 {
@@ -383,6 +365,10 @@
                 "zend",
                 "zikula"
             ],
+            "support": {
+                "issues": "https://github.com/composer/installers/issues",
+                "source": "https://github.com/composer/installers/tree/v1.10.0"
+            },
             "funding": [
                 {
                     "url": "https://packagist.com",
@@ -462,6 +448,10 @@
                 "rest",
                 "web service"
             ],
+            "support": {
+                "issues": "https://github.com/guzzle/guzzle/issues",
+                "source": "https://github.com/guzzle/guzzle/tree/master"
+            },
             "time": "2018-04-22T15:46:56+00:00"
         },
         {
@@ -513,6 +503,10 @@
             "keywords": [
                 "promise"
             ],
+            "support": {
+                "issues": "https://github.com/guzzle/promises/issues",
+                "source": "https://github.com/guzzle/promises/tree/1.4.0"
+            },
             "time": "2020-09-30T07:37:28+00:00"
         },
         {
@@ -584,6 +578,10 @@
                 "uri",
                 "url"
             ],
+            "support": {
+                "issues": "https://github.com/guzzle/psr7/issues",
+                "source": "https://github.com/guzzle/psr7/tree/1.7.0"
+            },
             "time": "2020-09-30T07:37:11+00:00"
         },
         {
@@ -642,6 +640,10 @@
                 "monitoring",
                 "telemetry"
             ],
+            "support": {
+                "issues": "https://github.com/Microsoft/ApplicationInsights-PHP/issues",
+                "source": "https://github.com/Microsoft/ApplicationInsights-PHP/tree/0.4.5"
+            },
             "abandoned": true,
             "time": "2019-04-26T05:48:58+00:00"
         },
@@ -686,6 +688,11 @@
             "keywords": [
                 "env"
             ],
+            "support": {
+                "email": "oom@oscarotero.com",
+                "issues": "https://github.com/oscarotero/env/issues",
+                "source": "https://github.com/oscarotero/env/tree/v1.2.0"
+            },
             "time": "2019-04-03T18:28:43+00:00"
         },
         {
@@ -741,6 +748,10 @@
                 "php",
                 "type"
             ],
+            "support": {
+                "issues": "https://github.com/schmittjoh/php-option/issues",
+                "source": "https://github.com/schmittjoh/php-option/tree/1.7.5"
+            },
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -801,6 +812,9 @@
                 "request",
                 "response"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/master"
+            },
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
@@ -841,6 +855,10 @@
                 }
             ],
             "description": "A polyfill for getallheaders.",
+            "support": {
+                "issues": "https://github.com/ralouphie/getallheaders/issues",
+                "source": "https://github.com/ralouphie/getallheaders/tree/develop"
+            },
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
@@ -853,8 +871,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.6.2",
-                "reference": "5.6.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.6.2"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -878,6 +895,15 @@
                 "cms",
                 "wordpress"
             ],
+            "support": {
+                "docs": "https://developer.wordpress.org/",
+                "forum": "https://wordpress.org/support/",
+                "irc": "irc://irc.freenode.net/wordpress",
+                "issues": "https://core.trac.wordpress.org/",
+                "rss": "https://wordpress.org/news/feed/",
+                "source": "https://core.trac.wordpress.org/browser",
+                "wiki": "https://codex.wordpress.org/"
+            },
             "funding": [
                 {
                     "url": "https://github.com/roots",
@@ -945,6 +971,10 @@
             "keywords": [
                 "wordpress"
             ],
+            "support": {
+                "issues": "https://github.com/roots/wordpress-core-installer/issues",
+                "source": "https://github.com/roots/wordpress-core-installer/tree/master"
+            },
             "funding": [
                 {
                     "url": "https://github.com/roots",
@@ -997,6 +1027,10 @@
                 }
             ],
             "description": "Collect configuration values and safely define() them",
+            "support": {
+                "issues": "https://github.com/roots/wp-config/issues",
+                "source": "https://github.com/roots/wp-config/tree/master"
+            },
             "time": "2018-08-10T14:18:38+00:00"
         },
         {
@@ -1054,11 +1088,16 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
+            "support": {
+                "forum": "https://discourse.roots.io/",
+                "issues": "https://github.com/roots/wp-password-bcrypt/issues",
+                "source": "https://github.com/roots/wp-password-bcrypt/tree/master"
+            },
             "time": "2016-03-01T16:27:06+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.22.0",
+            "version": "v1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -1116,6 +1155,9 @@
                 "polyfill",
                 "portable"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.22.1"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -1193,6 +1235,10 @@
                 "env",
                 "environment"
             ],
+            "support": {
+                "issues": "https://github.com/vlucas/phpdotenv/issues",
+                "source": "https://github.com/vlucas/phpdotenv/tree/v3.6.8"
+            },
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -1207,15 +1253,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "4.1.8",
+            "version": "4.1.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/4.1.8"
+                "reference": "tags/4.1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.4.1.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/akismet.4.1.9.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1278,26 +1324,8 @@
             "homepage": "https://wordpress.org/plugins/cloudflare/"
         },
         {
-            "name": "wpackagist-plugin/fluid-video-embeds",
-            "version": "1.2.9",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/fluid-video-embeds/",
-                "reference": "tags/1.2.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/fluid-video-embeds.1.2.9.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/fluid-video-embeds/"
-        },
-        {
             "name": "wpackagist-plugin/getwid",
-            "version": "1.6.9",
+            "version": "1.6.10",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/getwid/",
@@ -1305,7 +1333,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/getwid.zip?timestamp=1608237056"
+                "url": "https://downloads.wordpress.org/plugin/getwid.zip?timestamp=1614849195"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1441,15 +1469,15 @@
         },
         {
             "name": "wpackagist-plugin/quick-featured-images",
-            "version": "13.5.4",
+            "version": "13.5.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/quick-featured-images/",
-                "reference": "tags/13.5.4"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/quick-featured-images.13.5.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/quick-featured-images.zip?timestamp=1614804876"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1549,15 +1577,15 @@
         },
         {
             "name": "wpackagist-plugin/windows-azure-storage",
-            "version": "4.3.1",
+            "version": "4.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/windows-azure-storage/",
-                "reference": "tags/4.3.1"
+                "reference": "tags/4.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/windows-azure-storage.4.3.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/windows-azure-storage.4.3.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1582,24 +1610,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-webhooks/"
-        },
-        {
-            "name": "wpackagist-plugin/wpcustom-category-image",
-            "version": "2.1.13",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wpcustom-category-image/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpcustom-category-image.zip?timestamp=1516124414"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wpcustom-category-image/"
         },
         {
             "name": "wpackagist-plugin/zoninator",
@@ -1627,12 +1637,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "5f40d4d577a71466f9723122251b46bdaf634709"
+                "reference": "0745f820eed6cb92603ca44a9c137ff8ce315e86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5f40d4d577a71466f9723122251b46bdaf634709",
-                "reference": "5f40d4d577a71466f9723122251b46bdaf634709",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0745f820eed6cb92603ca44a9c137ff8ce315e86",
+                "reference": "0745f820eed6cb92603ca44a9c137ff8ce315e86",
                 "shasum": ""
             },
             "conflict": {
@@ -1650,6 +1660,7 @@
                 "barrelstrength/sprout-forms": "<3.9",
                 "baserproject/basercms": ">=4,<=4.3.6|>=4.4,<4.4.1",
                 "bolt/bolt": "<3.7.1",
+                "bolt/core": "<4.1.13",
                 "brightlocal/phpwhois": "<=4.2.5",
                 "buddypress/buddypress": "<5.1.2",
                 "bugsnag/bugsnag-laravel": ">=2,<2.0.2",
@@ -1697,6 +1708,7 @@
                 "ezsystems/platform-ui-assets-bundle": ">=4.2,<4.2.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1",
                 "ezyang/htmlpurifier": "<4.1.1",
+                "facade/ignition": "<=2.5.1,>=2.0|<=1.16.13",
                 "firebase/php-jwt": "<2",
                 "flarum/sticky": ">=0.1-beta.14,<=0.1-beta.15",
                 "flarum/tags": "<=0.1-beta.13",
@@ -1773,7 +1785,7 @@
                 "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
-                "pimcore/pimcore": "<6.3",
+                "pimcore/pimcore": "<6.8.8",
                 "pocketmine/pocketmine-mp": "<3.15.4",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
                 "prestashop/contactform": ">1.0.1,<4.3",
@@ -1813,7 +1825,7 @@
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
                 "simplito/elliptic-php": "<1.0.6",
                 "slim/slim": "<2.6",
-                "smarty/smarty": "<3.1.33",
+                "smarty/smarty": "<3.1.39",
                 "socalnick/scn-social-auth": "<1.15.2",
                 "socialiteproviders/steam": "<1.1",
                 "spoonity/tcpdf": "<6.2.22",
@@ -1874,6 +1886,7 @@
                 "ua-parser/uap-php": "<3.8",
                 "usmanhalalit/pixie": "<1.0.3|>=2,<2.0.2",
                 "verot/class.upload.php": "<=1.0.3|>=2,<=2.0.4",
+                "vrana/adminer": "<4.7.9",
                 "wallabag/tcpdf": "<6.2.22",
                 "willdurand/js-translation-bundle": "<2.1.1",
                 "yii2mod/yii2-cms": "<1.9.2",
@@ -1930,6 +1943,10 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
+            "support": {
+                "issues": "https://github.com/Roave/SecurityAdvisories/issues",
+                "source": "https://github.com/Roave/SecurityAdvisories/tree/latest"
+            },
             "funding": [
                 {
                     "url": "https://github.com/Ocramius",
@@ -1940,7 +1957,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-10T03:02:31+00:00"
+            "time": "2021-03-03T23:02:20+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -1991,6 +2008,11 @@
                 "phpcs",
                 "standards"
             ],
+            "support": {
+                "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
+                "source": "https://github.com/squizlabs/PHP_CodeSniffer",
+                "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
+            },
             "time": "2020-10-23T02:01:07+00:00"
         }
     ],
@@ -2005,7 +2027,6 @@
         "awakeningsv/teaching-plugin": 20,
         "awakeningsv/leadership-plugin": 20,
         "awakeningsv/upcoming-events-plugin": 20,
-        "awakeningsv/revslider": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
