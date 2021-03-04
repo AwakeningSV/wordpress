@@ -36,6 +36,24 @@
        "url": "https://github.com/AwakeningSV/ApplicationInsights-WordPress.git"
     },
     {
+        "type": "package",
+        "package": {
+            "name": "matomo-org/google-analytics-importer",
+            "version": "4.1.1",
+            "type": "wordpress-plugin",
+            "dist": {
+                "url": "https://plugins.matomo.org/api/2.0/plugins/GoogleAnalyticsImporter/download/4.1.1",
+                "type": "zip"
+            },
+            "require": {
+                "composer/installers": "^1.4"
+            },
+            "extra": {
+                "installer-name": "GoogleAnalyticsImporter"
+            }
+        }
+    },
+    {
       "type": "vcs",
       "url": "git@ssh.dev.azure.com:v3/awakeningsv/azure-cdn-rewrite-plugin/azure-cdn-rewrite-plugin"
     },
@@ -102,7 +120,8 @@
     "wpackagist-plugin/unsplash": "^1.0",
     "wpackagist-plugin/block-widget": "^0.1.1",
     "wpackagist-plugin/newspack-newsletters": "^1.0",
-    "wpackagist-plugin/matomo": "^4.2"
+    "wpackagist-plugin/matomo": "^4.2",
+    "matomo-org/google-analytics-importer": "^4.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
