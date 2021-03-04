@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f653f41b7d3aedbf7be6dc37f0272999",
+    "content-hash": "884065e0a0abc5945bc4fabe71bfe304",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -1322,6 +1322,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/cloudflare/"
+        },
+        {
+            "name": "wpackagist-plugin/ductile-responsive-video",
+            "version": "1.3.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ductile-responsive-video/",
+                "reference": "tags/1.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ductile-responsive-video.1.3.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ductile-responsive-video/"
         },
         {
             "name": "wpackagist-plugin/getwid",
