@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "884065e0a0abc5945bc4fabe71bfe304",
+    "content-hash": "9e17ce730133713d12ddbf1f6534dd1c",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -1628,6 +1628,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-webhooks/"
+        },
+        {
+            "name": "wpackagist-plugin/wpcustom-category-image",
+            "version": "2.1.13",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wpcustom-category-image/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wpcustom-category-image.zip?timestamp=1516124414"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wpcustom-category-image/"
         },
         {
             "name": "wpackagist-plugin/zoninator",
