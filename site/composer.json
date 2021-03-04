@@ -121,7 +121,8 @@
     "wpackagist-plugin/block-widget": "^0.1.1",
     "wpackagist-plugin/newspack-newsletters": "^1.0",
     "wpackagist-plugin/matomo": "^4.2",
-    "matomo-org/google-analytics-importer": "^4.1"
+    "matomo-org/google-analytics-importer": "^4.1",
+    "wpackagist-plugin/cloudflare": "^4.2"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
