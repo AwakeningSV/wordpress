@@ -9,6 +9,9 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 
+# Matomo
+web/app/cache
+
 # WordPress
 web/wp
 web/.htaccess
