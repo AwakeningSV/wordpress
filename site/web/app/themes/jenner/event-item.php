@@ -12,9 +12,8 @@
                                                 <?php the_title(); ?>
                                             </a>
                                         </p>
-                                        <p class="archive-excerpt">
-                                            <?php the_excerpt(); ?>
-                                        </p>
+                                        <div class="archive-excerpt"></div>
+                                        <?php the_excerpt(); ?>
                                         <p class="archive-date">
                                             <?php $event_start_date = get_post_meta($post->ID, 'event-start-date', true); ?>
                                             <?php printf('<time class="start" datetime="%1$s">%2$s</time>', date('Y-m-j', $event_start_date), date(get_option('date_format'), $event_start_date)); ?>

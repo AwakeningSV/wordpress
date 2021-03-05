@@ -20,8 +20,7 @@
                                                 <?php printf('<time class="updated" datetime="%1$s" pubdate>%2$s</time>', get_the_time('Y-m-j'), get_the_time(get_option('date_format'))); ?>
                                             </p>
                                         <?php endif; ?>
-                                         <p class="archive-excerpt">
-                                                <?php the_excerpt(); ?>
-                                            </p>
+                                            <div class="archive-excerpt"></div>
+                                            <?php the_excerpt(); ?>
                                     </article> <?php // end article ?>
                                 </div>

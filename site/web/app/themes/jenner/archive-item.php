@@ -13,9 +13,8 @@
                                             </a>
                                         </p>
                                         <?php if (get_post_type() === 'page') : ?>
-                                            <p class="archive-excerpt">
-                                                <?php the_excerpt(); ?>
-                                            </p>
+                                            <div class="archive-excerpt"></div>
+                                            <?php the_excerpt(); ?>
                                         <?php endif; ?>
                                         <?php if (get_post_type() === 'post' && !in_category('messages')) : ?>
                                             <p class="archive-date">
