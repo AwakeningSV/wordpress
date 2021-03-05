@@ -1,7 +1,7 @@
 # Application
 web/app/plugins/*
 !web/app/plugins/awakening-release-notes
-!web/app/plugins/awakening-clean-dashboard.php
+!web/app/plugins/awakening-cleanup.php
 !web/app/plugins/matomo.wpload_dir.php
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*/
