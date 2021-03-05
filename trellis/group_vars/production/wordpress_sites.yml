@@ -21,3 +21,6 @@ wordpress_sites:
       provider: cloudflare-origin-ca
     cache:
       enabled: true
+      # Disable cache on Privacy Policy due to matomo_opt_out dynamic content.
+      # See: https://roots.io/docs/trellis/master/fastcgi-caching/#example-cache-configurations
+      skip_cache_uri: /wp-admin/|/wp-json/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml|/privacy/
