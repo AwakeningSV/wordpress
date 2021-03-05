@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e17ce730133713d12ddbf1f6534dd1c",
+    "content-hash": "2b190ca67edbcad7aa4b9c12be8517c1",
     "packages": [
         {
             "name": "awakening-church/applicationinsights-wordpress",
@@ -1610,6 +1610,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/windows-azure-storage/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-dashboard-notes",
+            "version": "1.0.10",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-dashboard-notes/",
+                "reference": "tags/1.0.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-dashboard-notes.1.0.10.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-dashboard-notes/"
         },
         {
             "name": "wpackagist-plugin/wp-webhooks",
