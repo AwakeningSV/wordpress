@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39d2b4184046bee3d744920ce5cea310",
+    "content-hash": "ee1bbed08dd29d7b2a1ddaccfee80b8f",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -708,6 +708,53 @@
                 "source": "https://github.com/roots/wp-password-bcrypt/tree/master"
             },
             "time": "2016-03-01T16:27:06+00:00"
+        },
+        {
+            "name": "roots/wp-stage-switcher",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/wp-stage-switcher.git",
+                "reference": "c8bffa5a5d757437112f32833fb9e28dcbfecafe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/wp-stage-switcher/zipball/c8bffa5a5d757437112f32833fb9e28dcbfecafe",
+                "reference": "c8bffa5a5d757437112f32833fb9e28dcbfecafe",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Scott Walkinshaw",
+                    "email": "scott.walkinshaw@gmail.com",
+                    "homepage": "https://github.com/swalkinshaw"
+                },
+                {
+                    "name": "Ben Word",
+                    "email": "ben@benword.com",
+                    "homepage": "https://github.com/retlehs"
+                }
+            ],
+            "description": "WordPress plugin that allows you to switch between different environments from the admin bar",
+            "homepage": "https://roots.io/plugin/stage-switcher/",
+            "keywords": [
+                "wordpress"
+            ],
+            "support": {
+                "forum": "https://discourse.roots.io",
+                "issues": "https://github.com/roots/wp-stage-switcher/issues",
+                "source": "https://github.com/roots/wp-stage-switcher/tree/2.1.0"
+            },
+            "time": "2019-03-23T20:05:36+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

@@ -123,3 +123,13 @@ Config::apply();
 if (!defined('ABSPATH')) {
     define('ABSPATH', $webroot_dir . '/wp/');
 }
+
+/**
+ * Define environments for wp-stage-switcher
+ */
+$envs = [
+    'development' => 'https://awakeningchurch.test',
+    'staging'     => 'https://staging.awakeningchurch.com',
+    'production'  => 'https://awakeningchurch.com'
+];
+define('ENVIRONMENTS', serialize($envs));
