@@ -47,3 +47,21 @@ add_filter('web_app_manifest', function($manifest) {
     $manifest['short_name'] = 'Awakening';
     return $manifest;
 });
+
+// Hide password protected posts unless given a direct link or editing in admin.
+// https://wordpress.org/support/article/using-password-protection/#hiding-password-protected-posts
+add_action('pre_get_posts', function($query) {
+    if(!is_single() && !is_admin()) {
+        add_filter('posts_where', function ($where) {
+            global $wpdb;
+            return $where .= " AND {$wpdb->posts}.post_password = '' ";
+        });
+    }
+});
+
+// Hide password protected posts from search engines.
+add_action('wp', function() {
+    if (post_password_required()) {
+        header('X-Robots-Tag: noindex, nofollow', true);
+    }
+}, 1000);
