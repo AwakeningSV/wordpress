@@ -41,3 +41,9 @@ add_filter('xmlrpc_enabled', '__return_false');
 add_action('wp', function() {
     header_remove('X-Pingback');
 }, 1000);
+
+// Add PWA short name.
+add_filter('web_app_manifest', function($manifest) {
+    $manifest['short_name'] = 'Awakening';
+    return $manifest;
+});
