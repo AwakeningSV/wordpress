@@ -8,9 +8,12 @@ Author URI: https://reidburke.com/
 */
 
 function ac_social_login_disable_registrations($email) {
-    if (!email_exists ($email)) {
-        trigger_error ('Registrations with Social Login have been disabled', E_USER_ERROR);
+    if (!email_exists($email)) {
+        wp_die('Access to this resource is denied.', 'Access denied', array(
+            'response' => 403
+        ));
     }
+
     return $email;
 }
 
