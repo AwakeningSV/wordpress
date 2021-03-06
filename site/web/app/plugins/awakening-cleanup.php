@@ -7,7 +7,7 @@ Version: 1.0
 Author URI: https://reidburke.com/
 */
 
-function remove_dashboard_meta() {
+function ac_remove_dashboard_meta() {
     remove_meta_box('dashboard_activity', 'dashboard', 'normal'); // Activity
     remove_meta_box('dashboard_primary', 'dashboard', 'normal'); // WordPress News
     remove_meta_box('dashboard_quick_press', 'dashboard', 'side'); // Quick Draft
@@ -16,7 +16,7 @@ function remove_dashboard_meta() {
     remove_meta_box('dashboard_site_health', 'dashboard', 'normal'); // Site Health
 }
 
-add_action('admin_init', 'remove_dashboard_meta');
+add_action('admin_init', 'ac_remove_dashboard_meta');
 
 // Disable Emojis.
 remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -36,3 +36,8 @@ add_filter('show_recent_comments_widget_style', '__return_false');
 
 // Disable XML-RPC.
 add_filter('xmlrpc_enabled', '__return_false');
+
+// Remove X-Pingback header.
+add_action('wp', function() {
+    header_remove('X-Pingback');
+}, 1000);
