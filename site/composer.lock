@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee1bbed08dd29d7b2a1ddaccfee80b8f",
+    "content-hash": "d47c67f4a7411d7270470e742ffaf452",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -1145,6 +1145,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/powerpress/"
+        },
+        {
+            "name": "wpackagist-plugin/pwa",
+            "version": "0.6.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/pwa/",
+                "reference": "tags/0.6.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/pwa.0.6.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/pwa/"
         },
         {
             "name": "wpackagist-plugin/quick-featured-images",
