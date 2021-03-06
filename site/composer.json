@@ -32,10 +32,6 @@
       "url": "https://wpackagist.org"
     },
     {
-       "type": "vcs",
-       "url": "https://github.com/AwakeningSV/ApplicationInsights-WordPress.git"
-    },
-    {
         "type": "package",
         "package": {
             "name": "matomo-org/google-analytics-importer",
@@ -105,7 +101,6 @@
   ],
   "require": {
     "php": ">=7.1",
-    "awakening-church/applicationinsights-wordpress": "dev-master",
     "awakeningsv/azure-cdn-rewrite-plugin": "dev-master",
     "awakeningsv/remove-socialize-plugin": "dev-master",
     "awakeningsv/oembed-image-plugin": "dev-master",
