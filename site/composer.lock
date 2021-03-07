@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d47c67f4a7411d7270470e742ffaf452",
+    "content-hash": "c51ac2086d767bf7622994b8a3d839f1",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -1003,6 +1003,24 @@
             "homepage": "https://wordpress.org/plugins/ductile-responsive-video/"
         },
         {
+            "name": "wpackagist-plugin/esv-crossref",
+            "version": "2.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/esv-crossref/",
+                "reference": "tags/2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/esv-crossref.2.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/esv-crossref/"
+        },
+        {
             "name": "wpackagist-plugin/getwid",
             "version": "1.6.10",
             "source": {
@@ -1199,24 +1217,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/redirection/"
-        },
-        {
-            "name": "wpackagist-plugin/reftagger",
-            "version": "2.4.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/reftagger/",
-                "reference": "tags/2.4.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/reftagger.2.4.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/reftagger/"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
