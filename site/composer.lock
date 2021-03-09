@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c51ac2086d767bf7622994b8a3d839f1",
+    "content-hash": "7ee169a4b22ff0e3e5601b847ad5b8e6",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -911,24 +911,6 @@
                 }
             ],
             "time": "2021-01-20T14:39:46+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/akismet",
-            "version": "4.1.9",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/4.1.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.4.1.9.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/akismet/"
         },
         {
             "name": "wpackagist-plugin/autodescription",
