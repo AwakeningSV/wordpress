@@ -950,15 +950,15 @@
         },
         {
             "name": "wpackagist-plugin/cloudflare",
-            "version": "4.2.1",
+            "version": "4.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cloudflare/",
-                "reference": "tags/4.2.1"
+                "reference": "tags/4.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cloudflare.4.2.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/cloudflare.4.2.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1130,15 +1130,15 @@
         },
         {
             "name": "wpackagist-plugin/powerpress",
-            "version": "8.4.8",
+            "version": "8.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/powerpress/",
-                "reference": "tags/8.4.8"
+                "reference": "tags/8.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/powerpress.8.4.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/powerpress.8.5.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
