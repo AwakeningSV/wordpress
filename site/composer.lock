@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ee169a4b22ff0e3e5601b847ad5b8e6",
+    "content-hash": "93efdb91de5f1de68bb1133f63605628",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -477,15 +477,15 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.6.2",
+            "version": "5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.6.2"
+                "reference": "5.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.6.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.7"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -528,7 +528,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-02-22T15:12:53+00:00"
+            "time": "2021-03-09T20:23:15+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
