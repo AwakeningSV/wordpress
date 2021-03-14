@@ -367,7 +367,6 @@ function ac_get_teaching_live_time($teaching) {
     } else if ($completes == 1) {
         if ($is_sunday) {
             $teaching_local->modify('+11 hours');
-            $teaching_local->modify('+15 minutes');
             return $teaching_local->getTimestamp();
         }
     }
