@@ -1,0 +1,24 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Contact: mailto:reid@awakeningchurch.com
+Expires: Mon, 31 May 2021 00:00 -0700
+Encryption: https://keybase.io/reid/pgp_keys.asc
+Preferred-Languages: en
+Canonical: https://awakeningchurch.com/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+wsFcBAEBCAAQBQJgUTIKCRBHZlho19Vy7AAAAKgQADEQqEn/X0mkyxytlq667zed
+jOgjh3Sz6y5/E8vHV+wI2le8sauXPb5XWxki3p5UyXt3LCdCPWZ0F0R283Ci1YUX
+qUYVRP1ERZv63aKAZBibn9d3tOouzxN1MCV6tiZ0uw/K+bs+9hOccXQKb84Bobc2
+pN4gmpSy3ZaUDSym6FgVCxCEYkNDEUIeTPCVwb6HLcvl1cO7JLnDCXsAjhtry8LN
+IOZj2c7IfWCjNbRX44kDOHpyOzAweCMDA/4kmGQbXnWYFP0AtVL1VhHMlGRp72/T
+zsvnRZJUr5nG/jXIZ/jHZkYzpKkwOjVk44bRJQpiUAUvRhkGWlbvAqPDydwCz3oU
+1staROLpHcqmtOeqW5WCl4huhsC40XoOlPTz1h2jeAzL/rYYnemdzQUt2TuTUogJ
+v9SgMgYtuW9HAGyKrahF101p4nS/THlaeRUAfiAMOpdCQtLZaCgYQYcKNyf08cKb
+daP7AOhwBK3COOtPvSza3JgHCDzcYtlYZg9AAOVU1kmec1dkcVBQBEdbqdTexHYv
+SE+Ps0lmCkodjq1ouZaxNadI6dnAgFAk3CKTRg9J+bStkxEWzNIUmiftKIaeZqf9
+xpXNYin/Oe1UKK3IXrHk+XFqgSIiz+FJmFgEMlsqF9air0328gXI1ZPt6GPQ7FIG
+kihMfsR/q+mDxQxb9NWF
+=vcyC
+-----END PGP SIGNATURE-----
