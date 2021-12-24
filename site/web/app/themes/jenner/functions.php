@@ -287,7 +287,7 @@ function ac_add_webhook_actions($action, $webhook, $api_key) {
 
 add_action('wpwhpro/webhooks/add_webhooks_actions', 'ac_add_webhook_actions', 20, 3);
 
-function ac_is_sunday_teaching_active($teaching) {
+function ac_is_teaching_active($teaching) {
     $teaching_date = (int) get_post_meta($teaching->ID, 'teaching-date', true);
 
     if (!$teaching_date) return false;
@@ -299,21 +299,29 @@ function ac_is_sunday_teaching_active($teaching) {
 
     $is_sunday = $teaching_local->format('D') == 'Sun';
 
-    if (!$is_sunday) {
-        return false;
+    if ($is_sunday) {
+        $teaching_local->modify('+8 hours');
+        $teaching_begin = $teaching_local->getTimestamp();
+
+        $teaching_local->modify('+4 hours');
+        $teaching_local->modify('+30 minutes'); // 12:30 PM
+        $teaching_end = $teaching_local->getTimestamp();
+    } else {
+        // Christmas Eve
+        $teaching_local->modify('+14 hours');
+        $teaching_local->modify('+30 minutes'); // 4:30 PM
+        $teaching_begin = $teaching_local->getTimestamp();
+
+        // Allow for 1 hour 30 minutes after last service: 6:30 PM
+        $teaching_local->modify('+2 hours');
+        $teaching_end = $teaching_local->getTimestamp();
     }
 
-    $teaching_local->modify('+8 hours');
-    $teaching_begin = $teaching_local->getTimestamp();
-
-    $teaching_local->modify('+4 hours');
-    $teaching_local->modify('+30 minutes'); // 12:30 PM
-    $teaching_end = $teaching_local->getTimestamp();
 
     return ($teaching_begin < time()) && ($teaching_end > time());
 }
 
-function ac_is_sunday_teaching_live($teaching) {
+function ac_is_teaching_live($teaching) {
     $teaching_date = (int) get_post_meta($teaching->ID, 'teaching-date', true);
 
     if (!$teaching_date) return false;
@@ -325,17 +333,24 @@ function ac_is_sunday_teaching_live($teaching) {
 
     $is_sunday = $teaching_local->format('D') == 'Sun';
 
-    if (!$is_sunday) {
-        return false;
+    if ($is_sunday) {
+        $teaching_local->modify('+9 hours');
+        $teaching_local->modify('+30 minutes');
+        $teaching_begin = $teaching_local->getTimestamp();
+
+        // Allow for 1 hour 15 minutes after last service: 12:30 PM
+        $teaching_local->modify('+3 hours');
+        $teaching_end = $teaching_local->getTimestamp();
+    } else {
+        // Christmas Eve
+        $teaching_local->modify('+14 hours'); // 5 PM // was 17
+        $teaching_begin = $teaching_local->getTimestamp();
+
+        // Allow for 1 hour 30 minutes after last service: 6:30 PM
+        $teaching_local->modify('+1 hour');
+        $teaching_local->modify('+30 minutes');
+        $teaching_end = $teaching_local->getTimestamp();
     }
-
-    $teaching_local->modify('+9 hours');
-    $teaching_local->modify('+30 minutes');
-    $teaching_begin = $teaching_local->getTimestamp();
-
-    // Allow for 1 hour 15 minutes after last service: 12:30 PM
-    $teaching_local->modify('+3 hours');
-    $teaching_end = $teaching_local->getTimestamp();
 
     return ($teaching_begin < time()) && ($teaching_end > time());
 }
@@ -360,8 +375,8 @@ function ac_get_teaching_live_time($teaching) {
             $teaching_local->modify('+30 minutes');
             return $teaching_local->getTimestamp();
         } else {
-            $teaching_local->modify('+18 hours');
-            $teaching_local->modify('+30 minutes'); // 6:30 PM
+            // Special Christmas Eve service.
+            $teaching_local->modify('+14 hours'); // 5 PM // was 17
             return $teaching_local->getTimestamp();
         }
     } else if ($completes == 1) {
@@ -373,26 +388,6 @@ function ac_get_teaching_live_time($teaching) {
 
     // No more for this post.
     return false;
-
-    /*
-    if ($completes == 1) {
-        if ($is_sunday) {
-            $teaching_local->modify('+11 hours');
-            $teaching_local->modify('+15 minutes');
-            return $teaching_local->getTimestamp();
-        } else {
-            // No more for this post.
-            return false;
-        }
-    } else if ($completes == 2 && $teaching_day == '2020-12-24') {
-        // Special Christmas Eve service.
-        $teaching_local->modify('+15 hours'); // 3 PM
-        return $teaching_local->getTimestamp();
-    } else {
-        // No more for this post.
-        return false;
-    }
-    */
 }
 
 /* Exclude videos on the blog page. */

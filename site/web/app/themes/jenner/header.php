@@ -53,7 +53,7 @@
 
             foreach($announcements as $announcement): 
                 $live_start = ac_get_teaching_live_time($announcement);
-                $is_active_sunday_item = ac_is_sunday_teaching_active($announcement);
+                $is_active_teaching_item = ac_is_teaching_active($announcement);
 
                 $video_url = get_permalink($announcement);
 
@@ -73,11 +73,11 @@
             <div class="announce announce-upcoming" data-livestart="<?php echo $live_start; ?>">
                 <p class="announce-u">
                     <a href="<?php echo esc_html($video_url); ?>">
-                        <b>Sunday Service Live Stream</b><br><span><i class="announce-when">happening soon</i></span>
+                        <b>Upcoming Live Stream</b><br><span><i class="announce-when">happening soon</i></span>
                     </a>
                 </p>
             </div>
-        <?php elseif (ac_is_sunday_teaching_live($announcement) && get_queried_object_id() !== $announcement->ID): ?>
+        <?php elseif (ac_is_teaching_live($announcement) && get_queried_object_id() !== $announcement->ID): ?>
             <div class="announce announce-sunday announce-sunday-live">
                 <p class="announce-u">
                     <a href="<?php echo esc_html($video_url) ?>">
@@ -87,7 +87,7 @@
                 </p>
             </div>
         <?php endif; ?>
-        <?php if ($is_active_sunday_item && get_queried_object_id() !== $announcement->ID): ?>
+        <?php if ($is_active_teaching_item && get_queried_object_id() !== $announcement->ID): ?>
             <div class="announce announce-sunday announce-sunday-notes">
                 <p class="announce-u">
                     <a href="<?php echo esc_html(get_permalink($announcement)); ?>#teaching-notes">
