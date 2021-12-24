@@ -23,6 +23,12 @@ error during Composer install:
 remote: Public key authentication failed.
 ```
 
+## Vagrant issues
+
+You may need to [apply a fix][fix] for Vagrant to work correctly.
+
+    sudo curl -o /opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/plugins/hosts/darwin/cap/path.rb https://raw.githubusercontent.com/hashicorp/vagrant/42db2569e32a69e604634462b633bb14ca20709a/plugins/hosts/darwin/cap/path.rb
+
 ## License
 
 MIT, see LICENSE.
@@ -31,3 +37,4 @@ MIT, see LICENSE.
 [Trellis]: https://roots.io/trellis/
 [Roots]: https://roots.io
 [az]: https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops&tabs=current-page#q-i-have-multiple-ssh-keys--how-do-i-use-different-ssh-keys-for-different-ssh-servers-or-repos
+[fix]: https://github.com/hashicorp/vagrant/issues/12583#issuecomment-975070111
