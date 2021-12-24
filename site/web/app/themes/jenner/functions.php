@@ -308,7 +308,7 @@ function ac_is_teaching_active($teaching) {
         $teaching_end = $teaching_local->getTimestamp();
     } else {
         // Christmas Eve
-        $teaching_local->modify('+14 hours');
+        $teaching_local->modify('+16 hours');
         $teaching_local->modify('+30 minutes'); // 4:30 PM
         $teaching_begin = $teaching_local->getTimestamp();
 
@@ -343,7 +343,7 @@ function ac_is_teaching_live($teaching) {
         $teaching_end = $teaching_local->getTimestamp();
     } else {
         // Christmas Eve
-        $teaching_local->modify('+14 hours'); // 5 PM // was 17
+        $teaching_local->modify('+17 hours'); // 5 PM
         $teaching_begin = $teaching_local->getTimestamp();
 
         // Allow for 1 hour 30 minutes after last service: 6:30 PM
@@ -376,7 +376,7 @@ function ac_get_teaching_live_time($teaching) {
             return $teaching_local->getTimestamp();
         } else {
             // Special Christmas Eve service.
-            $teaching_local->modify('+14 hours'); // 5 PM // was 17
+            $teaching_local->modify('+17 hours'); // 5 PM
             return $teaching_local->getTimestamp();
         }
     } else if ($completes == 1) {
