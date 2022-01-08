@@ -124,7 +124,7 @@
     "wpackagist-plugin/windows-azure-storage": "^4.1",
     "wpackagist-plugin/post-type-converter": "^0.6.0",
     "wpackagist-plugin/oa-social-login": "^5.5",
-    "wpackagist-plugin/simple-history": "^2.33",
+    "wpackagist-plugin/simple-history": "^3.0",
     "wpackagist-plugin/redirection": "^5.0",
     "wpackagist-plugin/wp-webhooks": "^2.1.2",
     "wpackagist-plugin/getwid": "^1.5",
