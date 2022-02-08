@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "027950c680e57f01b871b5d2fe625810",
+    "content-hash": "2ddb0efebcbc27f08f48adf136ef1c5b",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -1004,6 +1004,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/ductile-responsive-video/"
+        },
+        {
+            "name": "wpackagist-plugin/elementor",
+            "version": "3.5.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/elementor/",
+                "reference": "tags/3.5.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.3.5.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/elementor/"
         },
         {
             "name": "wpackagist-plugin/esv-crossref",
