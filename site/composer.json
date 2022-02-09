@@ -97,6 +97,10 @@
     {
       "type": "vcs",
       "url": "git@ssh.dev.azure.com:v3/awakeningsv/leadership-plugin/leadership-plugin"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:AwakeningSV/elementor-pro.git"
     }
   ],
   "require": {
@@ -108,6 +112,7 @@
     "awakeningsv/teaching-plugin": "dev-master",
     "awakeningsv/leadership-plugin": "dev-master",
     "awakeningsv/upcoming-events-plugin": "dev-master",
+    "awakeningsv/elementor-pro": "dev-main",
     "composer/installers": "^1.4",
     "vlucas/phpdotenv": "^3.0.0",
     "oscarotero/env": "^1.1.0",

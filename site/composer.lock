@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ddb0efebcbc27f08f48adf136ef1c5b",
+    "content-hash": "f02fd326760e54b9ab17d876a9efbb56",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -32,6 +32,43 @@
                 "wordpress"
             ],
             "time": "2019-11-09T22:42:30+00:00"
+        },
+        {
+            "name": "awakeningsv/elementor-pro",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:AwakeningSV/elementor-pro.git",
+                "reference": "41023c01141d0ecf355dbc14f3e647caa2c7431d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AwakeningSV/elementor-pro/zipball/41023c01141d0ecf355dbc14f3e647caa2c7431d",
+                "reference": "41023c01141d0ecf355dbc14f3e647caa2c7431d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "default-branch": true,
+            "type": "wordpress-plugin",
+            "authors": [
+                {
+                    "name": "Elementor",
+                    "homepage": "http://elementor.com"
+                }
+            ],
+            "description": "Elementor Pro",
+            "homepage": "https://github.com/AwakeningSV/elementor-pro",
+            "keywords": [
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://github.com/AwakeningSV/elementor-pro/tree/main",
+                "issues": "https://github.com/AwakeningSV/elementor-pro/issues"
+            },
+            "time": "2022-02-09T16:37:12+00:00"
         },
         {
             "name": "awakeningsv/leadership-plugin",
@@ -1899,6 +1936,7 @@
         "awakeningsv/teaching-plugin": 20,
         "awakeningsv/leadership-plugin": 20,
         "awakeningsv/upcoming-events-plugin": 20,
+        "awakeningsv/elementor-pro": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
