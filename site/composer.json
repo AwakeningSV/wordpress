@@ -145,7 +145,8 @@
     "roots/wp-stage-switcher": "^2.1",
     "wpackagist-plugin/pwa": "^0.6.0",
     "wpackagist-plugin/esv-crossref": "^2.1",
-    "wpackagist-plugin/elementor": "^3.5"
+    "wpackagist-plugin/elementor": "^3.5",
+    "wpackagist-plugin/authorizer": "^3.2"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
