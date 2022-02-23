@@ -146,7 +146,6 @@
     "wpackagist-plugin/wpcustom-category-image": "2.1.13",
     "wpackagist-plugin/wp-dashboard-notes": "^1.0",
     "roots/wp-stage-switcher": "^2.1",
-    "wpackagist-plugin/pwa": "^0.6.0",
     "wpackagist-plugin/esv-crossref": "^2.1",
     "wpackagist-plugin/elementor": "^3.5",
     "wpackagist-plugin/authorizer": "^3.2"
