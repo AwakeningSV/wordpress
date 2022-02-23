@@ -1,3 +1,5 @@
 path: web/wp
 server:
   docroot: web
+@development:
+  ssh: vagrant@awakeningchurch.test/srv/www/awakeningchurch.com/current

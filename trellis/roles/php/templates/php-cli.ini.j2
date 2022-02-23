@@ -5,6 +5,9 @@ error_reporting = {{ php_error_reporting }}
 sendmail_path = {{ php_sendmail_path }}
 expose_php = Off
 date.timezone = {{ php_timezone }}
+# Required for WP-CLI
+# https://make.wordpress.org/cli/handbook/guides/common-issues/#php-fatal-error-allowed-memory-size-of-999999-bytes-exhausted-tried-to-allocate-99-bytes
+memory_limit = 512M 
 
 [mysqlnd]
 mysqlnd.collect_memory_statistics = {{ php_mysqlnd_collect_memory_statistics }}

@@ -9,6 +9,18 @@ Trellis based server infrastructure is in `trellis/`. For more
 about how to understand these files, please see the [Bedrock][]
 and [Trellis][] documentation.
 
+## Login from WP-CLI
+
+We use G Workspace SSO for login which is not available in development.
+An easy alternative is to use magic login links:
+
+```shell
+brew install wp-cli
+cd site
+wp @development login install --activate --yes
+wp @development login as 'Reid Burke'
+```
+
 ## Azure DevOps SSH key setup
 
 You may have issues working with Azure DevOps repos if
