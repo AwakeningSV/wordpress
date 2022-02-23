@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "027ceafbea6dfb8a856a915717fc6ee6",
+    "content-hash": "2b66cae863725c3623ddf94cf6cec2a5",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -1347,24 +1347,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-dashboard-notes/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-webhooks",
-            "version": "2.1.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-webhooks/",
-                "reference": "tags/2.1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-webhooks.2.1.2.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-webhooks/"
         },
         {
             "name": "wpackagist-plugin/wpcustom-category-image",
