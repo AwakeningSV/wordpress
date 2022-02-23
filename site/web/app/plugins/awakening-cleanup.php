@@ -13,7 +13,6 @@ function ac_remove_dashboard_meta() {
     remove_meta_box('dashboard_quick_press', 'dashboard', 'side'); // Quick Draft
     remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); // At a Glance
     remove_meta_box('powerpress_dashboard_news', 'dashboard', 'normal'); // PowerPress
-    remove_meta_box('dashboard_site_health', 'dashboard', 'normal'); // Site Health
 }
 
 add_action('admin_init', 'ac_remove_dashboard_meta');
@@ -65,3 +64,15 @@ add_action('wp', function() {
         header('X-Robots-Tag: noindex, nofollow', true);
     }
 }, 1000);
+
+// Disable SEO Framework HTML comments.
+// https://github.com/sybrew/The-SEO-Framework-Extension-Manager/blob/c5e901cc1eebf1e869053f798c8ea4fdfd3fc8ba/extensions/free/incognito/trunk/incognito.php
+add_filter('the_seo_framework_indicator', '__return_false');
+add_filter('the_seo_framework_title_fixed_indicator', '__return_false');
+add_filter('the_seo_framework_indicator_sitemap', '__return_false');
+
+// https://make.wordpress.org/core/2019/04/25/site-health-check-in-5-2/
+add_filter('site_status_tests', function($tests) {
+    unset($tests['async']['background_updates']);
+    return $tests;
+});
