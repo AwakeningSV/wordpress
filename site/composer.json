@@ -75,6 +75,21 @@
         }
     },
     {
+        "type": "package",
+        "package": {
+            "name": "awakeningsv/authorizer",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/AwakeningSV/authorizer/archive/refs/heads/no-monolog.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin"
+        }
+    },
+    {
       "type": "vcs",
       "url": "git@ssh.dev.azure.com:v3/awakeningsv/azure-cdn-rewrite-plugin/azure-cdn-rewrite-plugin"
     },
@@ -147,7 +162,7 @@
     "roots/wp-stage-switcher": "^2.1",
     "wpackagist-plugin/esv-crossref": "^2.1",
     "wpackagist-plugin/elementor": "^3.5",
-    "wpackagist-plugin/authorizer": "^3.2"
+    "awakeningsv/authorizer": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
