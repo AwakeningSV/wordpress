@@ -152,7 +152,6 @@
     "wpackagist-plugin/getwid": "^1.5",
     "wpackagist-plugin/unsplash": "^1.0",
     "wpackagist-plugin/block-widget": "^0.1.1",
-    "wpackagist-plugin/newspack-newsletters": "^1.0",
     "wpackagist-plugin/matomo": "^4.2",
     "matomo-org/google-analytics-importer": "^4.1",
     "wpackagist-plugin/cloudflare": "^4.2",

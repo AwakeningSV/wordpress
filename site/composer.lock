@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9879d8400170ba6bfc097f6fe7c97fad",
+    "content-hash": "9d7031d9f95fd405a80606c3942df9f1",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1143,24 +1143,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/matomo/"
-        },
-        {
-            "name": "wpackagist-plugin/newspack-newsletters",
-            "version": "1.42.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/newspack-newsletters/",
-                "reference": "tags/1.42.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/newspack-newsletters.1.42.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/newspack-newsletters/"
         },
         {
             "name": "wpackagist-plugin/page-excerpt",
