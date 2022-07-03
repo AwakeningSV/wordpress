@@ -334,12 +334,12 @@ function ac_is_teaching_live($teaching) {
     $is_sunday = $teaching_local->format('D') == 'Sun';
 
     if ($is_sunday) {
-        $teaching_local->modify('+9 hours');
-        $teaching_local->modify('+30 minutes');
+        $teaching_local->modify('+10 hours');
         $teaching_begin = $teaching_local->getTimestamp();
 
         // Allow for 1 hour 15 minutes after last service: 12:30 PM
-        $teaching_local->modify('+3 hours');
+        $teaching_local->modify('+2 hours');
+        $teaching_local->modify('+30 minutes');
         $teaching_end = $teaching_local->getTimestamp();
     } else {
         // Christmas Eve
@@ -371,17 +371,11 @@ function ac_get_teaching_live_time($teaching) {
 
     if ($completes == 0) {
         if ($is_sunday) {
-            $teaching_local->modify('+9 hours');
-            $teaching_local->modify('+30 minutes');
+            $teaching_local->modify('+10 hours');
             return $teaching_local->getTimestamp();
         } else {
             // Special Christmas Eve service.
             $teaching_local->modify('+17 hours'); // 5 PM
-            return $teaching_local->getTimestamp();
-        }
-    } else if ($completes == 1) {
-        if ($is_sunday) {
-            $teaching_local->modify('+11 hours');
             return $teaching_local->getTimestamp();
         }
     }
