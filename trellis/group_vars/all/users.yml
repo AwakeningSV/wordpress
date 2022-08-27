@@ -7,13 +7,15 @@ users:
     groups:
       - "{{ web_group }}"
     keys:
-      - "{{ lookup('file', '~/.ssh/id_personal_rsa.pub') }}"
+      - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMbi6n3z/5GKqG7Ih/BUJf1i7NyTc8aPR3h1x+39teDsB89QDgTrxfagexaAxuhXbRgw+ai6yE6iAOB6FRPKUjY= Awakening-Web-Server@secretive.sabrina.local"
+      - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOSOJLmptQmuOTp+xKVvqaWcU1EgkMS6Df6YQQ3Yw6uSgeF2DSyPLuHJBO4qbF9pgFbxjdjrzs7Tiyh3XX+bZbQ= Awakening-Web-Server@secretive.Izzi.local"
       # - https://github.com/username.keys
   - name: "{{ admin_user }}"
     groups:
       - sudo
     keys:
-      - "{{ lookup('file', '~/.ssh/id_personal_rsa.pub') }}"
+      - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMbi6n3z/5GKqG7Ih/BUJf1i7NyTc8aPR3h1x+39teDsB89QDgTrxfagexaAxuhXbRgw+ai6yE6iAOB6FRPKUjY= Awakening-Web-Server@secretive.sabrina.local"
+      - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOSOJLmptQmuOTp+xKVvqaWcU1EgkMS6Df6YQQ3Yw6uSgeF2DSyPLuHJBO4qbF9pgFbxjdjrzs7Tiyh3XX+bZbQ= Awakening-Web-Server@secretive.Izzi.local"
       # - https://github.com/username.keys
 
 web_user: web
