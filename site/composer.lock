@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45280d52259be8890578e463288975c4",
+    "content-hash": "23c2eab8eb1160218af51ce135503175",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/AwakeningSV/authorizer/archive/refs/heads/no-monolog.zip"
+                "url": "https://github.com/AwakeningSV/authorizer/archive/1ab1351fdbaafa94d5ba2c1b54f79db4e4fe22f5.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
