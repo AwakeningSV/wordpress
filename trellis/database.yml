@@ -3,6 +3,9 @@
   hosts: web:&{{ env }}
   remote_user: "{{ web_user }}"
 
+  environment:
+    PATH: "/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+
   vars:
     project: "{{ wordpress_sites[site] }}"
     project_current: "{{ www_root }}/{{ site }}/current"

@@ -65,8 +65,12 @@ elif [[ $MODE = up ]]; then
   MODE="push"
 fi
 
-DATABASE_CMD="ansible-playbook database.yml -e env=$ENV -e site=$SITE -e mode=$MODE"
-UPLOADS_CMD="ansible-playbook uploads.yml -e env=$ENV -e site=$SITE -e mode=$MODE"
+# Add ansible_python_interpreter to fix the following error:
+#   The module failed to execute correctly, you probably need to set the interpreter.
+#   /bin/sh: /usr/bin/python: No such file or directory
+# See: https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html#using-python-3-on-the-managed-machines-with-commands-and-playbooks
+DATABASE_CMD="ansible-playbook database.yml -e env=$ENV -e site=$SITE -e mode=$MODE -e 'ansible_python_interpreter=/usr/bin/python3'"
+UPLOADS_CMD="ansible-playbook uploads.yml -e env=$ENV -e site=$SITE -e mode=$MODE -e 'ansible_python_interpreter=/usr/bin/python3'"
 
 HOSTS_FILE="hosts/$ENV"
 

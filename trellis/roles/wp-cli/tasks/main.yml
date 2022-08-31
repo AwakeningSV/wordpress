@@ -48,6 +48,7 @@
 - name: Install WP-CLI packages
   command: wp package install {{ item }}
   environment:
+    # Without this setting, attempting to download packages over TLS fails.
     SSL_CERT_DIR: /etc/ssl/certs
   become: true
   become_user: "{{ web_user }}"
