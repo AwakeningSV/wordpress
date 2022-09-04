@@ -147,7 +147,6 @@ function bones_scripts_and_styles() {
 
     //adding scripts file in the footer
     // wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-    wp_register_script( 'menu-js', get_stylesheet_directory_uri() . '/library/js/menu.js', array(), '', true );
     wp_register_script( 'countdown-js', get_stylesheet_directory_uri() . '/library/js/libs/countdown.min.js', array(), '2.3.4', true );
     wp_register_script( 'countdown-livestream', get_stylesheet_directory_uri() . '/library/js/countdown-livestream.js', array( 'jquery' ), '', true );
 
@@ -169,7 +168,6 @@ function bones_scripts_and_styles() {
     */
     wp_enqueue_script( 'jquery' );
     //wp_enqueue_script( 'bones-js' );
-    wp_enqueue_script( 'menu-js' );
     wp_enqueue_script( 'countdown-js' );
     wp_enqueue_script( 'countdown-livestream' );
     wp_enqueue_script( 'pcogiving' );
