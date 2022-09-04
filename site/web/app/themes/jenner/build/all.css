@@ -1975,8 +1975,7 @@ h1, h2, h3, .series-h2, .teaching-meta h2, .leaders-h2, h4, .archive-h2, h5, .ca
   text-transform: uppercase;
   text-rendering: optimizeLegibility; }
 
-#menu a, .footer h2 {
-  font-weight: 400;
+.wp-block-navigation a, .footer h2 {
   font-family: Oswald, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility; }
 
@@ -2106,34 +2105,9 @@ span.page-numbers {
 span.page-numbers.current {
   background: #656568; }
 
-#logo a {
-  border: 0;
-  background: url("../library/images/logo.png") no-repeat center center;
-  width: 210px;
-  display: block;
-  overflow: hidden;
-  float: left;
-  padding: 28px 0 0 0;
-  height: 0 !important;
-  height: 28px;
-  position: relative;
-  bottom: 6px;
-  top: 2px; }
-
-.lt-ie7 #logo a {
-  font-size: 0;
-  color: #fff; }
-
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  #logo a {
-    background: url("../library/images/logo@2x.png") no-repeat center center;
-    background-size: 210px 28px; } }
-
 #inner-header {
   border-bottom: 1px solid #e9e9e9;
-  padding-bottom: 20px; }
-  #inner-header .top-nav {
-    text-transform: uppercase; }
+  padding: 0 .5em 20px; }
 
 html, body {
   background: #fff; }
@@ -2220,9 +2194,6 @@ Live video announcement.
     color: white; }
 
 @media (max-width: 767px) {
-  #logo {
-    padding: 0;
-    float: none; }
   /* disable wrap padding */
   .wrap, .announce-u {
     padding: 0; }
@@ -2231,9 +2202,6 @@ Live video announcement.
   #content {
     padding: 0 .5em;
     margin-bottom: 0; }
-  #logo a {
-    /* left margin should equal right margin of pure-menu-link */
-    margin: 5px 0 0 1em; }
   .announce-sunday span.button,
   .announce-sunday span.page-numbers {
     display: none; } }
@@ -2243,287 +2211,45 @@ Live video announcement.
     display: none;
     border: 0; } }
 
-/* Override _pure.scss. */
-.pure-menu li a {
-  padding: 4px 14px 4px; }
-
 /*
 Add transition to containers so they can push in and out.
 */
-#container,
-#menu,
-.main-menu-link {
+.wp-block-navigation {
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out; }
+  .wp-block-navigation .wp-block-navigation-item {
+    padding: 0 .1em; }
+  .wp-block-navigation li > a {
+    font-weight: 400;
+    border-bottom: 0;
+    justify-content: flex-end; }
+    .wp-block-navigation li > a span {
+      text-align: right; }
+  .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item {
+    padding: 0; }
+  .wp-block-navigation .wp-block-navigation__submenu-container a:hover {
+    background: #f0f0f0; }
 
-/*
-This is the parent `<div>` that contains the menu and the content area.
-*/
-#container {
-  right: 0; }
+.has-modal-open {
+  font-size: 1.2rem; }
+  .has-modal-open .wp-block-navigation__submenu-container {
+    padding-top: 0 !important; }
+    .has-modal-open .wp-block-navigation__submenu-container a {
+      font-size: .9rem; }
+      .has-modal-open .wp-block-navigation__submenu-container a:hover {
+        background: inherit; }
+  .has-modal-open .wp-block-navigation__container > .wp-block-navigation-item {
+    padding-top: 1em; }
 
-/*
-The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
-appears on the right side of the page.
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .submenu-container, .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container {
+  padding-left: .5em;
+  padding-right: .5em; }
 
-By using the combination of `position: fixed; top: 0; bottom:0;`, we can make
-the menu have 100% height and be fixed on the page as the rest of it scrolls.
-*/
-#menu {
-  padding: 0;
-  float: right; }
-
-/*
-    All anchors inside the menu should be styled like this.
-    */
-#menu a {
-  border: none;
-  font-weight: 400;
-  font-size: 14px;
-  color: #525252; }
-
-/*
-    Remove all background/borders, since we are applying them to #menu.
-    */
-#menu .pure-menu,
-#menu .pure-menu ul {
-  border: none;
-  background: transparent; }
-
-/*
-        Change color of the anchor links on hover/focus.
-        */
-#menu .pure-menu li a:hover,
-#menu .pure-menu li a:focus {
-  background: #f0f0f0;
-  color: #000; }
-
-/*
-    This styles the selected menu item `<li>`.
-    */
-/*
-        This styles a link within a selected menu item `<li>`.
-        */
-#menu .current-menu-item > a {
-  color: #111;
-  background: #f0f0f0; }
-
-#menu .sub-menu .current-menu-item > a {
-  background: #fff; }
-
-#menu .menu-item-has-children > a::before {
-  content: "";
-  position: absolute;
-  right: 2px;
-  top: 42%;
-  border: 4px solid transparent;
-  border-top-color: currentColor; }
-
-#menu ul ul .menu-item-has-children > a::before {
-  top: 32%;
-  border-top-color: transparent;
-  border-left-color: currentColor; }
-
-/*
-    This styles the menu heading.
-    */
-#menu .pure-menu-heading {
-  font-size: 110%;
-  color: #fff;
-  margin: 0; }
-
-/* Override: open menu from right, not left */
-/* This prevents horizontal scrollbar on desktop */
-.pure-menu ul ul {
-  left: auto;
-  right: -10000px; }
-
-/* Override */
-.pure-menu ul .sub-menu-open {
-  position: absolute;
-  visibility: visible; }
-
-/* Override */
-#menu .pure-menu ul .sub-menu {
-  /* Open from right */
-  right: 0;
-  text-align: right;
-  top: 30px;
-  box-shadow: 0px 2px 3px #e9e9e9;
-  border-width: 0 1px 1px;
-  background: #fff;
-  padding: 15px; }
-  #menu .pure-menu ul .sub-menu .sub-menu {
-    border-width: 1px;
-    top: 5px;
-    left: 100%; }
-
-/* -- Dynamic Button For Responsive Menu -------------------------------------*/
-/*
-The button to open/close the Menu is custom-made and not part of Pure. Here's
-how it works:
-*/
-/*
-`.main-menu-link` represents the responsive menu toggle that shows/hides on
-small screens.
-*/
-.main-menu-link {
-  display: none;
-  /* show this only on small screens */
-  position: absolute;
-  top: 20px;
-  right: 208px;
-  /* `#menu`'s width + pad, see also .active style */
-  background: #000;
-  background: rgba(0, 0, 0, 0.7);
-  font-size: 7px;
-  /* change this value to increase/decrease button size */
-  z-index: 501;
-  /* appear over wpadminbar */
-  width: 2em;
-  height: 2em;
-  padding: 8px;
-  border: 1px solid #444; }
-
-.admin-bar .main-menu-link {
-  top: 66px;
-  /* wpadminbar adds 46px, 46 + 20 */ }
-
-.main-menu-link:hover,
-.main-menu-link:focus {
-  background: #000; }
-
-.main-menu-link span {
-  position: relative;
-  display: block;
-  margin-top: 0.9em; }
-
-.main-menu-link span,
-.main-menu-link span:before,
-.main-menu-link span:after {
-  background-color: #fff;
-  width: 100%;
-  height: .2em;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -ms-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s; }
-
-.main-menu-link span:before,
-.main-menu-link span:after {
-  position: absolute;
-  top: -.55em;
-  content: " "; }
-
-.main-menu-link span:after {
-  top: .55em; }
-
-.main-menu-link.active span {
-  background: transparent; }
-
-.main-menu-link.active span:before {
-  -webkit-transform: rotate(45deg) translate(0.5em, 0.4em);
-  -moz-transform: rotate(45deg) translate(0.5em, 0.4em);
-  -ms-transform: rotate(45deg) translate(0.5em, 0.4em);
-  -o-transform: rotate(45deg) translate(0.5em, 0.4em);
-  transform: rotate(45deg) translate(0.5em, 0.4em); }
-
-.main-menu-link.active span:after {
-  -webkit-transform: rotate(-45deg) translate(0.4em, -0.3em);
-  -moz-transform: rotate(-45deg) translate(0.4em, -0.3em);
-  -ms-transform: rotate(-45deg) translate(0.4em, -0.3em);
-  -o-transform: rotate(-45deg) translate(0.4em, -0.3em);
-  transform: rotate(-45deg) translate(0.4em, -0.3em); }
-
-/* -- Responsive Styles (Media Queries) ------------------------------------- */
-/*
-Overrides some styles in _pure.scss at 480px.
-*/
-@media (max-width: 480px) {
-  .pure-menu-children li {
-    border: 0;
-    /* override black border in _pure.scss */ } }
-
-/*
-Hides the menu.
-Default at `767px` to match grid breakpoint.
-Larger to hide menu before it crowds the header.
-*/
-@media (max-width: 847px) {
-  #menu {
-    float: none; }
-  /* Continuation of style in _pure.scss to 480px. */
-  .pure-menu-horizontal {
-    width: 100%; }
-  /* Continuation of style in _pure.scss to 480px. */
-  .pure-menu-children li {
-    display: block; }
-  .article-header {
-    padding-left: 0;
-    padding-right: 10px; }
-  .main-menu-link {
-    position: fixed;
-    right: 8px;
-    display: block;
-    /* show the button on small screens */ }
-  #container {
-    position: relative;
-    padding-right: 0; }
-    #container.active {
-      right: 200px; }
-      #container.active #menu {
-        right: 200px;
-        width: 200px; }
-      #container.active .main-menu-link {
-        /* Only 8px to make it easier to close. */
-        right: 208px; }
-  #menu {
-    background: #191818;
-    position: fixed;
-    margin-right: -200px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    border: 0;
-    z-index: 1;
-    overflow-y: auto;
-    -webkit-overflow-scroll: touch;
-    /* for smooth scrolling on mobile */ }
-    #menu a {
-      padding: 0.6em 0 0.6em 0.6em;
-      color: #888; }
-    #menu .current-menu-item > a {
-      background: #58585B;
-      color: #000; }
-      #menu .current-menu-item > a:after {
-        display: none; }
-    #menu .current-menu-parent > a:after {
-      display: none; }
-    #menu .pure-menu ul .sub-menu-open {
-      position: static; }
-    #menu .pure-menu ul .sub-menu {
-      /* Override from earlier */
-      text-align: left;
-      border: 0;
-      box-shadow: none;
-      background: transparent; }
-      #menu .pure-menu ul .sub-menu a {
-        padding-left: 1.5em; }
-      #menu .pure-menu ul .sub-menu .sub-menu a {
-        padding-left: 2em; }
-  .admin-bar #menu {
-    top: 46px;
-    /* wpadminbar adds 46px */ }
-  /*
-    Add that light border to separate items into groups.
-    */
-  #menu .pure-menu ul,
-  #menu .pure-menu .menu-item-divided {
-    border-top: 0; } }
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation-item {
+  padding: .25em 0 0; }
 
 .article-header {
   margin: 0;

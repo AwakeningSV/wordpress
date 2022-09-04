@@ -87,6 +87,16 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
+	
+    register_sidebar(array(
+		'id' => 'header',
+		'name' => __( 'Header', 'bonestheme' ),
+		'description' => __( 'The place for the page header.', 'bonestheme' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
 
     register_sidebar(array(
 		'id' => 'footer',
