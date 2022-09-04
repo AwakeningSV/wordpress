@@ -77,7 +77,7 @@
                 </p>
             </div>
         <?php endif; ?>
-        <?php if ($is_active_teaching_item && get_queried_object_id() !== $announcement->ID): ?>
+        <?php if ($is_active_teaching_item && get_queried_object_id() !== $announcement->ID && get_post_meta($announcement->ID, 'teaching-notes', true)): ?>
             <div class="announce announce-sunday announce-sunday-notes">
                 <p class="announce-u">
                     <a href="<?php echo esc_html(get_permalink($announcement)); ?>#teaching-notes">
