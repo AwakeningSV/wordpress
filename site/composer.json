@@ -116,10 +116,6 @@
     {
       "type": "vcs",
       "url": "git@ssh.dev.azure.com:v3/awakeningsv/leadership-plugin/leadership-plugin"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:AwakeningSV/elementor-pro.git"
     }
   ],
   "require": {
@@ -131,7 +127,6 @@
     "awakeningsv/teaching-plugin": "dev-master",
     "awakeningsv/leadership-plugin": "dev-master",
     "awakeningsv/upcoming-events-plugin": "dev-master",
-    "awakeningsv/elementor-pro": "dev-main",
     "composer/installers": "^1.4",
     "vlucas/phpdotenv": "^3.0.0",
     "oscarotero/env": "^1.1.0",
@@ -158,7 +153,6 @@
     "wpackagist-plugin/wp-dashboard-notes": "^1.0",
     "roots/wp-stage-switcher": "^2.1",
     "wpackagist-plugin/esv-crossref": "^2.1",
-    "wpackagist-plugin/elementor": "^3.5",
     "awakeningsv/authorizer": "^1.2",
     "roots/wordpress": "^6.0",
     "wpackagist-plugin/gutenberg": "^14.1"
