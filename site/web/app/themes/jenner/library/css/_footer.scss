@@ -1,12 +1,9 @@
 .footer {
     margin-top: 40px;
     background: #222;
-    padding: 0;
     font-size: 0.8em;
-    .wrap {
-        padding: 1em;
-    }
     h2 {
+        text-transform: uppercase;
         font-weight: 400;
         letter-spacing: 1px;
         padding-bottom: 10px;
@@ -18,15 +15,11 @@
     a {
         color: #fff;
     }
-    a:hover {
-        text-decoration: underline;
-    }
     address {
         font-style: normal;
     }
 
     .copyright {
-        font-size: 80%;
         color: #999;
         border-top: 1px solid #555;
         padding-top: 20px;
@@ -37,13 +30,6 @@
     }
 }
 
-// Hellems
-.footerwhite {
-    background: #f0f0f0;
-    text-align: center;
-    padding: 50px 0;
-}
-
 .footer ul {
     padding: 0;
 }
@@ -52,22 +38,10 @@
     list-style: none;
 }
 
-.footer .widget {
+.footer {
     p, li, address {
         line-height: 1.6;
     }
     padding: 0 1em 0 0;
     word-wrap: break-word;
-}
-
-@media (max-width: 767px) {
-    .footer .widget {
-        padding: 0;
-    }
-}
-
-@media print {
-    #conclusion {
-        display: none;
-    }
 }

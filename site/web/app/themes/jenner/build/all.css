@@ -2185,11 +2185,9 @@ _::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-cl
 .footer {
   margin-top: 40px;
   background: #222;
-  padding: 0;
   font-size: 0.8em; }
-  .footer .wrap, .footer .announce-u {
-    padding: 1em; }
   .footer h2 {
+    text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;
     padding-bottom: 10px;
@@ -2198,12 +2196,9 @@ _::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-cl
     color: #ddd; }
   .footer a {
     color: #fff; }
-  .footer a:hover {
-    text-decoration: underline; }
   .footer address {
     font-style: normal; }
   .footer .copyright {
-    font-size: 80%;
     color: #999;
     border-top: 1px solid #555;
     padding-top: 20px; }
@@ -2211,30 +2206,17 @@ _::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-cl
       color: #bbb;
       border: 0; }
 
-.footerwhite {
-  background: #f0f0f0;
-  text-align: center;
-  padding: 50px 0; }
-
 .footer ul {
   padding: 0; }
 
 .footer li {
   list-style: none; }
 
-.footer .widget {
+.footer {
   padding: 0 1em 0 0;
   word-wrap: break-word; }
-  .footer .widget p, .footer .widget li, .footer .widget address {
+  .footer p, .footer li, .footer address {
     line-height: 1.6; }
-
-@media (max-width: 767px) {
-  .footer .widget {
-    padding: 0; } }
-
-@media print {
-  #conclusion {
-    display: none; } }
 
 .home h1 {
   font-size: 3em; }
@@ -2284,6 +2266,7 @@ _::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-cl
   position: relative; }
 
 .archive-h2 {
+  font-size: 90%;
   font-weight: 700; }
   .archive-h2 a {
     color: inherit;
@@ -2291,7 +2274,7 @@ _::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-cl
 
 .archive-date, .archive-badge a {
   color: #555;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1; }
 
 .archive-badge a {
@@ -2334,7 +2317,7 @@ _::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-cl
 
 .series-meta {
   color: #555;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1; }
 
 .teaching-inner-u {

@@ -27,18 +27,13 @@
 	},
     "templateParts": [
         {
-            "name": "Header",
+            "name": "header",
             "title": "Site Header",
             "area": "header"
         },
         {
-            "name": "Footer",
+            "name": "footer",
             "title": "Site Footer",
-            "area": "footer"
-        },
-        {
-            "name": "Social Icons",
-            "title": "Social Icons",
             "area": "footer"
         }
     ] 
