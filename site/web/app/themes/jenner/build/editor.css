@@ -12,7 +12,6 @@ body,
 
 h1, h2, h3, h4, h5, .caps {
   font-family: Montserrat, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   text-rendering: optimizeLegibility; }
 
 .wp-block-navigation, .footer h2 {

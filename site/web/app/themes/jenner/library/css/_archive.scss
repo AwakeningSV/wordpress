@@ -62,6 +62,7 @@
 
 .archive-h2 {
     @extend h4;
+    font-weight: 700; 
     a {
         color: inherit;
         border: 0;
@@ -85,7 +86,6 @@
     color: #222;
     line-height: 14px;
     font-size: 12px;
-    text-transform: uppercase;
     border: 0;
 }
 

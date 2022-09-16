@@ -1784,7 +1784,6 @@ body,
 
 h1, h2, h3, .series-h2, .teaching-meta h2, .leaders-h2, h4, .archive-h2, h5, .caps, .announce b, .leader-no-photo p {
   font-family: Montserrat, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   text-rendering: optimizeLegibility; }
 
 .wp-block-navigation, .footer h2 {
@@ -2284,9 +2283,11 @@ _::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-cl
   padding: 0 1em 2em 0;
   position: relative; }
 
-.archive-h2 a {
-  color: inherit;
-  border: 0; }
+.archive-h2 {
+  font-weight: 700; }
+  .archive-h2 a {
+    color: inherit;
+    border: 0; }
 
 .archive-date, .archive-badge a {
   color: #555;
@@ -2303,7 +2304,6 @@ _::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-cl
   color: #222;
   line-height: 14px;
   font-size: 12px;
-  text-transform: uppercase;
   border: 0; }
 
 .archive-badge-upcoming a {
