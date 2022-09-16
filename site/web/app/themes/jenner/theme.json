@@ -1,6 +1,17 @@
 {
     "$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
+    "useRootPaddingAwareAlignments": true,
+    "styles": {
+        "spacing": {
+            "padding": {
+                "top": "0px",
+                "right": "10px",
+                "left": "10px",
+                "bottom": "0px"
+            }
+        }
+    },
 	"settings": {
         "appearanceTools": true,
 		"layout": {
