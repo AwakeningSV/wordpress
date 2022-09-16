@@ -30,6 +30,7 @@ module.exports = function (grunt) {
                     implementation: sass
                 },
                 files: {
+                    "build/editor.css": "library/css/editor.scss",
                     "build/all.css": "library/css/main.scss"
                 }
             }

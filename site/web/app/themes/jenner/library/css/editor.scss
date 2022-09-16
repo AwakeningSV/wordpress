@@ -1,0 +1,29 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i,|Oswald:400";
+@import "typography";
+@import "page";
+@import "menu";
+
+.wp-block-navigation a {
+    text-decoration: none;
+}
+
+a {
+    border-bottom: 0;
+}
+
+// https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#changing-the-width-of-the-editor
+
+/* Main column width */
+.wp-block {
+    max-width: $content_width;
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align='wide'] {
+    max-width: $content_wide_width;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align='full'] {
+    max-width: none;
+}

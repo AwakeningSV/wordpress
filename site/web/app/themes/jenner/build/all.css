@@ -1867,15 +1867,12 @@ address {
   -webkit-animation-delay: 1s;
   animation-delay: 1s; }
 
-.hide-text {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden; }
+html, body {
+  background: #fff; }
 
 /* Defined by branding guidelines, Section 4, Colors, Gray */
 /* Deviates from branding guidelines, Section 2, Typography, Web */
 /* Be careful when changing */
-/* Used in _menu.scss to draw the selected item triangle. */
 a {
   color: #000;
   text-decoration: none; }
@@ -1887,6 +1884,114 @@ p > a,
 li > a,
 em > a {
   border-bottom: 1px solid #58585B; }
+
+/* Here be dragons. */
+.home-section .archive-excerpt + p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5; }
+
+.wp-block-cover a {
+  color: #fff;
+  border-color: #fff; }
+
+.cover-wide-text > div {
+  max-width: 976px;
+  line-height: 1.7; }
+
+.cover-wide-text h1,
+.cover-wide-text h2,
+.cover-wide-text h3,
+.cover-wide-text .series-h2,
+.cover-wide-text .teaching-meta h2,
+.teaching-meta .cover-wide-text h2,
+.cover-wide-text .leaders-h2,
+h2.f-accent {
+  line-height: 1.2; }
+
+h2.has-large-font-size.f-accent {
+  margin-bottom: 0; }
+
+.covid19-prepared p a {
+  font-weight: normal; }
+
+.hide {
+  display: none; }
+
+.wp-block-getwid-mailchimp input {
+  height: 1.6em;
+  border: 1px solid #ddd; }
+
+.home-hero .wp-block-getwid-mailchimp {
+  text-align: center; }
+
+.home-hero .wp-block-getwid-mailchimp input {
+  text-align: center;
+  border-width: 0; }
+
+.wp-block-getwid-field-email {
+  margin: auto auto 1em; }
+
+.home-hero .wp-block-getwid-field-email {
+  color: #000 !important;
+  line-height: 2;
+  max-width: 400px; }
+
+.wp-block-getwid-mailchimp__submit {
+  margin-top: auto; }
+
+.home-hero .wp-block-getwid-field-email__label {
+  color: #fff; }
+
+.wp-block-getwid-mailchimp__submit button {
+  border: 0;
+  font-weight: bold;
+  font-family: Oswald, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; }
+
+@media (max-width: 847px) {
+  .home-hero > .entry-content > .wp-block-cover {
+    align-items: flex-start;
+    justify-content: flex-start; } }
+
+@media (max-width: 847px) {
+  .home h1 {
+    font-size: 2.5em; } }
+
+.f-accent {
+  font-family: Oswald, sans-serif; }
+
+a.esv-crossref-link {
+  color: #000 !important;
+  border-bottom: 1px solid #58585B; }
+
+.wp-block-getwid-section img,
+.series-inner-u img,
+figure img {
+  max-width: 100%;
+  height: auto; }
+
+.footer {
+  margin-top: 0px;
+  background: #222;
+  padding: 0px;
+  font-size: .8em; }
+
+.social-icons {
+  margin-top: 0px;
+  background: #222;
+  padding: 0px;
+  font-size: .8em; }
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+  background: graytext; }
+
+.wp-block-site-logo img {
+  max-width: none; }
+
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
 
 .button, a.page-numbers,
 span.page-numbers {
@@ -1916,16 +2021,6 @@ span.page-numbers {
 
 span.page-numbers.current {
   background: #656568; }
-
-#inner-header {
-  border-bottom: 1px solid #e9e9e9;
-  padding: 0 .5em 20px; }
-
-html, body {
-  background: #fff; }
-
-body {
-  margin: 0 auto; }
 
 .wrap, .announce-u {
   padding: 0 2em;
@@ -2032,6 +2127,8 @@ Add transition to containers so they can push in and out.
   -ms-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out; }
+  .wp-block-navigation.is-layout-flex {
+    gap: 7px; }
   .wp-block-navigation li > a {
     font-weight: 400;
     border-bottom: 0;
@@ -2085,18 +2182,6 @@ _::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-cl
   margin: 50px 0 20px 0;
   font-weight: 300;
   color: #888; }
-
-.alignwide,
-.alignfull {
-  margin: 32px calc(50% - 50vw);
-  max-width: 100vw;
-  width: 100vw; }
-
-@media (min-width: 1280px) {
-  .alignwide {
-    margin: 32px calc( ( 976px - 1280px ) / 2);
-    max-width: 1280px;
-    width: 1280px; } }
 
 .footer {
   margin-top: 40px;
@@ -2359,3 +2444,19 @@ h1.single-title {
   content: " ";
   clear: both;
   height: 0; }
+
+body {
+  margin: 0 auto;
+  overflow-x: hidden; }
+
+.alignwide,
+.alignfull {
+  margin: 0 calc(50% - 50vw);
+  max-width: 100vw;
+  width: 100vw; }
+
+@media (min-width: 1280px) {
+  .alignwide {
+    margin: 32px calc( ( $content_width - $content_wide_width ) / 2);
+    max-width: 1280px;
+    width: 1280px; } }

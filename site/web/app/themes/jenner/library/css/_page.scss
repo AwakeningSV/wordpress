@@ -1,0 +1,150 @@
+
+html, body {
+    background: #fff;
+}
+
+/* Defined by branding guidelines, Section 4, Colors, Gray */ 
+/* Deviates from branding guidelines, Section 2, Typography, Web */
+/* Be careful when changing */
+$accent_color: #58585B;
+
+$content_width: 976px;
+$content_wide_width: 1280px;
+
+a {
+    color: #000;
+    text-decoration: none;
+
+    &.esv-crossref-link {
+        color: #000 !important;
+        border-bottom: 1px solid #58585B;
+    }
+}
+
+p > a,
+li > a,
+em > a {
+    border-bottom: 1px solid $accent_color;
+}
+
+/* Here be dragons. */
+
+.home-section .archive-excerpt + p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .wp-block-cover a {
+      color: #fff;
+      border-color: #fff;
+  }
+
+  .cover-wide-text > div {
+      max-width: 976px;
+      line-height: 1.7;
+  }
+  
+  .cover-wide-text h1,
+  .cover-wide-text h2,
+  .cover-wide-text h3,
+  h2.f-accent {
+      line-height: 1.2;
+  }
+  
+  h2.has-large-font-size.f-accent {
+          margin-bottom: 0;
+  }
+  
+  .covid19-prepared p a {
+      font-weight: normal;
+  }
+  
+  .hide {
+      display: none;
+  }
+  
+  .wp-block-getwid-mailchimp input {
+      height: 1.6em;
+      border: 1px solid #ddd;
+  }
+  
+  .home-hero .wp-block-getwid-mailchimp {
+      text-align: center;
+  }
+  
+  .home-hero .wp-block-getwid-mailchimp input 	{
+      text-align: center;
+      border-width: 0;
+  }
+  
+  .wp-block-getwid-field-email {
+      margin: auto auto 1em;
+  }
+  
+  .home-hero .wp-block-getwid-field-email {
+    color: #000 !important;
+      line-height: 2;
+      max-width: 400px;
+  }
+  
+  .wp-block-getwid-mailchimp__submit {
+      margin-top: auto;
+  }
+  
+  .home-hero .wp-block-getwid-field-email__label { color: #fff; }
+  
+  .wp-block-getwid-mailchimp__submit button {
+      border: 0;
+      font-weight: bold;
+      font-family: $font_family_accent;
+  }
+      
+  @media (max-width: 847px) {
+    .home-hero > .entry-content > .wp-block-cover {
+        align-items: flex-start;
+      justify-content: flex-start;
+      }
+  }
+  
+      
+  @media (max-width: 847px) {
+    .home h1 {
+        font-size: 2.5em;
+    }
+  }
+  
+  .f-accent {
+      font-family: Oswald, sans-serif;
+  }
+  
+  a.esv-crossref-link {
+      color: #000 !important;
+      border-bottom: 1px solid #58585B;
+  }
+  
+  .wp-block-getwid-section img,
+  .series-inner-u img,
+  figure img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .footer {
+      margin-top: 0px;
+      background: #222;
+      padding: 0px;
+      font-size: .8em;
+  }
+  
+  .social-icons {
+      margin-top: 0px;
+      background: #222;
+      padding: 0px;
+      font-size: .8em;
+  }
+  
+  .wp-block-button.is-style-outline .wp-block-button__link:hover {
+        background:  graytext 
+  }
+  

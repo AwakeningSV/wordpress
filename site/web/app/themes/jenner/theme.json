@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+        "appearanceTools": true,
+		"layout": {
+			"contentSize": "976px",
+			"wideSize": "1100px"
+		},
+        "spacing": {
+            "blockGap": true
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "Montserrat, FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif",
+                    "slug": "body",
+                    "name": "Body Font"
+                },
+                {
+                   "fontFamily": "Oswald, FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif",
+                   "slug": "accent",
+                   "name": "Accent"
+                }
+            ]
+        }
+	},
+    "templateParts": [
+        {
+            "name": "Header",
+            "title": "Site Header",
+            "area": "header"
+        },
+        {
+            "name": "Footer",
+            "title": "Site Footer",
+            "area": "footer"
+        },
+        {
+            "name": "Social Icons",
+            "title": "Social Icons",
+            "area": "footer"
+        }
+    ] 
+}

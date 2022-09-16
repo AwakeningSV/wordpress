@@ -1,3 +1,6 @@
+$font_family_body: Montserrat, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+$font_family_accent: Oswald, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+
 body,
 .font,
 .archive-g,
@@ -7,17 +10,17 @@ body,
 .pure-g [class *= "pure-u"],
 .pure-g-r [class *= "pure-u"] {
     font-size: 120%;
-    font-family: Montserrat, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+    font-family: $font_family_body;
 }
 
 h1, h2, h3, h4, h5, .caps {
-    font-family: Montserrat, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+    font-family: $font_family_body;
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
 }
 
 .wp-block-navigation, .footer h2 {
-    font-family: Oswald, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+    font-family: $font_family_accent;
     text-rendering: optimizeLegibility;
 }
 

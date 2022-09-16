@@ -181,6 +181,9 @@ THEME SUPPORT
 function bones_theme_support() {
 
     add_theme_support( 'block-template-parts' );
+    
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'build/editor.min.css' );
 
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support( 'post-thumbnails' );
