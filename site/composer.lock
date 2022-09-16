@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "969d0ae8384592c4e2673b031b7b85bd",
+    "content-hash": "905842e17f2bbfeda33b4275b89306d6",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1170,6 +1170,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/getwid/"
+        },
+        {
+            "name": "wpackagist-plugin/gutenberg",
+            "version": "14.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gutenberg/",
+                "reference": "tags/14.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.14.1.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
             "name": "wpackagist-plugin/manual-image-crop",

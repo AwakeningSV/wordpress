@@ -7,11 +7,6 @@ Add transition to containers so they can push in and out.
     -ms-transition: all 0.2s ease-out;
     -o-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
-
-    .wp-block-navigation-item {
-        // TODO exclude submenu
-        padding: 0 .1em;
-    }
     
     li > a {
         font-weight: 400;
@@ -28,7 +23,7 @@ Add transition to containers so they can push in and out.
             // override padding from above
             padding: 0;
         }
-        
+
         a { 
             &:hover {
                 background: #f0f0f0; // Hellems, previously: lighten($accent_color, 40);
@@ -55,7 +50,12 @@ Add transition to containers so they can push in and out.
     .wp-block-navigation__container > .wp-block-navigation-item {
         padding-top: 1em;
     }
+}
 
+// https://jeffclayton.wordpress.com/2015/04/28/css-hacks-for-safari-6-1-7-and-8-not-chrome/
+_::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle {
+    // align menus with toggles with other menu items without them
+    padding-bottom: 2px;
 }
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child {

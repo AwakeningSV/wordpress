@@ -1,11 +1,13 @@
             <footer class="footer" role="contentinfo">
                 <div class="footerwhite">
                     <div class="wrap">
-                        <?php get_sidebar() ?>
+                        <?php block_template_part( 'Social Icons' ); ?>
                     </div>
                 </div>
                 <div id="inner-footer" class="wrap clearfix" itemscope itemtype="http://schema.org/NGO">
-                    <?php get_sidebar('footer') ?>
+                    <div class="widget">
+                        <?php block_template_part( 'Footer' ); ?>
+                    </div>
                     <p class="source-org copyright">
                         <span itemprop="name"><?php bloginfo( 'name' ); ?></span> exists to awaken this generation to new life in Jesus Christ.
                         &bull; &copy; <?php echo date('Y'); ?>

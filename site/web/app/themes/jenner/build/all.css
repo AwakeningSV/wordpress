@@ -2032,8 +2032,6 @@ Add transition to containers so they can push in and out.
   -ms-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out; }
-  .wp-block-navigation .wp-block-navigation-item {
-    padding: 0 .1em; }
   .wp-block-navigation li > a {
     font-weight: 400;
     border-bottom: 0;
@@ -2055,6 +2053,9 @@ Add transition to containers so they can push in and out.
         background: inherit; }
   .has-modal-open .wp-block-navigation__container > .wp-block-navigation-item {
     padding-top: 1em; }
+
+_::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle {
+  padding-bottom: 2px; }
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .submenu-container, .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container {
   padding-left: .5em;

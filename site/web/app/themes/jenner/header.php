@@ -27,7 +27,7 @@
 
                     <div class="wrap">
 
-                        <?php dynamic_sidebar( 'header' ); ?>
+                        <?php block_template_part( 'Header' ); ?>
 
                     </div>
 
