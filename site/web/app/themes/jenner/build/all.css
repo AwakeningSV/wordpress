@@ -2443,3 +2443,6 @@ body {
     margin: 32px calc( ( $content_width - $content_wide_width ) / 2);
     max-width: 1280px;
     width: 1280px; } }
+
+.pagination {
+  margin-bottom: 20px; }
