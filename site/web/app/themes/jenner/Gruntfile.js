@@ -46,13 +46,24 @@ module.exports = function (grunt) {
                 dest: 'build/',
                 ext: '.min.css'
             }
+        },
+        clean: ['build'],
+        cacheBust: {
+            options: {
+                assets: ['build/*.min.css'],
+                jsonOutput: true,
+                jsonOutputFilename: 'build/manifest.json'
+            },
+            src: 'bones.php'
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-cache-bust');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask("default", ["sass:dist", "cssmin:minify"]);
+    grunt.registerTask("default", ["clean", "sass:dist", "cssmin:minify", "cacheBust"]);
 
 };

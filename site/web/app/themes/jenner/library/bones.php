@@ -113,10 +113,36 @@ function bones_gallery_style($css) {
   return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
-
 /*********************
 SCRIPTS & ENQUEUEING
 *********************/
+
+/**
+ * Serve theme styles via a hashed filename instead of WordPress' default style.css.
+ *
+ * Checks for a hashed filename as a value in a JSON object.
+ * If it exists: the hashed filename is enqueued in place of style.css.
+ * Fallback: the default style.css will be passed through.
+ *
+ * See: https://danielshaw.co.nz/wordpress-cache-busting-json-hash-map/
+ *
+ * @param string $css is WordPress’ required, known location for CSS: style.css
+ */
+
+function get_path_css( $css ) {
+    $map = get_template_directory() . '/build/manifest.json';
+    static $hash = null;
+
+    if ( null === $hash ) {
+        $hash = file_exists( $map ) ? json_decode( file_get_contents( $map ), true ) : [];
+    }
+
+    if ( array_key_exists( $css, $hash ) ) {
+        return $hash[ $css ];
+    }
+
+    return $css;
+}
 
 // loading modernizr and jquery, and reply script
 function bones_scripts_and_styles() {
@@ -130,7 +156,7 @@ function bones_scripts_and_styles() {
     // wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
     // register main stylesheet
-    wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/build/all.min.css', array('jenner-gfonts'), '', 'all' );
+    wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/' . get_path_css('build/all.min.css'), array('jenner-gfonts'), '', 'all' );
 
     // ie-only style sheet
     // wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
@@ -181,9 +207,9 @@ THEME SUPPORT
 function bones_theme_support() {
 
     add_theme_support( 'block-template-parts' );
-    
+
     add_theme_support( 'editor-styles' );
-    add_editor_style( 'build/editor.min.css' );
+    add_editor_style( get_path_css( 'build/editor.min.css' ) );
 
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support( 'post-thumbnails' );
