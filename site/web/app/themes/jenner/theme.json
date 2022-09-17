@@ -4,9 +4,9 @@
     "styles": {
         "spacing": {
             "padding": {
-                "top": "20px",
-                "right": "5px",
-                "left": "0px",
+                "top": "var(--wp--preset--spacing--40)",
+                "right": "var(--wp--preset--spacing--40)",
+                "left": "var(--wp--preset--spacing--40)",
                 "bottom": "0px"
             }
         },
