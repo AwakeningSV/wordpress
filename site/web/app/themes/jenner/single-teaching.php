@@ -74,15 +74,6 @@
 												<?php endif; ?>
 											<?php endif; ?>
 											<?php the_content(); ?>
-											<?php
-												$teaching_notes = get_post_meta($post->ID, 'teaching-notes', true);
-											?>
-											<?php if ($teaching_notes) : ?>
-                                                <section id="teaching-notes">
-                                                    <h3>Teaching Notes</h3>
-                                                </section>
-												<?php echo wpautop($teaching_notes); ?>
-											<?php endif; ?>
 		                                </section> <?php // end article section ?>
 									</div>
 									<div class="jenner-u-1 jenner-u-md-1-4">
@@ -136,6 +127,15 @@
 										</div>
 									</div>
 								</div>
+                                <?php
+                                    $teaching_notes = get_post_meta($post->ID, 'teaching-notes', true);
+                                ?>
+                                <?php if ($teaching_notes) : ?>
+                                    <div id="teaching-notes">
+                                        <h3>Teaching Notes</h3>
+                                </div>
+                                    <?php echo wpautop($teaching_notes); ?>
+                                <?php endif; ?>
 
 							</article> <?php // end article ?>
 
