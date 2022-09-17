@@ -22,7 +22,7 @@
 							?>
 								<h1 class="archive-title h2">
 
-									<span><?php _e( 'Posts By:', 'bonestheme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
+									<span><?php _e( 'Posts by:', 'bonestheme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
 
 								</h1>
 							<?php } elseif (is_day()) { ?>
@@ -53,7 +53,7 @@
                                     if ('teachers' === get_query_var('taxonomy')) {
                                 ?>
                                         <h1 class="archive-title h2">
-                                            <span><?php _e('Sermons By', 'bonestheme'); ?> <?php echo $term->name; ?></span>
+                                            <span><?php _e('Sermons by', 'bonestheme'); ?> <?php echo $term->name; ?></span>
                                         </h1>
                                 <?php } else { ?>
                                         <h1 class="archive-title h2">
