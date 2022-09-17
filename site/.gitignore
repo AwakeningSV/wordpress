@@ -8,6 +8,9 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 
+# Query Monitor plugin
+web/app/db.php
+
 # Matomo
 web/app/cache
 
