@@ -79,10 +79,7 @@
 											?>
 											<?php if ($teaching_notes) : ?>
                                                 <section id="teaching-notes">
-                                                    <h2>Teaching Notes</h2>
-                                                    <div class="teaching-notes-actions">
-                                                        <a class="button" onclick="window.print(); return false;" href="#">Print</a>
-                                                    </div>
+                                                    <h3>Teaching Notes</h3>
                                                 </section>
 												<?php echo wpautop($teaching_notes); ?>
 											<?php endif; ?>
@@ -181,7 +178,9 @@
 
 							<?php endwhile; ?>
 
-                            <?php block_template_part( 'teaching-footer' ); ?>
+                            <div class="no-print">
+                                <?php block_template_part( 'teaching-footer' ); ?>
+                            </div>
 
                             <?php else : ?>
 

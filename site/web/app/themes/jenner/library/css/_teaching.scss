@@ -61,8 +61,8 @@
     padding-top: .3em;
 }
 
-.teaching-notes-actions {
-    float: right;
+#teaching-notes h3 {
+    @extend .f-accent;
 }
 
 .youtube {
@@ -73,14 +73,15 @@
 @media print {
     /* Video div */
     .teaching-inner-u > div,
+    .no-print,
     .announce,
+    footer,
     .footer,
     .sidebar,
     .teaching-more,
     .teaching-meta,
     .teaching-inner-u .vimeo,
-    .teaching-inner-u .video-js,
-    .teaching-notes-actions {
+    .teaching-inner-u .video-js {
         display: none;
     }
 }
