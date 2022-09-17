@@ -33,6 +33,11 @@ em > a {
     border-bottom: 1px solid $accent_color;
 }
 
+.wp-block-outermost-social-sharing-link {
+    border-radius: 0 !important;
+    text-transform: lowercase;
+}
+
 /* Here be dragons. */
 
 .home-section .archive-excerpt + p {
