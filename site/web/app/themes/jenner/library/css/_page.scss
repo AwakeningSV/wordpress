@@ -29,6 +29,7 @@ a {
 p > a,
 li > a,
 em > a {
+    padding-bottom: 1px;
     border-bottom: 1px solid $accent_color;
 }
 

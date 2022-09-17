@@ -12,6 +12,11 @@
 .archive-u {
     @extend .jenner-u-1-2;
     @extend .jenner-u-md-1-4;
+
+    a {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
 }
 
 .archive-u p,

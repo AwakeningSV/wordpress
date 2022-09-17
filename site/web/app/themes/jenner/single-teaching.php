@@ -40,12 +40,12 @@
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
                                     <p class="byline">
+                                        <?php the_terms( $post->ID, 'teachers', '', ', ', ' &bull; ' ); ?>
                                         <?php if ($series): ?>
                                             Part <? echo $series_position ?> of
                                             <?php the_terms( $post->ID, 'series', '', ', ', ' ' ); ?>
-                                            &mdash;
+                                            &bull;
                                         <?php endif; ?>
-                                        <?php the_terms( $post->ID, 'teachers', 'Presented by ', ', ', ' &mdash; ' ); ?>
                                         <?php $event_presented_date = get_post_meta($post->ID, 'teaching-date', true); ?>
                                         <?php $live_time = ac_get_teaching_live_time($post); ?>
                                         <?php printf('<time class="presented" datetime="%1$s">%2$s</time>', date('Y-m-j', $event_presented_date), date(get_option('date_format'), $event_presented_date)); ?>

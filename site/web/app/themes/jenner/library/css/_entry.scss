@@ -1,6 +1,11 @@
 .article-header {
      margin: 0;
      padding: .25em 0 0;
+
+     .byline a {
+        padding-bottom: 0;
+        border-bottom: 0;
+     }
  }
     .article-header h1 {
         margin: 0.2em 0;
