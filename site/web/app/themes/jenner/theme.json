@@ -70,6 +70,11 @@
             "name": "teaching-sidebar",
             "title": "Teaching Sidebar",
             "area": "uncategorized"
+        },
+        {
+            "name": "teaching-footer",
+            "title": "Teaching Footer",
+            "area": "uncategorized"
         }
     ] 
 }

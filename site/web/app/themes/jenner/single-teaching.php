@@ -179,7 +179,11 @@
 								</div>
 							<?php endif; ?>
 
-							<?php endwhile; else : ?>
+							<?php endwhile; ?>
+
+                            <?php block_template_part( 'teaching-footer' ); ?>
+
+                            <?php else : ?>
 
 									<article id="post-not-found" class="hentry clearfix">
 										<header class="article-header">
