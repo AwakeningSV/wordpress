@@ -1,5 +1,5 @@
             <footer>
-                    <?php block_template_part( 'Footer' ); ?>
+                    <?php block_template_part( 'footer' ); ?>
 			</footer> <?php // end footer ?>
 
 		</div> <?php // end #container ?>

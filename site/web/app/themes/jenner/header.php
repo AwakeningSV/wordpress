@@ -27,7 +27,7 @@
 
                     <div class="wrap">
 
-                        <?php block_template_part( 'Header' ); ?>
+                        <?php block_template_part( 'header' ); ?>
 
                     </div>
 
