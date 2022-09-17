@@ -65,6 +65,11 @@
             "name": "footer",
             "title": "Site Footer",
             "area": "footer"
+        },
+        {
+            "name": "teaching-sidebar",
+            "title": "Teaching Sidebar",
+            "area": "uncategorized"
         }
     ] 
 }
