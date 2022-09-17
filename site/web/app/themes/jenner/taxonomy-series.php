@@ -88,7 +88,7 @@
 								</div>
 								<div class="series-u">
 									<div class="series-inner-u">
-										<a href="/podcasts/" class="button button-arrow">Subscribe</a>
+                                        <?php block_template_part( 'teaching-series-action' ); ?>
 										<p><?php echo term_description(); ?></p>
 									</div>
 								</div>
