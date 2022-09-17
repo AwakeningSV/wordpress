@@ -9,15 +9,13 @@
   "author": "Reid Burke <me@reidburke.com>",
   "license": "No license provided.",
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "^1.5.3",
     "grunt-cache-bust": "^1.7.0",
     "grunt-contrib-clean": "^2.0.1",
-    "grunt-contrib-cssmin": "~0.6.0",
-    "grunt-contrib-sass": "~0.5.1",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.1.0",
-    "node-sass": "^5.0.0"
+    "sass": "^1.54.9"
   },
   "volta": {
     "node": "15.14.0"
