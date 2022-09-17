@@ -128,11 +128,7 @@ foreach(array_chunk($teaching_latest_posts, 4) as $posts):
                                     ?>
                                 </div>
 <?php endforeach; ?>
-                                <div class="wp-block-buttons is-content-justification-center">
-                                    <div class="wp-block-button">
-                                        <b><a class="wp-block-button__link has-white-color has-text-color" href="/teaching/">View All Sermons</a></b>
-                                    </div>
-                                </div>
+                                <?php block_template_part( 'teaching-footer' ); ?>
                             </div>
 <?php if(count($event_posts) > 0): ?>
                             <div class="home-section">
