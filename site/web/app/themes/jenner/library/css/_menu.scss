@@ -10,7 +10,7 @@ Add transition to containers so they can push in and out.
 
     &.is-layout-flex {
         // override
-        gap: 7px;
+        gap: 14px;
     }
     
     li > a {
@@ -57,10 +57,21 @@ Add transition to containers so they can push in and out.
     }
 }
 
+.wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle {
+    padding-left: 0;
+}
+
 // https://jeffclayton.wordpress.com/2015/04/28/css-hacks-for-safari-6-1-7-and-8-not-chrome/
 _::-webkit-full-page-media, _:future, :root .wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle {
     // align menus with toggles with other menu items without them
     padding-bottom: 2px;
+
+    // Mobile Safari only
+    @supports (-webkit-text-size-adjust:none) and (not (-ms-accelerator:true)) {
+        & {
+            padding-bottom: 0;
+        }
+    }
 }
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child {
