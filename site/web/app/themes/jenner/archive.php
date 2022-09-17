@@ -52,9 +52,12 @@
                                 <?php
                                     if ('teachers' === get_query_var('taxonomy')) {
                                 ?>
+                                    <div class="teaching-taxonomy-header">
+                                        <span class="teaching-section-byline"><?php _e('Sermons by', 'bonestheme'); ?></span>
                                         <h1 class="archive-title h2">
-                                            <span><?php _e('Sermons by', 'bonestheme'); ?> <?php echo $term->name; ?></span>
+                                            <span><?php echo $term->name; ?></span>
                                         </h1>
+                                    </div>
                                 <?php } else { ?>
                                         <h1 class="archive-title h2">
                                             <span><?php echo $term->name; ?> <?php echo $features->labels->singular_name; ?></span>
