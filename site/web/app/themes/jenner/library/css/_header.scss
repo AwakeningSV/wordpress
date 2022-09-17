@@ -71,7 +71,7 @@ Live video announcement.
 */
 .announce {
     @extend .content;
-    padding: 0 .5em;
+    @include root-padding;
 
     b {
         @extend .caps;
@@ -169,7 +169,7 @@ Live video announcement.
     /* but keep it for the content */
     .content,
     #content {
-        padding: 0 .5em;
+        @include root-padding;
         margin-bottom: 0;
     }
 

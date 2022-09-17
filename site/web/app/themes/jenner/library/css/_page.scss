@@ -3,6 +3,13 @@ html, body {
     background: #fff;
 }
 
+@mixin root-padding {
+    padding-top: var(--wp--style--root--padding-top, 1rem);
+    padding-right: var(--wp--style--root--padding-right, 1rem);
+    padding-bottom: var(--wp--style--root--padding-bottom, 1rem);
+    padding-left: var(--wp--style--root--padding-left, 1rem);
+}
+
 /* Defined by branding guidelines, Section 4, Colors, Gray */ 
 /* Deviates from branding guidelines, Section 2, Typography, Web */
 /* Be careful when changing */
