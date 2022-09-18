@@ -12,11 +12,6 @@
 .archive-u {
     @extend .jenner-u-1-2;
     @extend .jenner-u-md-1-4;
-
-    #content & a {
-        padding-bottom: 0;
-        border-bottom: 0;
-    }
 }
 
 .archive-u p,
@@ -79,6 +74,10 @@
     color: #555;
     font-size: 13px;
     line-height: 1;
+    a {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
 }
 
 .archive-badge a {
