@@ -97,3 +97,49 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 48em) {
+    .teaching-video .embed-wrap {
+        @include full-width;
+    }
+}
+
+@media screen {
+    .post-type-archive-teaching,
+    .single-teaching,
+    .tax-series,
+    .tax-teachers {
+        &, .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+            background: #000;
+        }
+
+        &, .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container, nav a {
+            color: #fff;
+        }
+
+        .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+            border-color: #333;
+        }
+
+        .wp-block-navigation .wp-block-navigation__submenu-container a:hover {
+            background: #444;
+            color: #fff;
+        }
+
+        .custom-logo {
+            filter: invert(100%);
+        }
+
+        a {
+            color: #ccc;
+        }
+
+        a.esv-crossref-link {
+            color: #ccc !important;
+        }
+
+        .archive-badge a, .archive-date, .article-header .byline {
+            color: #888;
+        }
+    }
+}

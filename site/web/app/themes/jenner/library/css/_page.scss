@@ -14,6 +14,12 @@ html, body {
     padding-left: var(--wp--style--root--padding-left, 1rem);
 }
 
+@mixin full-width {
+    margin: 0 calc(50% - 50vw);
+    max-width: 100vw;
+    width: 100vw;
+}
+
 /* Defined by branding guidelines, Section 4, Colors, Gray */ 
 /* Deviates from branding guidelines, Section 2, Typography, Web */
 /* Be careful when changing */

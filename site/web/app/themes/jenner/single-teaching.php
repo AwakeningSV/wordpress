@@ -34,6 +34,29 @@
                             ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+<?php
+
+$post_content = get_the_content();
+$video_pattern = '/https?:\/\/[^\s"]+\s*$/im';
+
+// Find a more speciifc video URL by looking for oEmbed URLs.
+// We only use a single oEmbed in teaching posts, so we only need the first URL match.
+if (preg_match($video_pattern, $post_content, $matches)) {
+    // If we found a valid oEmbed, save it as the video URL.
+    if (wp_oembed_get($matches[0])) {
+        // Apply Fluid Video Embed filtering (do not use wp_oembed_get HTML directly)
+        $video_html = apply_filters( 'the_content', $matches[0] );
+    }
+    $post_content = preg_replace($video_pattern, '', $post_content);
+    $post_content = apply_filters( 'the_content', $post_content );
+}
+?>
+
+                                <?php if ($video_html): ?>
+                                    <div class="no-print teaching-video">
+                                        <?php echo $video_html; ?>
+                                    </div>
+                                <?php endif; ?>
 
 								<header class="article-header">
 
@@ -51,7 +74,20 @@
                                         <?php printf('<time class="presented" datetime="%1$s">%2$s</time>', date('Y-m-j', $event_presented_date), date(get_option('date_format'), $event_presented_date)); ?>
                                     </p>
 
-								</header> <?php // end article header ?>
+								</header>
+
+                                <?php if ($video_html): ?>
+                                    <div class="teaching-content">
+                                        <?php echo $post_content; ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($post->content == '') : ?>
+                                    <?php if ($event_presented_date > time() && $live_time) : ?>
+                                        <p>This event will be presented
+                                        <?php printf('<time class="presented" datetime="%1$s">%2$s</time>', date('Y-m-j', $event_presented_date), date(get_option('date_format'), $event_presented_date)); ?>.
+                                        Check back here to watch live online or <a href="/visit/">plan a visit</a>.</p>
+                                    <?php endif; ?>
+                                <?php endif; ?>
 
 								<?php
 								    $scriptures = get_the_terms($post->ID, 'bible');
@@ -63,77 +99,61 @@
 									}
 								?>
 
-								<div class="teaching-g">
-										<section class="teaching-inner-u" itemprop="articleBody">
-											<?php if ($post->content == '') : ?>
-		                                        <?php if ($event_presented_date > time() && $live_time) : ?>
-													<p>This event will be presented
-		                                            <?php printf('<time class="presented" datetime="%1$s">%2$s</time>', date('Y-m-j', $event_presented_date), date(get_option('date_format'), $event_presented_date)); ?>.
-													Check back here to watch live online or <a href="/visit/">plan a visit</a>.</p>
-												<?php endif; ?>
-											<?php endif; ?>
-											<?php the_content(); ?>
-		                                </section> <?php // end article section ?>
-										<div class="teaching-inner-u teaching-meta">
-											<?php
-												$audio_episode = powerpress_get_enclosure_data($post->ID, 'podcast');
-												$video_episode = powerpress_get_enclosure_data($post->ID, 'video');
-											?>
-											<?php if (!empty($audio_episode)) : ?>
-												<h2>Listen</h2>
-												<?php the_powerpress_content(); ?>
-											<?php endif; ?>
-											<?php if (!empty($audio_episode) || !empty($video_episode)) : ?>
-												<h2>Download</h2>
-												<ul>
-													<?php if (!empty($audio_episode)) : ?>
-														<li>
-															<a href="<?php echo esc_url($audio_episode['url']); ?>" rel="nofollow">
-																Audio MP3
-															</a>
-															<span class="teaching-podcast-meta">
-																<?php echo powerpress_readable_duration($audio_episode['duration']); ?>
-																/
-																<?php echo powerpress_byte_size($audio_episode['size']); ?>
-															</span>
-														</li>
-													<?php endif; ?>
-													<?php if (!empty($video_episode)) : ?>
-														<li>
-															<a href="<?php echo esc_url($video_episode['url']); ?>" rel="nofollow">
-																Video MP4
-															</a>
-															<span class="teaching-podcast-meta">
-																<?php echo powerpress_readable_duration($video_episode['duration']); ?>
-																/
-																<?php echo powerpress_byte_size($video_episode['size']); ?>
-															</span>
-														</li>
-													<?php endif; ?>
-												</ul>
-											<?php endif; ?>
-											<?php if (!empty($scriptures)) : ?>
-												<h2>Scripture</h2>
-												<ul>
-													<?php foreach($scriptures as $reference) : ?>
-														<li><?php echo $reference->name; ?></li>
-													<?php endforeach; ?>
-												</ul>
-                                            <?php endif; ?>
-                                            <?php block_template_part( 'teaching-sidebar' ); ?>
-										</div>
-								</div>
+                                <div class="no-print">
+                                <?php block_template_part( 'teaching-sidebar' ); ?>
+                                </div>
+ 
                                 <?php
                                     $teaching_notes = get_post_meta($post->ID, 'teaching-notes', true);
                                 ?>
-                                <?php if ($teaching_notes) : ?>
-                                    <div id="teaching-notes">
-                                        <h3>Teaching Notes</h3>
-                                </div>
-                                    <?php echo wpautop($teaching_notes); ?>
-                                <?php endif; ?>
 
-							</article> <?php // end article ?>
+                                <div class="teaching-meta">
+                                    <?php
+                                        $audio_episode = powerpress_get_enclosure_data($post->ID, 'podcast');
+                                        $video_episode = powerpress_get_enclosure_data($post->ID, 'video');
+                                    ?>
+                                    <?php if (!empty($audio_episode)) : ?>
+                                        <h2>Listen</h2>
+                                        <?php the_powerpress_content(); ?>
+                                    <?php endif; ?>
+                                    <?php if (!empty($audio_episode) || !empty($video_episode)) : ?>
+                                        <h2>Download</h2>
+                                        <ul>
+                                            <?php if (!empty($audio_episode)) : ?>
+                                                <li>
+                                                    <a href="<?php echo esc_url($audio_episode['url']); ?>" rel="nofollow">
+                                                        Audio MP3
+                                                    </a>
+                                                    <span class="teaching-podcast-meta">
+                                                        <?php echo powerpress_readable_duration($audio_episode['duration']); ?>
+                                                        /
+                                                        <?php echo powerpress_byte_size($audio_episode['size']); ?>
+                                                    </span>
+                                                </li>
+                                            <?php endif; ?>
+                                            <?php if (!empty($video_episode)) : ?>
+                                                <li>
+                                                    <a href="<?php echo esc_url($video_episode['url']); ?>" rel="nofollow">
+                                                        Video MP4
+                                                    </a>
+                                                    <span class="teaching-podcast-meta">
+                                                        <?php echo powerpress_readable_duration($video_episode['duration']); ?>
+                                                        /
+                                                        <?php echo powerpress_byte_size($video_episode['size']); ?>
+                                                    </span>
+                                                </li>
+                                            <?php endif; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                    <?php if (!empty($scriptures)) : ?>
+                                        <h2>Scripture</h2>
+                                        <ul>
+                                            <?php foreach($scriptures as $reference) : ?>
+                                                <li><?php echo $reference->name; ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                </div>
 
 							<?php if ($term->name) : ?>
 								<div class="teaching-more">
@@ -170,13 +190,24 @@
 		                                </div>
 									<?php endforeach; ?>
 								</div>
+                            <?php else: ?>
+                                <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
 							<?php endif; ?>
-
-							<?php endwhile; ?>
 
                             <div class="no-print">
                                 <?php block_template_part( 'teaching-footer' ); ?>
                             </div>
+
+                                <?php if ($teaching_notes) : ?>
+                                    <div id="teaching-notes">
+                                        <h3>Teaching Notes</h3>
+                                    </div>
+                                    <?php echo wpautop($teaching_notes); ?>
+                                <?php endif; ?>
+
+							<?php endwhile; ?>
+
+							</article> <?php // end article ?>
 
                             <?php else : ?>
 
