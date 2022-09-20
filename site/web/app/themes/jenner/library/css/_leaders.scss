@@ -10,7 +10,7 @@
     grid-template-columns: 1fr 1fr;
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (max-width: 65em) {
     .leaders-g {
         grid-template-columns: 1fr;
     }
@@ -29,6 +29,9 @@
 
 .leaders-inner-u {
     padding: 0 1em 2em 0;
+    img {
+        max-width: 100%;
+    }
 }
 
 .leaders-h2 {
