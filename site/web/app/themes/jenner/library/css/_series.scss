@@ -1,12 +1,15 @@
 .series-g {
-    @extend .pure-g;
-    max-width: 976px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 48em) {
+    .series-g {
+        grid-template-columns: 1fr;
+    }
 }
 
 .series-u {
-    @extend .jenner-u-1;
-    @extend .jenner-u-md-1-2;
-
     p {
         margin: 1em 0 0;
     }

@@ -1,17 +1,12 @@
 .archive-g {
-    @extend .pure-g;
-    max-width: 976px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
-.archive-blog {
-    @extend .jenner-u-1;
-    @extend .jenner-u-md-1;
-    @extend .jenner-u-lg-1;
-}
-
-.archive-u {
-    @extend .jenner-u-1-2;
-    @extend .jenner-u-md-1-4;
+@media screen and (max-width: 48em) {
+    .archive-g {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .archive-u p,

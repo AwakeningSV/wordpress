@@ -63,8 +63,7 @@
 									}
 								?>
 
-								<div class="pure-g">
-									<div class="jenner-u-1 jenner-u-md-3-4">
+								<div class="teaching-g">
 										<section class="teaching-inner-u" itemprop="articleBody">
 											<?php if ($post->content == '') : ?>
 		                                        <?php if ($event_presented_date > time() && $live_time) : ?>
@@ -75,8 +74,6 @@
 											<?php endif; ?>
 											<?php the_content(); ?>
 		                                </section> <?php // end article section ?>
-									</div>
-									<div class="jenner-u-1 jenner-u-md-1-4">
 										<div class="teaching-inner-u teaching-meta">
 											<?php
 												$audio_episode = powerpress_get_enclosure_data($post->ID, 'podcast');
@@ -125,7 +122,6 @@
                                             <?php endif; ?>
                                             <?php block_template_part( 'teaching-sidebar' ); ?>
 										</div>
-									</div>
 								</div>
                                 <?php
                                     $teaching_notes = get_post_meta($post->ID, 'teaching-notes', true);
