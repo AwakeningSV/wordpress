@@ -127,8 +127,10 @@
         article {
             p { max-inline-size: 66ch; }
 
-            margin-top: .5em;
-
+            @media (min-width: 48em) {
+                margin-top: .5em;
+            }
+            
             a, .archive-badge a {
                 color: #ccc;
             }
