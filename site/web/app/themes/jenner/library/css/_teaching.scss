@@ -20,7 +20,7 @@
 }
 
 .teaching-more h3 {
-    margin-bottom: 0;
+    margin-bottom: .5em;
 }
 
 .teaching-inner-u {
@@ -124,7 +124,18 @@
     .tax-teachers {
         // https://web.dev/learn/design/typography/
         font-size: clamp(.5rem, 0.5rem + 1vw, 1.2rem);
-        article p { max-inline-size: 66ch; }
+        article {
+            p { max-inline-size: 66ch; }
+
+            a, .archive-badge a {
+                color: #ccc;
+            }
+    
+            a.esv-crossref-link {
+                color: #ccc !important;
+            }
+    
+        }
 
         &, .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
             background: #000;
@@ -147,15 +158,7 @@
             filter: invert(100%);
         }
 
-        a {
-            color: #ccc;
-        }
-
-        a.esv-crossref-link {
-            color: #ccc !important;
-        }
-
-        .archive-badge a, .archive-date, .article-header .byline {
+        .archive-date, .article-header .byline {
             color: #888;
         }
     }
