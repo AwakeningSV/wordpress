@@ -47,15 +47,6 @@
 
                 $video_url = get_permalink($announcement);
 
-                // Find a more speciifc video URL by looking for oEmbed URLs.
-                // We only use a single oEmbed in teaching posts, so we only need the first URL match.
-                if (preg_match('/https?:\/\/[^\s"]+\s*$/im', $announcement->post_content, $matches)) {
-                    // If we found a valid oEmbed, save it as the video URL.
-                    if (wp_oembed_get($matches[0])) {
-                        $video_url = $matches[0];
-                    }
-                }
-
                 if (!$live_start) continue;
 
                 if ($live_start > time()):
