@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad871c8d760fd91eeca3211ad0d8a583",
+    "content-hash": "99eddb27a9f0d5916aaebe288d6ae7f7",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1117,6 +1117,24 @@
             "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
+            "name": "wpackagist-plugin/icon-block",
+            "version": "1.3.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/icon-block/",
+                "reference": "tags/1.3.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/icon-block.1.3.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/icon-block/"
+        },
+        {
             "name": "wpackagist-plugin/manual-image-crop",
             "version": "1.12",
             "source": {
@@ -1151,6 +1169,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/matomo/"
+        },
+        {
+            "name": "wpackagist-plugin/modal-builder-block",
+            "version": "1.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/modal-builder-block/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/modal-builder-block.zip?timestamp=1630035461"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/modal-builder-block/"
         },
         {
             "name": "wpackagist-plugin/page-excerpt",
