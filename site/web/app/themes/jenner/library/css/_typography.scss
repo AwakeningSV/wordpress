@@ -6,11 +6,10 @@ body,
 .archive-g,
 .series-g,
 .leaders-g,
-.teaching-inner-u,
-.pure-g [class *= "pure-u"],
-.pure-g-r [class *= "pure-u"] {
-    font-size: 120%;
+.teaching-inner-u {
     font-family: $font_family_body;
+    // https://web.dev/learn/design/typography/
+    font-size: clamp(.5rem, 0.5rem + 1vw, 1.2rem);
 }
 
 h1, h2, h3, h4, h5, .caps {

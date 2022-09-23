@@ -122,8 +122,6 @@
     .single-teaching,
     .tax-series,
     .tax-teachers {
-        // https://web.dev/learn/design/typography/
-        font-size: clamp(.5rem, 0.5rem + 1vw, 1.2rem);
         article {
             p { max-inline-size: 66ch; }
 
