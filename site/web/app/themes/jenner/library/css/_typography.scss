@@ -1,13 +1,11 @@
 $font_family_body: Montserrat, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
 $font_family_accent: Oswald, FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
 
-body,
-.font,
-.archive-g,
-.series-g,
-.leaders-g,
-.teaching-inner-u {
+body {
     font-family: $font_family_body;
+}
+
+header, .announce, #content {
     // https://web.dev/learn/design/typography/
     font-size: clamp(.8rem, 0.75rem + 1vw, 1.2rem);
 }
