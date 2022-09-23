@@ -9,8 +9,12 @@ body,
 .teaching-inner-u {
     font-family: $font_family_body;
     // https://web.dev/learn/design/typography/
-    font-size: clamp(.5rem, 0.5rem + 1vw, 1.2rem);
+    font-size: clamp(.8rem, 0.75rem + 1vw, 1.2rem);
 }
+
+// Fix % font-size in _pure.scss (normalize).
+small { font-size: .8rem; }
+sub, sup { font-size: .75rem; }
 
 h1, h2, h3, h4, h5, .caps {
     font-family: $font_family_body;
