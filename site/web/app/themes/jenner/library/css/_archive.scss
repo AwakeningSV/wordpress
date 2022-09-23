@@ -1,11 +1,17 @@
 .archive-g {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr;
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (min-width: 32em) {
     .archive-g {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .archive-g {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
