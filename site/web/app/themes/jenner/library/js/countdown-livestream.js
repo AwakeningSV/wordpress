@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
             }
 
             interval = countdown(updater, start,
-                countdown.DAYS | countdown.MINUTES | countdown.HOURS | countdown.SECONDS);
+                countdown.DAYS | countdown.MINUTES | countdown.HOURS);
         }
     });
 });
