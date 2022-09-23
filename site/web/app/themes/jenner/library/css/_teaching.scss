@@ -124,7 +124,7 @@
     .tax-teachers {
         // https://web.dev/learn/design/typography/
         font-size: clamp(.5rem, 0.5rem + 1vw, 1.2rem);
-        p { max-inline-size: 66ch; }
+        article p { max-inline-size: 66ch; }
 
         &, .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
             background: #000;
