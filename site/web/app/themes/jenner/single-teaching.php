@@ -158,7 +158,6 @@ if (preg_match($video_pattern, $post_content, $matches)) {
 							<?php if ($term->name) : ?>
 								<div class="teaching-more">
 									<h3>More from <?php echo $term->name; ?></h3>
-									<p><?php echo $term->description; ?></p>
 									<?php
 
 									// TODO: Filter this post out!
@@ -202,7 +201,9 @@ if (preg_match($video_pattern, $post_content, $matches)) {
                                     <div id="teaching-notes">
                                         <h3>Teaching Notes</h3>
                                     </div>
-                                    <?php echo wpautop($teaching_notes); ?>
+                                    <div class="teaching-notes">
+                                        <?php echo wpautop($teaching_notes); ?>
+                                    </div>
                                 <?php endif; ?>
 
 							<?php endwhile; ?>
