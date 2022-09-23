@@ -30,7 +30,9 @@
 .leaders-inner-u {
     padding: 0 1em 2em 0;
     img {
-        max-width: 100%;
+        // https://web.dev/learn/design/responsive-images/
+        max-inline-size: 100%;
+        block-size: auto;
     }
 }
 
