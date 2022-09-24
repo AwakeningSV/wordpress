@@ -39,7 +39,7 @@ a {
 }
 
 p > a,
-.footer li > a,
+.footer li > a:not(.wp-block-getwid-social-links__link),
 em > a {
     padding-bottom: 1px;
     border-bottom: 1px solid $accent_color;
