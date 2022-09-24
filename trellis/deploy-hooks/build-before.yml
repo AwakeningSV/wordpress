@@ -6,7 +6,7 @@
     chdir: "{{ project_local_path }}/web/app/themes/jenner"
 
 - name: Compile assets for production
-  command: grunt
+  command: npm run build 
   delegate_to: localhost
   args:
     chdir: "{{ project_local_path }}/web/app/themes/jenner"

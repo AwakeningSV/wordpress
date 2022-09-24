@@ -1,3 +1,5 @@
+import countdown from './libs/countdown.min';
+
 jQuery(document).ready(function ($) {
     var streams = $('.announce-upcoming');
     if (!streams.length) return;
@@ -12,8 +14,6 @@ jQuery(document).ready(function ($) {
             start = start * 1000;
 
             function updater(timer) {
-                var formattedTimer = timer.toString();
-
                 if (timer.value > 0) {
                     stream.find('.announce-when:first').html('in ' + timer.toString());
                 } else {

@@ -4,18 +4,22 @@
   "description": "Awakening website theme 2013",
   "main": "index.js",
   "scripts": {
+    "build": "wp",
+    "watch": "wp --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Reid Burke <me@reidburke.com>",
   "license": "No license provided.",
   "devDependencies": {
-    "grunt": "^1.5.3",
-    "grunt-cache-bust": "^1.7.0",
-    "grunt-contrib-clean": "^2.0.1",
-    "grunt-contrib-cssmin": "^4.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-sass": "^3.1.0",
-    "sass": "^1.54.9"
+    "@beyonk/google-fonts-webpack-plugin": "^1.7.0",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "sass": "^1.54.9",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-manifest-plugin": "^5.0.0",
+    "webpack-nano": "^1.1.1"
   },
   "volta": {
     "node": "16.17.0"

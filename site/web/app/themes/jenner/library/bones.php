@@ -129,7 +129,7 @@ SCRIPTS & ENQUEUEING
  * @param string $css is WordPress’ required, known location for CSS: style.css
  */
 
-function get_path_css( $css ) {
+function get_path_from_manifest( $css ) {
     $map = get_template_directory() . '/build/manifest.json';
     static $hash = null;
 
@@ -148,52 +148,23 @@ function get_path_css( $css ) {
 function bones_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   if (!is_admin()) {
-
-    // modernizr (without media query polyfill)
-    // wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-
     // register main stylesheet
-    // wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+    wp_register_style( 'jenner-stylesheet', get_stylesheet_directory_uri() . '/' . get_path_from_manifest('build/frontend.css'), array('jenner-fonts'), '', 'all' );
 
-    // register main stylesheet
-    wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/' . get_path_css('build/all.min.css'), array('jenner-gfonts'), '', 'all' );
-
-    // ie-only style sheet
-    // wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
-
-    wp_register_style( 'jenner-gfonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i,|Oswald:400', array(), '', 'all' );
-
-    // comment reply script for threaded comments
-    /*
-     * if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-		wp_enqueue_script( 'comment-reply' );
-     }*/
+    // wp_register_style( 'jenner-gfonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i,|Oswald:400', array(), '', 'all' );
+    wp_register_style( 'jenner-fonts', get_stylesheet_directory_uri() . '/' . get_path_from_manifest('build/fonts.css'), array(), '', 'all' );
 
     //adding scripts file in the footer
-    // wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-    wp_register_script( 'countdown-js', get_stylesheet_directory_uri() . '/library/js/libs/countdown.min.js', array(), '2.3.4', true );
-    wp_register_script( 'countdown-livestream', get_stylesheet_directory_uri() . '/library/js/countdown-livestream.js', array( 'jquery' ), '', true );
+    wp_register_script( 'jenner-main', get_stylesheet_directory_uri() . '/' . get_path_from_manifest('build/main.js'), array( 'jquery' ), '', true );
 
     // https://planning.center/blog/2017/11/embedded-giving
     wp_register_script( 'pcogiving', 'https://js.churchcenter.com/modal/v1', array(), '', true );
 
     // enqueue styles and scripts
-    //wp_enqueue_script( 'bones-modernizr' );
-    wp_enqueue_style( 'bones-stylesheet' );
-    wp_enqueue_style( 'jenner-gfonts' );
-    //wp_enqueue_style( 'bones-ie-only' );
-
-    // $wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
-
-    /*
-    I recommend using a plugin to call jQuery
-    using the google cdn. That way it stays cached
-    and your site will load faster.
-    */
+    wp_enqueue_style( 'jenner-stylesheet' );
+    wp_enqueue_style( 'jenner-fonts' );
     wp_enqueue_script( 'jquery' );
-    //wp_enqueue_script( 'bones-js' );
-    wp_enqueue_script( 'countdown-js' );
-    wp_enqueue_script( 'countdown-livestream' );
+    wp_enqueue_script( 'jenner-main' );
     wp_enqueue_script( 'pcogiving' );
 
   }
@@ -209,7 +180,7 @@ function bones_theme_support() {
     add_theme_support( 'block-template-parts' );
 
     add_theme_support( 'editor-styles' );
-    add_editor_style( get_path_css( 'build/editor.min.css' ) );
+    add_editor_style( get_path_from_manifest( 'build/editor.css' ) );
 
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support( 'post-thumbnails' );
