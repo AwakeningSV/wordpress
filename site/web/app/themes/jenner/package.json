@@ -14,6 +14,8 @@
     "@beyonk/google-fonts-webpack-plugin": "^1.7.0",
     "css-loader": "^6.7.1",
     "mini-css-extract-plugin": "^2.6.1",
+    "normalize.css": "^8.0.1",
+    "purecss": "^2.1.0",
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
