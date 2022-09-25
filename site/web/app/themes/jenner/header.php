@@ -12,6 +12,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
         <link rel="preconnect" href="https://awakening.azureedge.net">
+        <link rel="preload" href="/app/themes/jenner/build/font/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin> 
+        <link rel="preload" href="/app/themes/jenner/build/font/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin> 
+        <link rel="preload" href="/app/themes/jenner/build/font/Oswald-Regular.woff2" as="font" type="font/woff2" crossorigin> 
 
 		<?php wp_head(); ?>
 	</head>
