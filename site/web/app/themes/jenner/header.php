@@ -14,6 +14,8 @@
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 
+        <link rel="preconnect" href="https://awakening.azureedge.net">
+
 		<?php wp_head(); ?>
 	</head>
 
