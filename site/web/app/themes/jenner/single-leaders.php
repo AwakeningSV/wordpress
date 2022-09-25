@@ -85,10 +85,13 @@
 		                                </div>
 									<?php endforeach; ?>
 									<p>
-										<a class="button button-arrow"
-											href="<?php echo esc_url(get_term_link($teacher)); ?>">
-											More Sermons by <?php echo $teacher->name; ?>
-										</a>
+                                        <div class="wp-block-buttons">
+                                            <div class="wp-block-button">
+                                                <a class="wp-block-button__link wp-element-button" href="<?php echo esc_url(get_term_link($teacher)); ?>">
+											        More Sermons by <?php echo $teacher->name; ?>
+                                                </a>
+                                            </div>
+                                        </div>
 									</p>
 								<?php endif; ?>
 
