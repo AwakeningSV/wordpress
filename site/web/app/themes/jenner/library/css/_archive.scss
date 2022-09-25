@@ -70,10 +70,14 @@
     }
 }
 
-.archive-date {
-    color: #555;
+@mixin archive-metadata {
     font-size: .7em;
     line-height: 1;
+}
+
+.archive-date {
+    color: #555;
+    @include archive-metadata;
     a {
         padding-bottom: 0;
         border-bottom: 0;
@@ -81,12 +85,14 @@
 }
 
 .archive-badge a {
+    font-size: .7em;
+    line-height: 1;
     display: block;
     position: absolute;
     top: 10px;
     right: 35px;
     padding: 5px 7px;
-    @extend .archive-date;
+    @include archive-metadata;
     background: $accent_color;
     color: #222;
     line-height: 14px;
