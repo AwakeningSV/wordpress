@@ -56,34 +56,29 @@
 
 								<?php if ($teacher->term_id) : ?>
 									<h3>Sermons by <?php echo $teacher->name; ?></h3>
-									<?php
+		                            <div class="archive-g">
+                                        <?php
+                                            $teaching_query = new WP_Query(array(
+                                                'post_type' => 'teaching',
+                                                'tax_query' => array(
+                                                    array(
+                                                        'taxonomy' => 'teachers',
+                                                        'terms' => $teacher->term_id
+                                                    )
+                                                ),
+                                                'meta_key' => 'teaching-date',
+                                                'orderby' => 'meta_value_num',
+                                                'order' => 'DESC',
+                                                'posts_per_page' => 8
+                                            ));
 
-									$teaching_query = new WP_Query(array(
-									    'post_type' => 'teaching',
-										'tax_query' => array(
-											array(
-												'taxonomy' => 'teachers',
-												'terms' => $teacher->term_id
-											)
-										),
-									    'meta_key' => 'teaching-date',
-									    'orderby' => 'meta_value_num',
-									    'order' => 'DESC',
-									    'posts_per_page' => 8
-									));
+                                            $teaching_posts = $teaching_query->posts;
 
-									$teaching_posts = $teaching_query->posts;
-
-									foreach(array_chunk($teaching_posts, 4) as $posts):
-									?>
-		                                <div class="archive-g">
-		                                    <?php
-		                                        foreach ($posts as $post):
-		                                            include 'teaching-item.php';
-		                                        endforeach;
-		                                    ?>
-		                                </div>
-									<?php endforeach; ?>
+                                            foreach ($teaching_posts as $post):
+                                                include 'teaching-item.php';
+                                            endforeach;
+                                        ?>
+		                            </div>
 									<p>
                                         <div class="wp-block-buttons">
                                             <div class="wp-block-button">
