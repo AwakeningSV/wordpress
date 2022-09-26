@@ -163,81 +163,6 @@ function ac_add_zoninator_post_types() {
 }
 add_action('zoninator_pre_init', 'ac_add_zoninator_post_types');
 
-/** WEBHOOKS **/
-function ac_stream_end($actions) {
-    $actions[] = ac_stream_end_content();
-    return $actions;
-}
-add_filter('wpwhpro/webhooks/get_webhooks_actions', 'ac_stream_end', 20);
-
-function ac_stream_end_content() {
-    $parameter = array();
-    $returns = array(
-        'success'        => array( 'short_description' => WPWHPRO()->helpers->translate( '(Bool) True if the action was successful, false if not. E.g. array( \'success\' => true )', 'action-stream_end-content' ) ),
-        'msg'        => array( 'short_description' => WPWHPRO()->helpers->translate( '(string) A message with more information about the current request. E.g. array( \'msg\' => "This action was successful." )', 'action-stream_end-content' ) ),
-    );
-    ob_start();
-    ?>
-    <pre>
-    $return_args = array(
-        'success' => false,
-        'msg' => 'This is a test message'
-    );
-    </pre>
-    <?php
-        $returns_code = ob_get_clean();
-        ob_start();
-    ?>
-        <p>
-            <?php echo WPWHPRO()->helpers->translate('When this hook fires, metadata is updated on the live teaching post to advance the service time.', 'ac-stream_end-content' ); ?>
-        </p>
-    <?php
-    $description = ob_get_clean();
-    return array(
-        'action'            => 'stream_end', //required
-        'parameter'         => $parameter,
-        'returns'           => $returns,
-        'returns_code'      => $returns_code,
-        'short_description' => WPWHPRO()->helpers->translate('Notifies the upcoming teaching post the stream has ended.', 'ac-stream_end-content' ),
-        'description'       => $description
-    );
-}
-
-function ac_perform_stream_completion() {
-    $announcements = z_get_posts_in_zone('upcoming-livestream', array(
-        'posts_per_page' => 1,
-        'post_type' => 'teaching',
-        'post_status' => 'publish'
-    ), false);
-
-    if (!isset($announcements[0])) return;
-    
-    $announcement = $announcements[0];
-
-    $finishes = (int) get_post_meta($announcement->ID, 'stream-completed', true);
-
-    update_post_meta($announcement->ID, 'stream-completed', $finishes + 1, $finishes);
-}
-
-function ac_add_webhook_actions($action, $webhook, $api_key) {
-    switch ($action) {
-        case 'stream_end':
-            $response_body = WPWHPRO()->helpers->get_response_body();
-			$return_args = array(
-				'success' => false
-            );
-
-            ac_perform_stream_completion();
-            
-            $return_args['msg'] = WPWHPRO()->helpers->translate("Acknowledged, thank you!", 'ac-stream_end-success');
-            $return_args['success'] = true;
-            WPWHPRO()->webhook->echo_response_data( $return_args );
-			die();
-    }
-}
-
-add_action('wpwhpro/webhooks/add_webhooks_actions', 'ac_add_webhook_actions', 20, 3);
-
 function ac_is_teaching_active($teaching) {
     $teaching_date = (int) get_post_meta($teaching->ID, 'teaching-date', true);
 
@@ -316,11 +241,11 @@ function ac_get_teaching_live_time($teaching) {
     $teaching_day = $teaching_gmt->format('Y-m-d');
     $teaching_local = new DateTime($teaching_day, new DateTimeZone('America/Los_Angeles'));
 
-    $completes = (int) get_post_meta($teaching->ID, 'stream-completed', true);
+    $service = ac_get_service_count($teaching);
 
     $is_sunday = $teaching_local->format('D') == 'Sun';
 
-    if ($completes == 0) {
+    if ($service === 1) {
         if ($is_sunday) {
             $teaching_local->modify('+9 hours');
             $teaching_local->modify('+30 minutes');
@@ -330,15 +255,38 @@ function ac_get_teaching_live_time($teaching) {
             $teaching_local->modify('+17 hours'); // 5 PM
             return $teaching_local->getTimestamp();
         }
-    } else if ($completes == 1) {
+    } else if ($service === 2) {
         if ($is_sunday) {
             $teaching_local->modify('+11 hours');
+            $teaching_local->modify('+15 minutes');
             return $teaching_local->getTimestamp();
         }
     }
 
     // No more for this post.
     return false;
+}
+
+// Should we show a video for the first or second service?
+function ac_get_service_count($teaching) {
+    $teaching_date = (int) get_post_meta($teaching->ID, 'teaching-date', true);
+
+    if (!$teaching_date) return 1;
+
+    $teaching_gmt = new DateTime();
+    $teaching_gmt->setTimestamp($teaching_date);
+    $teaching_day = $teaching_gmt->format('Y-m-d');
+    $teaching_local = new DateTime($teaching_day, new DateTimeZone('America/Los_Angeles'));
+
+    // Second service is 11:15 AM, but show next service about 15 minutes before.
+    $teaching_local->modify('+11 hours');
+    $second_service_start = $teaching_local->getTimestamp();
+
+    $now = time();
+
+    if ($now > $second_service_start) return 2;
+
+    return 1;
 }
 
 /* Exclude videos on the blog page. */

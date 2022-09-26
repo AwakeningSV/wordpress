@@ -39,15 +39,33 @@
 $post_content = get_the_content();
 $video_pattern = '/https?:\/\/[^\s"]+\s*$/im';
 
-// Find a more speciifc video URL by looking for oEmbed URLs.
-// We only use a single oEmbed in teaching posts, so we only need the first URL match.
-if (preg_match($video_pattern, $post_content, $matches)) {
+// Find a speciifc video URL by looking for oEmbed URLs.
+if (preg_match( $video_pattern, $post_content, $matches) ) {
     // If we found a valid oEmbed, save it as the video URL.
-    if (wp_oembed_get($matches[0])) {
-        // Apply Fluid Video Embed filtering (do not use wp_oembed_get HTML directly)
-        $video_html = apply_filters( 'the_content', $matches[0] );
+    if (wp_oembed_get( $matches[0] )) {
+        $oembed_first = $matches[0];
+
+        // Look for a second one after the first.
+        if (preg_match( $video_pattern, $post_content, $matches, 0, strlen( $matches[0] ) )) {
+            if (wp_oembed_get($matches[0])) {
+                // Second service video.
+                $oembed_second = $matches[0];
+            }
+        }
     }
-    $post_content = preg_replace($video_pattern, '', $post_content);
+
+    if ($oembed_second && ac_get_service_count( $post ) === 2) {
+        $oembed = $oembed_second;
+    } else {
+        $oembed = $oembed_first;
+    }
+    
+    if ($oembed) {
+        // Apply Fluid Video Embed filtering (do not use wp_oembed_get HTML directly)
+        $video_html = apply_filters( 'the_content', $oembed );
+    }
+
+    $post_content = preg_replace( $video_pattern, '', $post_content );
     $post_content = apply_filters( 'the_content', $post_content );
 }
 ?>
