@@ -99,9 +99,9 @@ em > a {
   }
   
   .home-hero .wp-block-getwid-field-email {
-    color: #000 !important;
-      line-height: 2;
-      max-width: 400px;
+        color: #000 !important;
+        line-height: 2;
+        max-width: 400px;
   }
   
   .wp-block-getwid-mailchimp__submit {
@@ -111,9 +111,9 @@ em > a {
   .home-hero .wp-block-getwid-field-email__label { color: #fff; }
   
   .wp-block-getwid-mailchimp__submit button {
-      border: 0;
+      border: 2px solid;
       font-weight: bold;
-      font-family: $font_family_accent;
+      background-color: initial;
   }
       
   @media (max-width: 847px) {
