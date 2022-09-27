@@ -1,3 +1,30 @@
+async function share(url) {
+    if (!window._mtm) {
+        window._mtm = [];
+    }
+
+    window._mtm.push({
+        event: 'Web Share',
+        action: 'Share Initiated',
+        label: url
+    });
+
+    try {
+        await navigator.share({url});
+        window._mtm.push({
+            event: 'Web Share',
+            action: 'Share Successful',
+            label: url
+        });
+    } catch (err) {
+        window._mtm.push({
+            event: 'Web Share',
+            action: 'Share Cancelled',
+            label: err.name
+        });
+    }
+}
+
 function sharePage(ev) {
     ev.preventDefault();
     ev.stopImmediatePropagation();
@@ -8,14 +35,33 @@ function sharePage(ev) {
         url = canonicalEl.href;
     }
 
-    navigator.share({url});
+    share(url);
 }
 
 function attachShare() {
-    const shareTrigger = document.querySelector('.htr-modal-trigger[data-modal-id=share]');
-    shareTrigger.addEventListener('click', sharePage, {capture: true});
+    const shareLinkTriggerList = document.querySelectorAll('.wp-block-button.share-link');
+
+    if (navigator.share) {
+        const shareTrigger = document.querySelector('.htr-modal-trigger[data-modal-id=share]');
+        if (shareTrigger) {
+            shareTrigger.addEventListener('click', sharePage, {capture: true});
+        }
+
+        for (const shareLinkTrigger of shareLinkTriggerList) {
+            const section = shareLinkTrigger.closest('.wp-block-buttons').parentNode;
+            const link = section.querySelector('a[href]');
+            if (link) {
+                shareLinkTrigger.addEventListener('click', ev => {
+                    ev.preventDefault();
+                    share(link.getAttribute('href'));
+                });
+            }
+        }
+    } else {
+        for (const shareLinkTrigger of shareLinkTriggerList) {
+            shareLinkTrigger.parentNode.removeChild(shareLinkTrigger);
+        }
+    }
 }
 
-if (navigator.share) {
-    document.addEventListener('DOMContentLoaded', attachShare);
-}
+document.addEventListener('DOMContentLoaded', attachShare);
