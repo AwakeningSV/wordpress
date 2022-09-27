@@ -2,29 +2,13 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap clearfix">
+				<div id="inner-content" class="wrap">
 
-					<div id="main" class="eightcol first clearfix" role="main">
+					<div id="main" role="main">
 
-						<article id="post-not-found" class="hentry clearfix">
+						<article id="post-not-found">
 
-							<header class="article-header">
-
-								<h1>Not Found</h1>
-
-							</header> <?php // end article header ?>
-
-							<section class="entry-content">
-
-								<p><?php _e( 'The page you were looking for was not found, but maybe try looking again?', 'bonestheme' ); ?></p>
-
-							</section> <?php // end article section ?>
-
-							<section class="search">
-
-									<p><?php get_search_form(); ?></p>
-
-							</section> <?php // end search section ?>
+                            <?php block_template_part( '404' ); ?>
 
 						</article> <?php // end article ?>
 

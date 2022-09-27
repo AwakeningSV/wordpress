@@ -67,6 +67,11 @@
             "area": "footer"
         },
         {
+            "name": "404",
+            "title": "Page Not Found",
+            "area": "uncategorized"
+        },
+        {
             "name": "teaching-sidebar",
             "title": "Teaching Sidebar",
             "area": "uncategorized"
