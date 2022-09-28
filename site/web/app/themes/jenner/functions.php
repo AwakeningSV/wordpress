@@ -400,7 +400,7 @@ function ac_backfill_audio_podcast_episode($post_id) {
             // some of these are media.awakeningchurch.com/podcast/ which
             // will not work at all, so we should backfill
             // note the missing "s" before the slash
-            strpos($previous_enclosure, '.com/podcast/') !== false ||
+            strpos($previous_enclosure, '/podcast/2') !== false ||
             // backfill if media URL is not secure
             strpos($previous_enclosure, 'http://') === 0
         );
