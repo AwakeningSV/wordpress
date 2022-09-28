@@ -127,6 +127,7 @@ if (preg_match( $video_pattern, $post_content, $matches) ) {
 
                                 <div class="teaching-meta">
                                     <?php
+                                        ac_backfill_audio_podcast_episode($post->ID);
                                         $audio_episode = powerpress_get_enclosure_data($post->ID, 'podcast');
                                         $video_episode = powerpress_get_enclosure_data($post->ID, 'video');
                                     ?>

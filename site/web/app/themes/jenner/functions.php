@@ -384,4 +384,35 @@ function cf_search_distinct( $where ) {
 }
 add_filter( 'posts_distinct', 'cf_search_distinct' );
 
+function ac_backfill_audio_podcast_episode($post_id) {
+    $exists = get_post_meta($post_id, 'enclosure', true);
+    if ($exists) return;
+
+    $teaching_date = (int) get_post_meta($post_id, 'teaching-date', true);
+    if (!$teaching_date) return;
+
+    require_once(WP_PLUGIN_DIR . '/powerpress/powerpressadmin.php');
+
+    $teaching_gmt = new DateTime();
+    $teaching_gmt->setTimestamp($teaching_date);
+    $teaching_local = new DateTime($teaching_gmt->format('Y-m-d'), new DateTimeZone('America/Los_Angeles'));
+    $teaching_year = $teaching_local->format('Y');
+    $teaching_month = $teaching_local->format('m');
+    $teaching_day = $teaching_local->format('d');
+
+    $media_url = "https://awakeningmedia.azureedge.net/podcasts/${teaching_year}/${teaching_month}/awakening_${teaching_year}-${teaching_month}-${teaching_day}.mp3";
+
+    $content_type = '';
+    $info = powerpress_get_media_info_local($media_url, $content_type, 0, '');
+
+    if ($info['error']) return;
+
+    $extra = array();
+    $extra['duration'] = powerpress_readable_duration($info['duration'], true);
+
+    $enclosure = $media_url . "\n" . $info['length'] . "\n" . $content_type . "\n" . serialize($extra);
+
+    add_post_meta($post_id, 'enclosure', $enclosure, true);
+}
+
 ?>
