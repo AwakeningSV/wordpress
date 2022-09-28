@@ -57,6 +57,7 @@
                                         </h1>
                                 <?php } else if ('series' === get_query_var('taxonomy')) { ?>
                                     <div class="teaching-taxonomy-header">
+                                        <span class="teaching-section-byline"><a href="/teaching/">All Sermons</a></span> &rarr;
                                         <span class="teaching-section-byline"><?php _e('Sermon Series', 'bonestheme'); ?></span>
                                         <h1 class="archive-title h2">
                                             <span><?php echo $term->name; ?></span>

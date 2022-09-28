@@ -17,7 +17,7 @@
 
 .archive-u p,
 .archive-blog p {
-    margin: 5px 0 0;
+    margin: 0 0 5px;
     line-height: 1.2;
 }
 
@@ -29,18 +29,8 @@
 
 // Hellems
 .archive-blog {
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
-    p {
-        font-weight: 300;
-    }
-    h2 {
-        margin-bottom: 0;
-    }
-    img {
-        float: left;
-        margin-right: 30px;
-        margin-bottom: 30px;
+    .archive-excerpt {
+        font-size: .8em;
     }
 }
 

@@ -46,6 +46,11 @@
                    "fontFamily": "Oswald, FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif",
                    "slug": "accent",
                    "name": "Accent"
+                },
+                {
+                   "fontFamily": "Montserrat, FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif",
+                   "slug": "primary",
+                   "name": "Primary"
                 }
             ]
         },
@@ -69,6 +74,11 @@
         {
             "name": "404",
             "title": "Page Not Found",
+            "area": "uncategorized"
+        },
+        {
+            "name": "teaching-header",
+            "title": "Teaching Header",
             "area": "uncategorized"
         },
         {

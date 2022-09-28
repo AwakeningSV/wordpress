@@ -41,9 +41,12 @@
 									</h1>
 
                             <?php } elseif (is_post_type_archive('teaching')) { ?>
-                                    <h1 class="archive-title h2">
-                                        <span><?php echo post_type_archive_title(); ?></span>
-									</h1>
+                                    <div class="teaching-header">
+                                        <h1 class="archive-title h2">
+                                            <span><?php echo post_type_archive_title(); ?></span>
+                                        </h1>
+                                        <?php block_template_part( 'teaching-header' ); ?>
+                                    </div>
 
                             <?php } elseif (get_query_var('term')) {
                                 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
@@ -53,6 +56,7 @@
                                     if ('teachers' === get_query_var('taxonomy')) {
                                 ?>
                                     <div class="teaching-taxonomy-header">
+                                        <span class="teaching-section-byline"><a href="/teaching/">All Sermons</a></span> &rarr;
                                         <span class="teaching-section-byline"><?php _e('Sermons by', 'bonestheme'); ?></span>
                                         <h1 class="archive-title h2">
                                             <span><?php echo $term->name; ?></span>

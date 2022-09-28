@@ -2,11 +2,43 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap clearfix">
+				<div id="inner-content" class="wrap">
 
-					<div id="main" class="eightcol first clearfix" role="main">
-						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+					<div id="main" role="main">
+                        <div class="teaching-header">
+                            <div class="teaching-taxonomy-header">
+                                <?php if (get_query_var('post_type') === 'teaching'): ?>
+                                    <span class="teaching-section-byline"><a href="/teaching/">All Sermons</a></span> &rarr;
+                                <?php endif; ?>
+                                <span class="teaching-section-byline"><?php _e('Search Results', 'bonestheme'); ?></span>
+                                <h1 class="archive-title h2">
+                                    <span><?php echo esc_attr(wptexturize('"' . get_search_query() . '"')); ?></span>
+                                </h1>
+                            </div>
+                            <?php if (get_query_var('post_type') === 'teaching'): ?>
+                                <?php block_template_part( 'teaching-header' ); ?>
+                            <?php endif; ?>
+                        </div>
 
+                        <?php if (have_posts()): ?>
+                            <div class="archive-g">
+                                <?php
+                                    while (have_posts()):
+                                        the_post();
+                                        if (
+                                            'teaching' === get_post_type() ||
+                                            'teachers' === get_post_type() ||
+                                            'series' === get_post_type()
+                                        ) {
+                                            include 'teaching-item.php';
+                                        } else {
+                                            include 'archive-blog.php';
+                                        }
+                                    endwhile;
+                                ?>
+                            </div>
+                        <?php
+/*
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
@@ -15,7 +47,11 @@
 
 									<h3 class="search-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link(), get_the_category_list(', ') );
+                                        // https://wordpress.stackexchange.com/a/169509
+                                        $postType = get_post_type_object(get_post_type());
+                                        if ($postType) {
+                                            // echo esc_html($postType->labels->singular_name);
+                                        }
 									?></p>
 
 								</header> <?php // end article header ?>
@@ -32,6 +68,8 @@
 							</article> <?php // end article ?>
 
 						<?php endwhile; ?>
+*/
+                        ?>
 
 								<?php if (function_exists('bones_page_navi')) { ?>
 										<?php bones_page_navi(); ?>
@@ -48,14 +86,11 @@
 
 									<article id="post-not-found" class="hentry clearfix">
 										<header class="article-header">
-											<h1><?php _e( 'Sorry, No Results.', 'bonestheme' ); ?></h1>
+											<h1><?php _e( 'Nothing found', 'bonestheme' ); ?></h1>
 										</header>
 										<section class="entry-content">
 											<p><?php _e( 'Try your search again.', 'bonestheme' ); ?></p>
 										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the search.php template.', 'bonestheme' ); ?></p>
-										</footer>
 									</article>
 
 							<?php endif; ?>

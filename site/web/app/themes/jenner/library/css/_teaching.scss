@@ -27,6 +27,12 @@
     padding: 0 1em 2em 0;
 }
 
+.teaching-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .teaching-inner-u,
 .series-inner-u {
     p {
@@ -125,7 +131,7 @@
     .single-teaching,
     .tax-series,
     .tax-teachers {
-        article {
+        article, .series-inner-u {
             p { max-inline-size: 66ch; }
 
             @media (min-width: 48em) {
@@ -134,6 +140,13 @@
             
             a, .archive-badge a {
                 color: #ccc;
+            }
+        }
+
+        .teaching-taxonomy-header {
+            a {
+                color: #fff;
+                text-decoration: underline;
             }
         }
 

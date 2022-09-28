@@ -14,6 +14,9 @@
         ?>
         <?php if ($series) : ?>
             <?php
+            if (is_search()) {
+                $series_position = '';
+            } else {
                 $query = new WP_Query(array(
                     'series' => $series->slug,
                     'posts_per_page' => -1,
@@ -33,6 +36,7 @@
 
                 $series_position = array_search($post->ID, $query->posts) + 1;
                 // $series_total = $query->post_count;
+            }
             ?>
             <p class="archive-date">
                 Part <? echo $series_position ?> of
