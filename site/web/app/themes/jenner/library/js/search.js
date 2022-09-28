@@ -14,6 +14,20 @@ const replaceOpenIcon = () => {
     openButton.appendChild(searchIcon.cloneNode(true));
 };
 
+const replacePlaceholderText = teachingSearch => {
+    let count;
+    try {
+        count = document.querySelector('.teaching-header').dataset.count;
+    } catch (ex) {
+        return;
+    }
+
+    const input = teachingSearch.querySelector('input');
+    if (!input) return;
+
+    input.setAttribute('placeholder', `Search ${count} sermons...`);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const teachingSearch = document.querySelector('.teaching-header .wp-block-search');
 
@@ -26,5 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         teachingSearch.appendChild(input);
 
         replaceOpenIcon();
+        replacePlaceholderText(teachingSearch);
     }
 })

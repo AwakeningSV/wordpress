@@ -41,7 +41,7 @@
 									</h1>
 
                             <?php } elseif (is_post_type_archive('teaching')) { ?>
-                                    <div class="teaching-header">
+                                    <div class="teaching-header" data-count="<?php echo wp_count_posts('teaching')->publish; ?>">
                                         <h1 class="archive-title h2">
                                             <span><?php echo post_type_archive_title(); ?></span>
                                         </h1>
