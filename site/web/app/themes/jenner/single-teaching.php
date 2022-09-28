@@ -101,11 +101,9 @@ if (preg_match( $video_pattern, $post_content, $matches) ) {
 
 								</header>
 
-                                <?php if ($video_html): ?>
-                                    <div class="teaching-content">
-                                        <?php echo $post_content; ?>
-                                    </div>
-                                <?php endif; ?>
+                                <div class="teaching-content">
+                                    <?php echo $post_content; ?>
+                                </div>
                                 <?php if ($post->content == '') : ?>
                                     <?php if ($event_presented_date > time() && $live_time) : ?>
                                         <p>This event will be presented
@@ -139,11 +137,11 @@ if (preg_match( $video_pattern, $post_content, $matches) ) {
                                         $video_episode = powerpress_get_enclosure_data($post->ID, 'video');
                                     ?>
                                     <?php if (!empty($audio_episode)) : ?>
-                                        <h2>Listen</h2>
+                                        <h3>Listen</h3>
                                         <?php the_powerpress_content(); ?>
                                     <?php endif; ?>
                                     <?php if (!empty($audio_episode) || !empty($video_episode)) : ?>
-                                        <h2>Download</h2>
+                                        <h3>Download</h3>
                                         <ul>
                                             <?php if (!empty($audio_episode)) : ?>
                                                 <li>
