@@ -59,7 +59,7 @@ if (preg_match( $video_pattern, $post_content, $matches) ) {
     } else {
         $oembed = $oembed_first;
     }
-    
+
     if ($oembed) {
         // Apply Fluid Video Embed filtering (do not use wp_oembed_get HTML directly)
         $video_html = apply_filters( 'the_content', $oembed );
@@ -173,14 +173,11 @@ if (preg_match( $video_pattern, $post_content, $matches) ) {
                                     <?php endif; ?>
                                 </div>
 
-							<?php if ($term->name) : ?>
-								<div class="teaching-more">
-									<h3>More from <?php echo $term->name; ?></h3>
-									<?php
+							<?php 
+                                $teaching_posts = array();
 
-									// TODO: Filter this post out!
-
-									$event_query = new WP_Query(array(
+                                if ($term->name) {
+									$teaching_query = new WP_Query(array(
 									    'post_type' => 'teaching',
 										'tax_query' => array(
 											array(
@@ -194,18 +191,20 @@ if (preg_match( $video_pattern, $post_content, $matches) ) {
 									    'posts_per_page' => -1
 									));
 
-									$event_posts = $event_query->posts;
+									$teaching_posts = $teaching_query->posts;
+                                }
 
-									foreach(array_chunk($event_posts, 4) as $posts):
-									?>
+                                if (count($teaching_posts) > 1):
+                            ?>
+								<div class="teaching-more">
+									<h3>More from <?php echo $term->name; ?></h3>
 		                                <div class="archive-g">
 		                                    <?php
-		                                        foreach ($posts as $post):
+		                                        foreach ($teaching_posts as $post):
 		                                            include 'teaching-item.php';
 		                                        endforeach;
 		                                    ?>
 		                                </div>
-									<?php endforeach; ?>
 								</div>
                             <?php else: ?>
                                 <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
