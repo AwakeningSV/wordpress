@@ -387,9 +387,10 @@ add_filter( 'posts_distinct', 'cf_search_distinct' );
 function ac_backfill_audio_podcast_episode($post_id) {
     if (!jenner_post_has_oembed($post_id)) return;
 
+    $should_replace_existing_enclosure = false;
     $previous_enclosure = get_post_meta($post_id, 'enclosure', true);
     if ($previous_enclosure) {
-        $should_backfill = (
+        $should_replace_existing_enclosure = (
             // media.awakeningchurch.com no longer exists, backfill if found
             strpos($previous_enclosure, '://media.awakeningchurch.com') !== false ||
             // backfill if old directory is used
@@ -404,7 +405,7 @@ function ac_backfill_audio_podcast_episode($post_id) {
             strpos($previous_enclosure, 'http://') === 0
         );
 
-        if (!$should_backfill) return;
+        if (!$should_replace_existing_enclosure) return;
     }
 
     $teaching_date = (int) get_post_meta($post_id, 'teaching-date', true);
@@ -416,6 +417,9 @@ function ac_backfill_audio_podcast_episode($post_id) {
     $teaching_year = $teaching_local->format('Y');
     $teaching_month = $teaching_local->format('m');
     $teaching_day = $teaching_local->format('d');
+
+    $is_sunday = $teaching_local->format('D') == 'Sun';
+    if (!$is_sunday && !$should_replace_existing_enclosure) return;
 
     $teaching_local->modify('+1 day');
     $day_after = $teaching_local->getTimestamp();
