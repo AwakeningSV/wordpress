@@ -387,13 +387,28 @@ add_filter( 'posts_distinct', 'cf_search_distinct' );
 function ac_backfill_audio_podcast_episode($post_id) {
     if (!jenner_post_has_oembed($post_id)) return;
 
-    $exists = get_post_meta($post_id, 'enclosure', true);
-    if ($exists) return;
+    $previous_enclosure = get_post_meta($post_id, 'enclosure', true);
+    if ($previous_enclosure) {
+        $should_backfill = (
+            // media.awakeningchurch.com no longer exists, backfill if found
+            strpos($previous_enclosure, '://media.awakeningchurch.com') !== false ||
+            // backfill if old directory is used
+            // some of these correctly redirect and play if they are
+            // at awakeningchurch.com/podcast/ but the duration is not
+            // available due to the redirect, so we should backfill
+            // some of these are media.awakeningchurch.com/podcast/ which
+            // will not work at all, so we should backfill
+            // note the missing "s" before the slash
+            strpos($previous_enclosure, '.com/podcast/') !== false ||
+            // backfill if media URL is not secure
+            strpos($previous_enclosure, 'http://') === 0
+        );
+
+        if (!$should_backfill) return;
+    }
 
     $teaching_date = (int) get_post_meta($post_id, 'teaching-date', true);
     if (!$teaching_date) return;
-
-    require_once(WP_PLUGIN_DIR . '/powerpress/powerpressadmin.php');
 
     $teaching_gmt = new DateTime();
     $teaching_gmt->setTimestamp($teaching_date);
@@ -411,6 +426,8 @@ function ac_backfill_audio_podcast_episode($post_id) {
 
     $media_url = "https://awakeningmedia.azureedge.net/podcasts/${teaching_year}/${teaching_month}/awakening_${teaching_year}-${teaching_month}-${teaching_day}.mp3";
 
+    require_once(WP_PLUGIN_DIR . '/powerpress/powerpressadmin.php');
+
     $content_type = '';
     $info = powerpress_get_media_info_local($media_url, $content_type, 0, '');
 
@@ -421,7 +438,11 @@ function ac_backfill_audio_podcast_episode($post_id) {
 
     $enclosure = $media_url . "\n" . $info['length'] . "\n" . $content_type . "\n" . serialize($extra);
 
-    add_post_meta($post_id, 'enclosure', $enclosure, true);
+    if ($previous_enclosure) {
+        update_post_meta($post_id, 'enclosure', $enclosure, $previous_enclosure);
+    } else {
+        add_post_meta($post_id, 'enclosure', $enclosure, true);
+    }
 }
 
 ?>
