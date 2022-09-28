@@ -402,6 +402,13 @@ function ac_backfill_audio_podcast_episode($post_id) {
     $teaching_month = $teaching_local->format('m');
     $teaching_day = $teaching_local->format('d');
 
+    $teaching_local->modify('+1 day');
+    $day_after = $teaching_local->getTimestamp();
+
+    $now = time();
+
+    if ($now < $day_after) return;
+
     $media_url = "https://awakeningmedia.azureedge.net/podcasts/${teaching_year}/${teaching_month}/awakening_${teaching_year}-${teaching_month}-${teaching_day}.mp3";
 
     $content_type = '';
