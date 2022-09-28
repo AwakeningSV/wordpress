@@ -66,8 +66,10 @@ if (preg_match( $video_pattern, $post_content, $matches) ) {
     }
 
     $post_content = preg_replace( $video_pattern, '', $post_content );
-    $post_content = apply_filters( 'the_content', $post_content );
 }
+
+$post_content = apply_filters( 'the_content', $post_content );
+
 ?>
 
                                 <?php if ($video_html): ?>
