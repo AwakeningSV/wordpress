@@ -385,6 +385,8 @@ function cf_search_distinct( $where ) {
 add_filter( 'posts_distinct', 'cf_search_distinct' );
 
 function ac_backfill_audio_podcast_episode($post_id) {
+    if (!jenner_post_has_oembed($post_id)) return;
+
     $exists = get_post_meta($post_id, 'enclosure', true);
     if ($exists) return;
 
