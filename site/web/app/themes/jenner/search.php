@@ -12,7 +12,7 @@
                                 <?php endif; ?>
                                 <span class="teaching-section-byline"><?php _e('Search Results', 'bonestheme'); ?></span>
                                 <h1 class="archive-title h2">
-                                    <span><?php echo esc_attr(wptexturize('"' . get_search_query() . '"')); ?></span>
+                                    <span><?php echo esc_attr( wptexturize( '"' . trim( get_search_query() ) . '"' ) ); ?></span>
                                 </h1>
                             </div>
                             <?php if (get_query_var('post_type') === 'teaching'): ?>
