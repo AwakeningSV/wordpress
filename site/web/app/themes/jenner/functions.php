@@ -447,4 +447,26 @@ function ac_backfill_audio_podcast_episode($post_id) {
     }
 }
 
+function ac_teaching_sort_filter($wp_query) {
+    if (
+        $wp_query->is_main_query() &&
+        (
+            is_post_type_archive('teaching') ||
+            is_tax('series') || is_tax('teachers')
+        )
+    ) {
+        $wp_query->set( 'meta_key', 'teaching-date' );
+        $wp_query->set( 'orderby', 'meta_value_num' );
+        $wp_query->set( 'order',
+            is_tax('series')
+                ? 'ASC'
+                : 'DESC'
+        );
+
+        return $wp_query;
+    }
+}
+
+add_filter( 'pre_get_posts', 'ac_teaching_sort_filter' );
+
 ?>
