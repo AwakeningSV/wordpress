@@ -17,6 +17,7 @@ const enhanceAudioPlayerWithMediaSession = () => {
     if (!navigator.mediaSession) return;
 
     let thumbnail = {};
+
     try {
         const artwork = JSON.parse(document.querySelector('.byline').dataset.artwork);
         thumbnail.src = artwork[0];
@@ -44,13 +45,13 @@ const enhanceAudioPlayerWithMediaSession = () => {
         let artist = '';
 
         try {
-            const teachers = document.querySelectorAll('.byline > .teachers a');
+            const teachers = document.querySelectorAll('.teachers a');
             artist = Array.from(teachers).map(node => node.textContent).join(', ');
         } catch (ex) {}
 
         let album = '';
         try {
-            album = document.querySelector('.byline > .series a').textContent;
+            album = document.querySelector('.series a').textContent;
         } catch (ex) {}
 
 

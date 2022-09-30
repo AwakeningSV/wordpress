@@ -34,7 +34,36 @@
                             ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+
+                            <div class="teaching-header">
+                                <ul class="teaching-taxonomy-header">
+                                    <li class="teaching-section-byline"><a href="/">Home</a></li>
+                                    <li class="teaching-section-byline"><a href="/teaching/">Sermons</a></li>
+                                    <?php if ($series): ?>
+                                    <li class="teaching-section-byline series">
+                                        <span>
+                                            Part <? echo $series_position ?> of
+                                            <?php the_terms( $post->ID, 'series', '', ', ', ' ' ); ?>
+                                        </span>
+                                    </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
 <?php
+
+ac_backfill_podcast_episode($post->ID, false);
+ac_backfill_podcast_episode($post->ID, true);
+
+$itunes_artwork = ac_get_podcast_artwork($post); // 892x892 ?
+
+$audio_episode = powerpress_get_enclosure_data($post->ID, 'podcast');
+$video_episode = powerpress_get_enclosure_data($post->ID, 'video');
+
+if ($itunes_artwork) {
+    $artwork = array($itunes_artwork, '892', '892', '');
+} else {
+    $artwork = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+}
 
 $post_content = get_the_content();
 $video_pattern = '/https?:\/\/[^\s"]+\s*$/im';
@@ -70,6 +99,11 @@ if (preg_match( $video_pattern, $post_content, $matches) ) {
 
 $post_content = apply_filters( 'the_content', $post_content );
 
+if (!$video_html && !empty($video_episode)) {
+    $src = $video_episode['url'];
+
+    $video_html = "<div class='video-wrap'><video src='${src}' type='video/mp4' controls poster='{$artwork[0]}'></video></div>";
+}
 ?>
 
                                 <?php if ($video_html): ?>
@@ -81,20 +115,10 @@ $post_content = apply_filters( 'the_content', $post_content );
 								<header class="article-header">
 
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-                                    <?php
-                                        $artwork = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
-                                    ?>
 
                                     <p class="byline" data-artwork='<?php echo json_encode($artwork); ?>'>
                                         <span class="teachers">
                                             <?php the_terms( $post->ID, 'teachers', '', ', ', ' &bull; ' ); ?>
-                                        </span>
-                                        <span class="series">
-                                            <?php if ($series): ?>
-                                                Part <? echo $series_position ?> of
-                                                <?php the_terms( $post->ID, 'series', '', ', ', ' ' ); ?>
-                                                &bull;
-                                            <?php endif; ?>
                                         </span>
                                         <?php $event_presented_date = get_post_meta($post->ID, 'teaching-date', true); ?>
                                         <?php $live_time = ac_get_teaching_live_time($post); ?>
@@ -133,30 +157,37 @@ $post_content = apply_filters( 'the_content', $post_content );
                                 ?>
 
                                 <div class="teaching-meta">
-                                    <?php
-                                        ac_backfill_audio_podcast_episode($post->ID);
-                                        $audio_episode = powerpress_get_enclosure_data($post->ID, 'podcast');
-                                        $video_episode = powerpress_get_enclosure_data($post->ID, 'video');
-                                    ?>
                                     <?php if (!empty($audio_episode)) : ?>
-                                        <h3>Listen</h3>
-                                        <?php the_powerpress_content(); ?>
+                                        <div class="teaching-podcast">
+                                            <div class="teaching-podcast-player">
+                                                <h3>Sermon Audio</h3>
+                                                <?php the_powerpress_content(); ?>
+                                                <?php if (!empty($audio_episode)) : ?>
+                                                    <ul class="teaching-podcast-actions">
+                                                        <li>
+                                                            <a href="/podcasts/">
+                                                                Subscribe to our podcast
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="<?php echo esc_url($audio_episode['url']); ?>" rel="nofollow">
+                                                                Download MP3
+                                                            </a>
+                                                            <span class="teaching-podcast-meta">
+                                                                <?php echo powerpress_readable_duration($audio_episode['duration']); ?>
+                                                                /
+                                                                <?php echo powerpress_byte_size($audio_episode['size']); ?>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                <?php endif; ?>
+                                            </div>
+                                            <img class="teaching-podcast-image" src="<?php echo $artwork[0] ?>" alt="">
+                                        </div>
                                     <?php endif; ?>
-                                    <?php if (!empty($audio_episode) || !empty($video_episode)) : ?>
+                                    <?php if (!empty($video_episode)) : ?>
                                         <h3>Download</h3>
                                         <ul>
-                                            <?php if (!empty($audio_episode)) : ?>
-                                                <li>
-                                                    <a href="<?php echo esc_url($audio_episode['url']); ?>" rel="nofollow">
-                                                        Audio MP3
-                                                    </a>
-                                                    <span class="teaching-podcast-meta">
-                                                        <?php echo powerpress_readable_duration($audio_episode['duration']); ?>
-                                                        /
-                                                        <?php echo powerpress_byte_size($audio_episode['size']); ?>
-                                                    </span>
-                                                </li>
-                                            <?php endif; ?>
                                             <?php if (!empty($video_episode)) : ?>
                                                 <li>
                                                     <a href="<?php echo esc_url($video_episode['url']); ?>" rel="nofollow">

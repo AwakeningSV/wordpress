@@ -384,9 +384,21 @@ function cf_search_distinct( $where ) {
 }
 add_filter( 'posts_distinct', 'cf_search_distinct' );
 
-function ac_backfill_audio_podcast_episode($post_id) {
+function ac_get_podcast_media_url($file_prefix, $teaching_year, $teaching_month, $teaching_day, $file_suffix) {
+    $filename = "${file_prefix}${teaching_year}-${teaching_month}-${teaching_day}.${file_suffix}";
+
+    return "https://awakeningmedia.azureedge.net/podcasts/${teaching_year}/${teaching_month}/${filename}";
+}
+
+function ac_backfill_podcast_episode($post_id, $is_video) {
     $should_replace_existing_enclosure = false;
-    $previous_enclosure = get_post_meta($post_id, 'enclosure', true);
+
+    $meta_key = $is_video
+        ? '_video:enclosure'
+        : 'enclosure';
+
+    $previous_enclosure = get_post_meta($post_id, $meta_key, true);
+
     if ($previous_enclosure) {
         $should_replace_existing_enclosure = (
             // media.awakeningchurch.com no longer exists, backfill if found
@@ -404,6 +416,9 @@ function ac_backfill_audio_podcast_episode($post_id) {
         );
 
         if (!$should_replace_existing_enclosure) return;
+    } else if ($is_video) {
+        // If there is no previous video enclosure, do nothing.
+        return;
     }
 
     $teaching_date = (int) get_post_meta($post_id, 'teaching-date', true);
@@ -417,6 +432,7 @@ function ac_backfill_audio_podcast_episode($post_id) {
     $teaching_day = $teaching_local->format('d');
 
     $is_sunday = $teaching_local->format('D') == 'Sun';
+
     if (!$is_sunday && !$should_replace_existing_enclosure) return;
 
     $teaching_local->modify('+1 day');
@@ -426,14 +442,31 @@ function ac_backfill_audio_podcast_episode($post_id) {
 
     if ($now < $day_after) return;
 
-    $media_url = "https://awakeningmedia.azureedge.net/podcasts/${teaching_year}/${teaching_month}/awakening_${teaching_year}-${teaching_month}-${teaching_day}.mp3";
+    $file_prefix = $is_video ? 'awakening_video_' : 'awakening_';
+    $file_suffix = $is_video ? 'mp4' : 'mp3';
+
+    if ($previous_enclosure) {
+        if (strpos($previous_enclosure, 'm4v') !== false) {
+            $file_suffix = 'm4v';
+        }
+    }
 
     require_once(WP_PLUGIN_DIR . '/powerpress/powerpressadmin.php');
 
+    $media_url = ac_get_podcast_media_url($file_prefix, $teaching_year, $teaching_month, $teaching_day, $file_suffix);
     $content_type = '';
     $info = powerpress_get_media_info_local($media_url, $content_type, 0, '');
 
-    if ($info['error']) return;
+    if ($info['error']) {
+        if (!$is_video) return;
+
+        $file_suffix = $file_suffix === 'mp4' ? 'm4v' : 'mp4';
+        $media_url = ac_get_podcast_media_url($file_prefix, $teaching_year, $teaching_month, $teaching_day, $file_suffix);
+        $info = powerpress_get_media_info_local($media_url, $content_type, 0, '');
+        if ($info['error']) {
+            return;
+        }
+    }
 
     $extra = array();
     $extra['duration'] = powerpress_readable_duration($info['duration'], true);
@@ -441,9 +474,9 @@ function ac_backfill_audio_podcast_episode($post_id) {
     $enclosure = $media_url . "\n" . $info['length'] . "\n" . $content_type . "\n" . serialize($extra);
 
     if ($previous_enclosure) {
-        update_post_meta($post_id, 'enclosure', $enclosure, $previous_enclosure);
+        update_post_meta($post_id, $meta_key, $enclosure, $previous_enclosure);
     } else {
-        add_post_meta($post_id, 'enclosure', $enclosure, true);
+        add_post_meta($post_id, $meta_key, $enclosure, true);
     }
 }
 
@@ -468,5 +501,52 @@ function ac_teaching_sort_filter($wp_query) {
 }
 
 add_filter( 'pre_get_posts', 'ac_teaching_sort_filter' );
+
+function ac_get_podcast_artwork($post) {
+    $episode = powerpress_get_enclosure_data($post->ID, 'podcast');
+    if (empty($episode)) return '';
+
+    $teaching_date = (int) get_post_meta($post->ID, 'teaching-date', true);
+    if (!$teaching_date) return;
+
+    $date_format = 'Y-m-d';
+
+    $teaching_gmt = new DateTime();
+    $teaching_gmt->setTimestamp($teaching_date);
+    $teaching_local = new DateTime($teaching_gmt->format($date_format), new DateTimeZone('America/Los_Angeles'));
+    $desired_date = $teaching_local->format($date_format);
+
+    $feed = fetch_feed('https://awakeningmedia.azureedge.net/podcasts/awakening_podcast.rss');
+
+    if (is_wp_error($feed)) return;
+
+    $items = array();
+
+    foreach ($feed->get_items() as $item) {
+        if ($enclosure = $item->get_enclosure()) {
+            $date = $item->get_date($date_format);
+            $image = $item->get_item_tags(SIMPLEPIE_NAMESPACE_ITUNES, 'image')[0]['attribs']['']['href'];
+
+            if (!$image) continue;
+
+            // Rewrite image basename to HTTPS CDN with no redirects.
+            if (preg_match('/images\/(.*)$/', $image, $matches)) {
+                $image = "https://awakeningmedia.azureedge.net/podcasts/" . $matches[0];
+            } else {
+                continue;
+            }
+
+            $items[$date] = array(
+                'image' => $image
+            );
+        }
+    }
+
+    if ($items[$desired_date]) {
+        return $items[$desired_date]['image'];
+    }
+
+    return '';
+}
 
 ?>

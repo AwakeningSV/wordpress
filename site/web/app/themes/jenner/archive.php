@@ -56,12 +56,13 @@
                                     if ('teachers' === get_query_var('taxonomy')) {
                                 ?>
                                     <div class="teaching-taxonomy-header">
-                                        <span class="teaching-section-byline"><a href="/teaching/">All Sermons</a></span> &rarr;
-                                        <span class="teaching-section-byline"><?php _e('Sermons by', 'bonestheme'); ?></span>
-                                        <h1 class="archive-title h2">
-                                            <span><?php echo $term->name; ?></span>
-                                        </h1>
+                                        <span class="teaching-section-byline"><a href="/">Home</a></span>
+                                        <span class="teaching-section-byline"><a href="/teaching/">Sermons</a></span>
+                                        <span class="teaching-section-byline"><?php _e('Teachers', 'bonestheme'); ?></span>
                                     </div>
+                                    <h1 class="archive-title h2">
+                                        <span><?php echo $term->name; ?></span>
+                                    </h1>
                                 <?php } else { ?>
                                         <h1 class="archive-title h2">
                                             <span><?php echo $term->name; ?> <?php echo $features->labels->singular_name; ?></span>

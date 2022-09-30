@@ -6,11 +6,14 @@
 
 					<div id="main" role="main">
                         <div class="teaching-header">
-                            <div class="teaching-taxonomy-header">
-                                <?php if (get_query_var('post_type') === 'teaching'): ?>
-                                    <span class="teaching-section-byline"><a href="/teaching/">All Sermons</a></span> &rarr;
-                                <?php endif; ?>
-                                <span class="teaching-section-byline"><?php _e('Search Results', 'bonestheme'); ?></span>
+                            <div>
+                                <div class="teaching-taxonomy-header">
+                                        <span class="teaching-section-byline"><a href="/">Home</a></span>
+                                    <?php if (get_query_var('post_type') === 'teaching'): ?>
+                                        <span class="teaching-section-byline"><a href="/teaching/">Sermons</a></span>
+                                    <?php endif; ?>
+                                    <span class="teaching-section-byline"><?php _e('Search Results', 'bonestheme'); ?></span>
+                                </div>
                                 <h1 class="archive-title h2">
                                     <span><?php echo esc_attr( wptexturize( '"' . trim( get_search_query() ) . '"' ) ); ?></span>
                                 </h1>
