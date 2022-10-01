@@ -203,7 +203,7 @@ function media_selection_pressed() {
                                 </div>
                                 <?php if ($post->content == '') : ?>
                                     <?php if ($event_presented_date > time() && $live_time) : ?>
-                                        <p>This event will be presented
+                                        <p>This sermon will be presented
                                         <?php printf('<time class="presented" datetime="%1$s">%2$s</time>', date('Y-m-j', $event_presented_date), date(get_option('date_format'), $event_presented_date)); ?>.
                                         Check back here to watch live online or <a href="/visit/">plan a visit</a>.</p>
                                     <?php endif; ?>
