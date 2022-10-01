@@ -47,21 +47,25 @@ function attachShare() {
         const shareTrigger = document.querySelector(
             ".htr-modal-trigger[data-modal-id=share]"
         );
-        if (shareTrigger) {
+        if (shareTrigger && !shareTrigger.dataset.shareEnhanced) {
             shareTrigger.addEventListener("click", sharePage, {
                 capture: true,
             });
+
+            shareTrigger.dataset.shareEnhanced = true;
         }
 
         for (const shareLinkTrigger of shareLinkTriggerList) {
             const section =
                 shareLinkTrigger.closest(".wp-block-buttons").parentNode;
             const link = section.querySelector("a[href]");
-            if (link) {
+            if (link && !link.dataset.shareEnhanced) {
                 shareLinkTrigger.addEventListener("click", (ev) => {
                     ev.preventDefault();
                     share(link.getAttribute("href"));
                 });
+
+                link.dataset.shareEnhanced = true;
             }
         }
     } else {
