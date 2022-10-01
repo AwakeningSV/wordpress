@@ -3,6 +3,33 @@ Contains software by Google LLC.
 Used under the Apache 2.0 license: https://github.com/GoogleChrome/samples/blob/83ecaff10e0f27af41797e6177ae7feeacc412e8/LICENSE
 */
 
+const enhanceAudioPlayerWithTrackData = (audio) => {
+    let artist = "";
+
+    try {
+        const teachers = document.querySelectorAll(".teachers a");
+        artist = Array.from(teachers)
+            .map((node) => node.textContent)
+            .join(", ");
+    } catch (ex) {}
+
+    let album = "";
+    try {
+        album = document.querySelector(".series a").textContent;
+    } catch (ex) {}
+
+    const title = document.querySelector(".page-title").textContent;
+
+    audio.dataset.artist = artist;
+    audio.dataset.album = album;
+    audio.dataset.title = title;
+
+    try {
+        audio.dataset.artwork =
+            document.querySelector(".byline").dataset.artwork;
+    } catch (ex) {}
+};
+
 /**
  * Add Media Session support for audio element on teaching page.
  *
@@ -16,18 +43,10 @@ const enhanceAudioPlayerWithMediaSession = () => {
     if (!audio) return;
     if (!navigator.mediaSession) return;
 
-    let thumbnail = {};
+    enhanceAudioPlayerWithTrackData(audio);
 
     // If events are already attached, no need to re-add them.
     if (audio.dataset.mediaSessionEnhanced) return;
-
-    try {
-        const artwork = JSON.parse(
-            document.querySelector(".byline").dataset.artwork
-        );
-        thumbnail.src = artwork[0];
-        thumbnail.sizes = `${artwork[1]}x${artwork[2]}`;
-    } catch (ex) {}
 
     const updatePositionState = () => {
         if ("setPositionState" in navigator.mediaSession) {
@@ -47,22 +66,18 @@ const enhanceAudioPlayerWithMediaSession = () => {
     };
 
     audio.addEventListener("play", () => {
-        let artist = "";
+        const { title, artist, album } = audio.dataset;
+
+        let thumbnail = {};
 
         try {
-            const teachers = document.querySelectorAll(".teachers a");
-            artist = Array.from(teachers)
-                .map((node) => node.textContent)
-                .join(", ");
-        } catch (ex) {}
-
-        let album = "";
-        try {
-            album = document.querySelector(".series a").textContent;
+            const artwork = JSON.parse(audio.dataset.artwork);
+            thumbnail.src = artwork[0];
+            thumbnail.sizes = `${artwork[1]}x${artwork[2]}`;
         } catch (ex) {}
 
         navigator.mediaSession.metadata = new MediaMetadata({
-            title: document.querySelector(".page-title").textContent,
+            title,
             artist,
             album,
             artwork: [thumbnail],
