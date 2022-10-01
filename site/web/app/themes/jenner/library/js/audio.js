@@ -18,6 +18,9 @@ const enhanceAudioPlayerWithMediaSession = () => {
 
     let thumbnail = {};
 
+    // If events are already attached, no need to re-add them.
+    if (audio.dataset.mediaSessionEnhanced) return;
+
     try {
         const artwork = JSON.parse(
             document.querySelector(".byline").dataset.artwork
@@ -109,6 +112,8 @@ const enhanceAudioPlayerWithMediaSession = () => {
             updatePositionState();
         });
     } catch (ex) {}
+
+    audio.dataset.mediaSessionEnhanced = true;
 };
 
 document.documentElement.addEventListener(
