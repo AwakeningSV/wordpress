@@ -53,13 +53,15 @@
     }
 }
 
+$audio_column_breakpoint: 34em;
+
 .teaching-podcast-image {
     aspect-ratio: 1/1;
     object-fit: contain;
     max-inline-size: 15em;
     block-size: auto;
     margin: 1em 0 1em 1em;
-    @media screen and (max-width: 48em) {
+    @media screen and (max-width: $audio_column_breakpoint) {
         & {
             margin: 1em 0;
         }
@@ -140,7 +142,6 @@
     width: 100%;
 }
 
-
 .teaching-theater-audio {
     .teaching-video {
         display: none;
@@ -149,7 +150,7 @@
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    @media screen and (max-width: 48em) {
+    @media screen and (max-width: $audio_column_breakpoint) {
         & {
             flex-direction: column;
         }
