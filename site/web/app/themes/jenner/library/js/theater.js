@@ -12,7 +12,7 @@ const setupMediaSwitcher = () => {
             node.setAttribute("aria-checked", !checked);
         });
 
-    switcher.addEventListener("click", (ev) => {
+    const handleClick = (ev) => {
         if (
             ev.target.classList &&
             ev.target.classList.contains("teaching-content-option-selected")
@@ -26,7 +26,16 @@ const setupMediaSwitcher = () => {
             theater.classList.add("teaching-theater-audio");
             theater.classList.remove("teaching-theater-video");
         }
+    };
+
+    document.body.addEventListener("click", (ev) => {
+        if (
+            ev.target.parentNode &&
+            ev.target.parentNode.classList.contains("teaching-content-option")
+        ) {
+            handleClick(ev);
+        }
     });
 };
 
-document.documentElement.addEventListener("jenner:load", setupMediaSwitcher);
+document.documentElement.addEventListener("jenner:initial", setupMediaSwitcher);
