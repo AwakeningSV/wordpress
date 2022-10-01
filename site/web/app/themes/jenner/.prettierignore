@@ -1,4 +1,7 @@
 build
 node_modules
 package-lock.json
+*.php
+!library/bones.php
+!functions.php
 library/js/libs/countdown.min.js
