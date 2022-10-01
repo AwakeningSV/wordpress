@@ -157,7 +157,40 @@ function get_path_from_manifest($css)
     return $css;
 }
 
-// loading modernizr and jquery, and reply script
+function jenner_add_script_attributes($tag, $handle)
+{
+    $async_handles = ["jenner-main", "pcogiving"];
+
+    if (in_array($handle, $async_handles)) {
+        $tag = str_replace(" src=", " async src=", $tag);
+    }
+
+    $versioned_handles = ["jenner-main"];
+
+    if (in_array($handle, $versioned_handles)) {
+        // https://turbo.hotwired.dev/reference/attributes
+        $tag = str_replace(" src=", ' data-turbo-track="reload" src=', $tag);
+    }
+
+    return $tag;
+}
+
+add_filter("script_loader_tag", "jenner_add_script_attributes", 10, 3);
+
+function jenner_add_style_attributes($tag, $handle)
+{
+    $versioned_handles = ["jenner-fonts", "jenner-stylesheet"];
+
+    if (in_array($handle, $versioned_handles)) {
+        // https://turbo.hotwired.dev/reference/attributes
+        $tag = str_replace(" href=", ' data-turbo-track="reload" href=', $tag);
+    }
+
+    return $tag;
+}
+
+add_filter("style_loader_tag", "jenner_add_style_attributes", 10, 3);
+
 function bones_scripts_and_styles()
 {
     global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
@@ -190,9 +223,9 @@ function bones_scripts_and_styles()
             get_stylesheet_directory_uri() .
                 "/" .
                 get_path_from_manifest("build/main.js"),
-            ["jquery"],
+            ["jquery-core"],
             "",
-            true
+            false // in head but will be async, see jenner_add_script_attributes
         );
 
         // https://planning.center/blog/2017/11/embedded-giving
@@ -201,13 +234,12 @@ function bones_scripts_and_styles()
             "https://js.churchcenter.com/modal/v1",
             [],
             "",
-            true
+            false // in head but will be async, see jenner_add_script_attributes
         );
 
         // enqueue styles and scripts
         wp_enqueue_style("jenner-stylesheet");
         wp_enqueue_style("jenner-fonts");
-        wp_enqueue_script("jquery");
         wp_enqueue_script("jenner-main");
         wp_enqueue_script("pcogiving");
     }
