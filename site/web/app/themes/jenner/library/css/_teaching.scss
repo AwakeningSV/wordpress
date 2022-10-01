@@ -39,6 +39,7 @@
 
 .teaching-header-single {
     @extend .teaching-header;
+    margin-top: .5em;
     align-items: flex-start;
     @media screen and (max-width: 32em) {
         flex-direction: column;
@@ -163,6 +164,8 @@
     .teaching-podcast-player, .teaching-podcast-image {
         display: none;
     }
+
+    margin-top: .5em;
 }
 
 .teaching-section-byline {
