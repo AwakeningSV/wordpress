@@ -19,11 +19,9 @@ const setupMediaSwitcher = () => {
         if (ev.target.textContent === 'Video') {
             theater.classList.remove('teaching-theater-audio');
             theater.classList.add('teaching-theater-video');
-            document.cookie = "MPX=V; Path=/teaching; Secure";
         } else {
             theater.classList.add('teaching-theater-audio');
             theater.classList.remove('teaching-theater-video');
-            document.cookie = "MPX=A; Path=/teaching; Secure";
         }
     })
 };

@@ -105,11 +105,6 @@ $options_exist = $video_html && !empty($audio_episode);
 
 $default_media = $video_html ? 'video' : 'audio';
 
-if ($options_exist && isset($_COOKIE['MPX'])) {
-    $preferred_media = $_COOKIE['MPX'] === 'A' ? 'audio' : 'video';
-    $default_media = $preferred_media;
-}
-
 function media_selection_class($type) {
     global $default_media;
     $selected = 'teaching-content-option-selected';
