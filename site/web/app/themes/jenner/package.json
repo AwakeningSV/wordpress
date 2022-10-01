@@ -6,13 +6,16 @@
     "scripts": {
         "build": "wp",
         "watch": "wp --watch",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "cd ../../../../.. && husky install"
     },
     "author": "Reid Burke <me@reidburke.com>",
     "license": "No license provided.",
     "devDependencies": {
         "@beyonk/google-fonts-webpack-plugin": "^1.7.0",
         "css-loader": "^6.7.1",
+        "husky": "^8.0.1",
+        "lint-staged": "^13.0.3",
         "mini-css-extract-plugin": "^2.6.1",
         "normalize.css": "^8.0.1",
         "prettier": "2.7.1",
@@ -26,5 +29,8 @@
     },
     "volta": {
         "node": "16.17.0"
+    },
+    "lint-staged": {
+        "*.{js,css,md,scss}": "prettier --write"
     }
 }
