@@ -1,3 +1,6 @@
+# DB Backups
+db-backup-*.sql.gz
+
 # Application
 web/app/plugins/*
 !web/app/plugins/awakening-cleanup.php
