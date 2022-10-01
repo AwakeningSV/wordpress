@@ -1,7 +1,7 @@
 .footer {
     margin-top: 1.5rem;
     background: #222;
-    font-size: clamp(.5rem, 0.75rem + 1vw, 1rem);
+    font-size: clamp(0.5rem, 0.75rem + 1vw, 1rem);
     h2 {
         text-transform: uppercase;
         font-weight: 400;
@@ -9,7 +9,10 @@
         padding-bottom: 10px;
         border-bottom: 1px solid #555;
     }
-    h2, p, li, address {
+    h2,
+    p,
+    li,
+    address {
         color: #ddd;
     }
     a {
@@ -22,7 +25,7 @@
     .copyright {
         color: #999;
         border-top: 1px solid #555;
-        padding-top: .75rem;
+        padding-top: 0.75rem;
         a {
             color: #bbb;
             border: 0;
@@ -39,7 +42,9 @@
 }
 
 .footer {
-    p, li, address {
+    p,
+    li,
+    address {
         line-height: 1.6;
     }
     padding: 0 1em 0 0;

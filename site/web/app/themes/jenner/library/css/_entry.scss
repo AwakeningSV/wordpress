@@ -1,24 +1,24 @@
 .article-header {
-     margin: 0;
-     padding: .25em 0 0;
+    margin: 0;
+    padding: 0.25em 0 0;
 
-     .byline a {
+    .byline a {
         padding-bottom: 0;
         border-bottom: 0;
-     }
- }
-    .article-header h1 {
-        margin: 0.2em 0;
-        /* Not supported by the font stack. */
-        /* font-weight: 300; */
     }
-     .article-header .byline {
-        /* Not supported by the font stack. */
-        /* font-weight: 300; */
-        color: #555;
-        padding: 0;
-        margin-top: 0;
-    }
+}
+.article-header h1 {
+    margin: 0.2em 0;
+    /* Not supported by the font stack. */
+    /* font-weight: 300; */
+}
+.article-header .byline {
+    /* Not supported by the font stack. */
+    /* font-weight: 300; */
+    color: #555;
+    padding: 0;
+    margin-top: 0;
+}
 
 .content-subhead {
     margin: 50px 0 20px 0;

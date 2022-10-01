@@ -30,7 +30,7 @@
 // Hellems
 .archive-blog {
     .archive-excerpt {
-        font-size: .8em;
+        font-size: 0.8em;
     }
 }
 
@@ -53,7 +53,7 @@
 
 .archive-h2 {
     @extend h4;
-    font-weight: 700; 
+    font-weight: 700;
     a {
         color: inherit;
         border: 0;
@@ -61,7 +61,7 @@
 }
 
 @mixin archive-metadata {
-    font-size: .7em;
+    font-size: 0.7em;
     line-height: 1;
 }
 
@@ -84,18 +84,18 @@
     background: $accent_color;
     color: #222;
     line-height: 14px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     border: 0;
 }
 
 .archive-badge-upcoming a {
     /* Awakening Graphic Standards Sec. 4, Gray */
-    background: #58585B;
-    color: lighten(#58585B, 70);
+    background: #58585b;
+    color: lighten(#58585b, 70);
 }
 
 .archive-badge-live a {
     /* Awakening Graphic Standards Sec. 4, Red */
-    background: #EF4E33;
-    color: lighten(#EF4E33, 70);
+    background: #ef4e33;
+    color: lighten(#ef4e33, 70);
 }

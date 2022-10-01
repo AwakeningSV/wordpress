@@ -21,7 +21,7 @@
 }
 
 .button-arrow::after {
-    content: ' \25b8';
+    content: " \25b8";
 }
 
 ul.page-numbers {
@@ -36,7 +36,8 @@ span.page-numbers {
     font-weight: normal;
     background: #1a1a1a;
     transition: all 0.5s;
-    &.next, &.prev {
+    &.next,
+    &.prev {
         /* override _pure.scss */
         color: #fff;
         text-shadow: none;
@@ -73,7 +74,8 @@ Live video announcement.
         @extend .caps;
     }
 
-    i { // .announce-when
+    i {
+        // .announce-when
         font-style: normal;
     }
 
@@ -86,7 +88,8 @@ Live video announcement.
 }
 
 .announce-sunday {
-    em { // Live teaching title
+    em {
+        // Live teaching title
         font-style: normal;
         font-weight: bold;
     }
@@ -98,9 +101,10 @@ Live video announcement.
 
     span {
         display: inline-block;
-        margin-left: .5em;
+        margin-left: 0.5em;
 
-        &.button { // Watch Now button
+        &.button {
+            // Watch Now button
             margin-left: auto;
             @extend .pulse;
             @extend .animated;
@@ -109,10 +113,11 @@ Live video announcement.
         }
     }
 
-    b { // Live Icon
+    b {
+        // Live Icon
         display: inline-block;
         border-radius: 3px;
-        padding: .2em .5em;
+        padding: 0.2em 0.5em;
     }
 }
 
@@ -124,25 +129,26 @@ Live video announcement.
 
 .announce-sunday-live {
     /* Awakening Graphic Standards Sec. 4, Red */
-    background: #EF4E33;
+    background: #ef4e33;
 
     a {
-        color: lighten(#EF4E33, 70);
+        color: lighten(#ef4e33, 70);
     }
 
-    b { // Live Icon
-        background: lighten(#EF4E33, 70);
-        color: #EF4E33;
+    b {
+        // Live Icon
+        background: lighten(#ef4e33, 70);
+        color: #ef4e33;
     }
 }
-
 
 .announce-sunday-notes {
     background: #457b9d;
     a {
         color: lighten(#457b9d, 70);
     }
-    b { // Live Icon
+    b {
+        // Live Icon
         background: lighten(#457b9d, 70);
         color: #457b9d;
     }
@@ -150,9 +156,9 @@ Live video announcement.
 
 .announce-upcoming {
     /* Awakening Graphic Standards Sec. 4, Gray */
-    background: darken(#58585B, 10);
+    background: darken(#58585b, 10);
     a {
-        color: lighten(#58585B, 70);
+        color: lighten(#58585b, 70);
     }
 }
 

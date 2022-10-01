@@ -6,7 +6,7 @@
  * Copyright (c) 2019 Daniel Eden
  */
 
- /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
 @-webkit-keyframes pulse {
     from {
@@ -24,7 +24,7 @@
         transform: scale3d(1, 1, 1);
     }
 }
-  
+
 @keyframes pulse {
     from {
         -webkit-transform: scale3d(1, 1, 1);

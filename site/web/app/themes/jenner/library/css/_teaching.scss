@@ -24,7 +24,7 @@
 }
 
 .teaching-more h3 {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
 }
 
 .teaching-inner-u {
@@ -39,7 +39,7 @@
 
 .teaching-header-single {
     @extend .teaching-header;
-    margin-top: .5em;
+    margin-top: 0.5em;
     align-items: flex-start;
     @media screen and (max-width: 32em) {
         flex-direction: column;
@@ -49,7 +49,7 @@
 .teaching-inner-u,
 .series-inner-u {
     p {
-       font-size: .84em; 
+        font-size: 0.84em;
     }
 }
 
@@ -90,14 +90,14 @@ $audio_column_breakpoint: 34em;
 .teaching-taxonomy-header {
     display: flex;
     align-items: center;
-    gap: 0 .4em;
+    gap: 0 0.4em;
 
     margin: 1em 0;
 }
 
 .teaching-header ul {
     padding: 0;
-    margin: .5em 0;
+    margin: 0.5em 0;
 }
 
 .teaching-content-option {
@@ -107,7 +107,7 @@ $audio_column_breakpoint: 34em;
     align-items: center;
     color: #ccc;
 
-    padding: .5em 0;
+    padding: 0.5em 0;
 
     @media screen and (min-width: 32em) {
         margin-left: 1em;
@@ -115,7 +115,7 @@ $audio_column_breakpoint: 34em;
     }
 
     button {
-        padding: .8ch 1.3ch;
+        padding: 0.8ch 1.3ch;
         border: 1px solid #fff;
         color: #fff;
         background: #000;
@@ -126,7 +126,6 @@ $audio_column_breakpoint: 34em;
         }
     }
 }
-
 
 .teaching-theater-body {
     display: flex;
@@ -162,11 +161,12 @@ $audio_column_breakpoint: 34em;
 }
 
 .teaching-theater-video {
-    .teaching-podcast-player, .teaching-podcast-image {
+    .teaching-podcast-player,
+    .teaching-podcast-image {
         display: none;
     }
 
-    margin-top: .5em;
+    margin-top: 0.5em;
 }
 
 .teaching-section-byline {
@@ -182,18 +182,18 @@ $audio_column_breakpoint: 34em;
 
     display: flex;
     align-items: center;
-    gap: 0 .6em;
+    gap: 0 0.6em;
 
     & + &::before {
-        content: '';
+        content: "";
         display: block;
         width: 7px;
         height: 7px;
         border: 2px solid currentColor;
         border-width: 2px 2px 0 0;
-        margin: .2em 0 0;
+        margin: 0.2em 0 0;
         transform: rotate(45deg);
-        opacity: .8;
+        opacity: 0.8;
     }
 }
 
@@ -217,17 +217,17 @@ $audio_column_breakpoint: 34em;
         margin-top: 0.2em;
     }
 
-    p, ul {
+    p,
+    ul {
         padding-bottom: 10px;
     }
-
 }
 
 .teaching-podcast-meta {
     display: block;
-    color: lighten(#58585B, 20);
-    font-size: .6em;
-    padding-top: .3em;
+    color: lighten(#58585b, 20);
+    font-size: 0.6em;
+    padding-top: 0.3em;
 }
 
 #teaching-notes h3 {
@@ -273,7 +273,8 @@ $audio_column_breakpoint: 34em;
 
 @media screen and (max-width: 48em) {
     .teaching-video {
-        .video-wrap, .embed-wrap {
+        .video-wrap,
+        .embed-wrap {
             @include full-width;
         }
     }
@@ -284,14 +285,18 @@ $audio_column_breakpoint: 34em;
     .single-teaching,
     .tax-series,
     .tax-teachers {
-        article, .series-inner-u {
-            p { max-inline-size: 66ch; }
+        article,
+        .series-inner-u {
+            p {
+                max-inline-size: 66ch;
+            }
 
             @media (min-width: 48em) {
-                margin-top: .5em;
+                margin-top: 0.5em;
             }
-            
-            a, .archive-badge a {
+
+            a,
+            .archive-badge a {
                 color: #ccc;
             }
         }
@@ -307,19 +312,28 @@ $audio_column_breakpoint: 34em;
             color: #ccc !important;
         }
 
-        &, .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+        &,
+        .wp-block-navigation:not(.has-background)
+            .wp-block-navigation__submenu-container {
             background: #000;
         }
 
-        &, .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container, nav a {
+        &,
+        .wp-block-navigation:not(.has-background)
+            .wp-block-navigation__submenu-container,
+        nav a {
             color: #fff;
         }
 
-        .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+        .wp-block-navigation:not(.has-background)
+            .wp-block-navigation__submenu-container {
             border-color: #333;
         }
 
-        .wp-block-navigation > :not(.wp-block-navigation__responsive-container.is-menu-open) .wp-block-navigation__submenu-container a:hover {
+        .wp-block-navigation
+            > :not(.wp-block-navigation__responsive-container.is-menu-open)
+            .wp-block-navigation__submenu-container
+            a:hover {
             background: #444;
             color: #fff;
         }
@@ -328,7 +342,9 @@ $audio_column_breakpoint: 34em;
             filter: invert(100%);
         }
 
-        .archive-date, .article-header .byline, .teaching-taxonomy-header {
+        .archive-date,
+        .article-header .byline,
+        .teaching-taxonomy-header {
             color: #888;
         }
     }

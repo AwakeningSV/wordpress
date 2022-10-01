@@ -33,7 +33,9 @@ https://github.com/AwakeningSV/wordpress/blob/master/NOTICES
 @import "leaders";
 
 // Hellems
-h1.single-title {padding-top: 40px;}
+h1.single-title {
+    padding-top: 40px;
+}
 // End Hellems
 
 .clearfix:after {
@@ -57,11 +59,11 @@ body {
 }
 
 @media (min-width: $content_wide_width) {
-	.alignwide {
-		margin: 32px calc( ( $content_width - $content_wide_width ) / 2 );
-		max-width: $content_wide_width;
-		width: $content_wide_width;
-	}
+    .alignwide {
+        margin: 32px calc(($content_width - $content_wide_width) / 2);
+        max-width: $content_wide_width;
+        width: $content_wide_width;
+    }
 }
 
 .pagination {

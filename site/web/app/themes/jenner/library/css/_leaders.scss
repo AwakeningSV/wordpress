@@ -18,7 +18,7 @@
 
 .leaders-u {
     p {
-        font-size: .84em;
+        font-size: 0.84em;
         margin: 1em 0 0;
     }
 
@@ -45,19 +45,19 @@
 
 .leaders-meta {
     color: #555;
-    font-size: .9rem;
+    font-size: 0.9rem;
     line-height: 1;
 }
 
 .leader-no-photo {
-    border: 1px solid lighten(#58585B, 50);
+    border: 1px solid lighten(#58585b, 50);
     margin-bottom: 9px;
 
     p {
         @extend .caps;
         font-size: 1.2rem;
         padding: 10px;
-        color: #58585B;
+        color: #58585b;
     }
 }
 

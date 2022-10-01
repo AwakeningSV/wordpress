@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/theme.json",
-	"version": 2,
+    "version": 2,
     "styles": {
         "spacing": {
             "padding": {
@@ -30,27 +30,27 @@
             }
         }
     },
-	"settings": {
+    "settings": {
         "useRootPaddingAwareAlignments": true,
         "appearanceTools": true,
-		"layout": {
-			"contentSize": "976px",
-			"wideSize": "1100px"
-		},
+        "layout": {
+            "contentSize": "976px",
+            "wideSize": "1100px"
+        },
         "spacing": {
             "blockGap": true
         },
         "typography": {
             "fontFamilies": [
                 {
-                   "fontFamily": "Oswald, FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif",
-                   "slug": "accent",
-                   "name": "Accent"
+                    "fontFamily": "Oswald, FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif",
+                    "slug": "accent",
+                    "name": "Accent"
                 },
                 {
-                   "fontFamily": "Montserrat, FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif",
-                   "slug": "primary",
-                   "name": "Primary"
+                    "fontFamily": "Montserrat, FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif",
+                    "slug": "primary",
+                    "name": "Primary"
                 }
             ]
         },
@@ -59,7 +59,7 @@
                 "appearanceTools": false
             }
         }
-	},
+    },
     "templateParts": [
         {
             "name": "header",
@@ -96,5 +96,5 @@
             "title": "Teaching Footer",
             "area": "uncategorized"
         }
-    ] 
+    ]
 }

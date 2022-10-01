@@ -4,23 +4,23 @@ async function share(url) {
     }
 
     window._mtm.push({
-        event: 'Web Share',
-        action: 'Share Initiated',
-        label: url
+        event: "Web Share",
+        action: "Share Initiated",
+        label: url,
     });
 
     try {
-        await navigator.share({url});
+        await navigator.share({ url });
         window._mtm.push({
-            event: 'Web Share',
-            action: 'Share Successful',
-            label: url
+            event: "Web Share",
+            action: "Share Successful",
+            label: url,
         });
     } catch (err) {
         window._mtm.push({
-            event: 'Web Share',
-            action: 'Share Cancelled',
-            label: err.name
+            event: "Web Share",
+            action: "Share Cancelled",
+            label: err.name,
         });
     }
 }
@@ -30,7 +30,7 @@ function sharePage(ev) {
     ev.stopImmediatePropagation();
 
     let url = document.location.href;
-    const canonicalEl = document.querySelector('link[rel=canonical]');
+    const canonicalEl = document.querySelector("link[rel=canonical]");
     if (canonicalEl) {
         url = canonicalEl.href;
     }
@@ -39,21 +39,28 @@ function sharePage(ev) {
 }
 
 function attachShare() {
-    const shareLinkTriggerList = document.querySelectorAll('.wp-block-button.share-link');
+    const shareLinkTriggerList = document.querySelectorAll(
+        ".wp-block-button.share-link"
+    );
 
     if (navigator.share) {
-        const shareTrigger = document.querySelector('.htr-modal-trigger[data-modal-id=share]');
+        const shareTrigger = document.querySelector(
+            ".htr-modal-trigger[data-modal-id=share]"
+        );
         if (shareTrigger) {
-            shareTrigger.addEventListener('click', sharePage, {capture: true});
+            shareTrigger.addEventListener("click", sharePage, {
+                capture: true,
+            });
         }
 
         for (const shareLinkTrigger of shareLinkTriggerList) {
-            const section = shareLinkTrigger.closest('.wp-block-buttons').parentNode;
-            const link = section.querySelector('a[href]');
+            const section =
+                shareLinkTrigger.closest(".wp-block-buttons").parentNode;
+            const link = section.querySelector("a[href]");
             if (link) {
-                shareLinkTrigger.addEventListener('click', ev => {
+                shareLinkTrigger.addEventListener("click", (ev) => {
                     ev.preventDefault();
-                    share(link.getAttribute('href'));
+                    share(link.getAttribute("href"));
                 });
             }
         }
@@ -64,4 +71,4 @@ function attachShare() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', attachShare);
+document.addEventListener("DOMContentLoaded", attachShare);
