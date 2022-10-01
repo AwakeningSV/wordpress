@@ -1,6 +1,7 @@
 import countdown from "./libs/countdown.min";
 
-jQuery(document).ready(function ($) {
+document.documentElement.addEventListener("jenner:load", () => {
+    const $ = jQuery;
     var streams = $(".announce-upcoming");
     if (!streams.length) return;
 

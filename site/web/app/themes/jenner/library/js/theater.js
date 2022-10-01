@@ -29,4 +29,4 @@ const setupMediaSwitcher = () => {
     });
 };
 
-document.addEventListener("DOMContentLoaded", setupMediaSwitcher);
+document.documentElement.addEventListener("jenner:load", setupMediaSwitcher);

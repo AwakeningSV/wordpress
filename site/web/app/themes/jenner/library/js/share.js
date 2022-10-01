@@ -71,4 +71,4 @@ function attachShare() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", attachShare);
+document.documentElement.addEventListener("jenner:load", attachShare);

@@ -30,7 +30,7 @@ const replacePlaceholderText = (teachingSearch) => {
     input.setAttribute("placeholder", `Search ${count} sermons...`);
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.documentElement.addEventListener("jenner:load", () => {
     const teachingSearch = document.querySelector(
         ".teaching-header .wp-block-search"
     );

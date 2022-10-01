@@ -111,7 +111,7 @@ const enhanceAudioPlayerWithMediaSession = () => {
     } catch (ex) {}
 };
 
-document.addEventListener(
-    "DOMContentLoaded",
+document.documentElement.addEventListener(
+    "jenner:load",
     enhanceAudioPlayerWithMediaSession
 );
