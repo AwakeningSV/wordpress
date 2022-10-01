@@ -46,7 +46,7 @@ $year = (int) date('Y', $event_presented_date);
 
 $itunes_artwork = false;
 
-$should_use_itunes_artwork = WP_ENV === 'development' || $year >= 2022;
+$should_use_itunes_artwork = WP_ENV === 'development' || $year >= 2019;
 
 if ($should_use_itunes_artwork) {
     $itunes_artwork = ac_get_podcast_artwork($post);
