@@ -150,45 +150,6 @@ function ac_add_zoninator_post_types()
 }
 add_action("zoninator_pre_init", "ac_add_zoninator_post_types");
 
-function ac_is_teaching_active($teaching)
-{
-    $teaching_date = (int) get_post_meta($teaching->ID, "teaching-date", true);
-
-    if (!$teaching_date) {
-        return false;
-    }
-
-    $teaching_gmt = new DateTime();
-    $teaching_gmt->setTimestamp($teaching_date);
-    $teaching_day = $teaching_gmt->format("Y-m-d");
-    $teaching_local = new DateTime(
-        $teaching_day,
-        new DateTimeZone("America/Los_Angeles")
-    );
-
-    $is_sunday = $teaching_local->format("D") == "Sun";
-
-    if ($is_sunday) {
-        $teaching_local->modify("+8 hours");
-        $teaching_begin = $teaching_local->getTimestamp();
-
-        $teaching_local->modify("+4 hours");
-        $teaching_local->modify("+30 minutes"); // 12:30 PM
-        $teaching_end = $teaching_local->getTimestamp();
-    } else {
-        // Christmas Eve
-        $teaching_local->modify("+16 hours");
-        $teaching_local->modify("+30 minutes"); // 4:30 PM
-        $teaching_begin = $teaching_local->getTimestamp();
-
-        // Allow for 1 hour 30 minutes after last service: 6:30 PM
-        $teaching_local->modify("+2 hours");
-        $teaching_end = $teaching_local->getTimestamp();
-    }
-
-    return $teaching_begin < time() && $teaching_end > time();
-}
-
 function ac_is_teaching_live($teaching)
 {
     $teaching_date = (int) get_post_meta($teaching->ID, "teaching-date", true);

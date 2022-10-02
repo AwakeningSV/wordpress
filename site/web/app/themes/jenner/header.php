@@ -45,7 +45,6 @@
 
             foreach($announcements as $announcement): 
                 $live_start = ac_get_teaching_live_time($announcement);
-                $is_active_teaching_item = ac_is_teaching_active($announcement);
 
                 $video_url = get_permalink($announcement);
 
@@ -66,16 +65,6 @@
                     <a href="<?php echo esc_html($video_url) ?>">
                         <b>Live</b> <span><em><?php echo esc_html(get_the_title($announcement)); ?></em> streaming live</span>
                         <span class="button button-arrow">Watch Now</span>
-                    </a>
-                </p>
-            </div>
-        <?php endif; ?>
-        <?php if ($is_active_teaching_item && get_queried_object_id() !== $announcement->ID && get_post_meta($announcement->ID, 'teaching-notes', true)): ?>
-            <div class="announce announce-sunday announce-sunday-notes">
-                <p class="announce-u">
-                    <a href="<?php echo esc_html(get_permalink($announcement)); ?>#teaching-notes">
-                        <b>Sermon Notes</b> <span>Read <em><?php echo esc_html(get_the_title($announcement)); ?></em> notes and scripture</span>
-                        <span class="button button-arrow">Read Now</span>
                     </a>
                 </p>
             </div>
