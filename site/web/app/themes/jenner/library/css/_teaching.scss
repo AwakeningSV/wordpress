@@ -255,6 +255,55 @@ $audio_column_breakpoint: 34em;
     }
 }
 
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.teaching-video > .embed-wrap,
+.teaching-video > .embed-video {
+    & > .stuck {
+        position: fixed;
+        top: auto;
+        left: auto;
+        bottom: 20px;
+        right: 20px;
+        width: 270px; // 1.86
+        height: 145px;
+        transform: translateY(100%);
+        animation: fade-in-up 0.75s ease forwards;
+        border: 1px solid #ccc;
+
+        z-index: 1000;
+
+        @media screen and (min-width: 28em) {
+            & {
+                width: 372px;
+                height: 250px;
+            }
+        }
+
+        @media screen and (min-width: 1120px) {
+            & {
+                width: 465px;
+                height: 250px;
+            }
+        }
+
+        @media screen and (min-width: 1300px) {
+            & {
+                width: 558px;
+                height: 300px;
+            }
+        }
+    }
+}
+
 @media print {
     /* Video div */
     .teaching-inner-u > div,
