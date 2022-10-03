@@ -1,4 +1,5 @@
 import "./countdown-livestream";
+import "./analytics";
 import "./share";
 import "./search";
 import "./audio";

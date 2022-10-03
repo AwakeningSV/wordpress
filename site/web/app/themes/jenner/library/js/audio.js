@@ -1,8 +1,3 @@
-/*!
-Contains software by Google LLC.
-Used under the Apache 2.0 license: https://github.com/GoogleChrome/samples/blob/83ecaff10e0f27af41797e6177ae7feeacc412e8/LICENSE
-*/
-
 const enhanceAudioPlayerWithTrackData = (audio) => {
     let artist = "";
 
@@ -30,6 +25,109 @@ const enhanceAudioPlayerWithTrackData = (audio) => {
     } catch (ex) {}
 };
 
+const enhanceAudioPlayerWithAnalytics = (audio, log) => {
+    let updateTimeout;
+    let seekTimeout;
+
+    const getUpdateInterval = () => {
+        const { duration, currentTime } = audio;
+
+        if (!duration) return 1000;
+
+        return Math.min(
+            Math.floor(duration * 0.25) * 1000,
+            (duration - currentTime) * 1000
+        );
+    };
+
+    const progress = () => {
+        const { duration, currentTime } = audio;
+        const t = Math.floor((currentTime / duration) * 4) / 4;
+        const percent = t * 100;
+
+        if (audio.dataset.percent !== String(percent)) {
+            log(percent + "% Played");
+            audio.dataset.percent = String(percent);
+        }
+
+        const delay = getUpdateInterval();
+
+        if (delay > 0) setTimeout(progress, delay);
+    };
+
+    audio.addEventListener("play", () => {
+        log("Audio Play");
+
+        const delay = getUpdateInterval();
+
+        if (delay > 0) updateTimeout = setTimeout(progress, delay);
+    });
+
+    audio.addEventListener("pause", () => {
+        log("Audio Pause");
+        clearInterval(updateTimeout);
+    });
+
+    const seeked = () => {
+        clearInterval(updateTimeout);
+        clearInterval(seekTimeout);
+        seekTimeout = setTimeout(() => {
+            log("Audio Seek");
+            progress();
+        }, 2000);
+    };
+
+    audio.addEventListener("seeked", seeked);
+
+    // Listen for various MediaSession seeks.
+    document.documentElement.addEventListener("jenner:audioseeked", seeked);
+};
+
+const enhanceAudioPlayer = () => {
+    const audio = document.querySelector("audio");
+
+    if (!audio) return;
+
+    // If events are already attached, no need to re-add them.
+    if (audio.dataset.enhanced) return;
+
+    enhanceAudioPlayerWithTrackData(audio);
+
+    const log = (origin, action) => {
+        document.documentElement.dispatchEvent(
+            new CustomEvent("jenner:activity", {
+                detail: {
+                    event: "Audio",
+                    origin,
+                    action,
+                    label: [
+                        audio.dataset.title,
+                        audio.dataset.artist,
+                        audio.dataset.album,
+                    ]
+                        .filter((v) => !!v)
+                        .join(" - "),
+                },
+            })
+        );
+    };
+
+    if (navigator.mediaSession) {
+        enhanceAudioPlayerWithMediaSession(
+            audio,
+            log.bind(null, "MediaSession")
+        );
+    }
+
+    enhanceAudioPlayerWithAnalytics(audio, log.bind(null, "Player"));
+
+    audio.dataset.enhanced = true;
+};
+
+/*!
+Contains software by Google LLC.
+Used under the Apache 2.0 license: https://github.com/GoogleChrome/samples/blob/83ecaff10e0f27af41797e6177ae7feeacc412e8/LICENSE
+*/
 /**
  * Add Media Session support for audio element on teaching page.
  *
@@ -37,17 +135,8 @@ const enhanceAudioPlayerWithTrackData = (audio) => {
  *
  * Adapted from an Apache 2.0 licensed sample: https://googlechrome.github.io/samples/media-session/audio.html
  */
-const enhanceAudioPlayerWithMediaSession = () => {
-    const audio = document.querySelector("audio");
 
-    if (!audio) return;
-    if (!navigator.mediaSession) return;
-
-    enhanceAudioPlayerWithTrackData(audio);
-
-    // If events are already attached, no need to re-add them.
-    if (audio.dataset.mediaSessionEnhanced) return;
-
+const enhanceAudioPlayerWithMediaSession = (audio, log) => {
     const updatePositionState = () => {
         if ("setPositionState" in navigator.mediaSession) {
             try {
@@ -95,12 +184,22 @@ const enhanceAudioPlayerWithMediaSession = () => {
     let defaultSkipTime = 10; /* Time to skip in seconds */
 
     navigator.mediaSession.setActionHandler("seekbackward", (event) => {
+        log("Audio Seek Backward");
+        document.documentElement.dispatchEvent(
+            new CustomEvent("jenner:audioseeked")
+        );
+
         const skipTime = event.seekOffset || defaultSkipTime;
         audio.currentTime = Math.max(audio.currentTime - skipTime, 0);
         updatePositionState();
     });
 
     navigator.mediaSession.setActionHandler("seekforward", (event) => {
+        log("Audio Seek Forward");
+        document.documentElement.dispatchEvent(
+            new CustomEvent("jenner:audioseeked")
+        );
+
         const skipTime = event.seekOffset || defaultSkipTime;
         audio.currentTime = Math.min(
             audio.currentTime + skipTime,
@@ -110,28 +209,35 @@ const enhanceAudioPlayerWithMediaSession = () => {
     });
 
     navigator.mediaSession.setActionHandler("play", async () => {
+        log("Audio Play");
         await audio.play();
     });
 
     navigator.mediaSession.setActionHandler("pause", () => {
+        log("Audio Pause");
         audio.pause();
     });
 
     try {
         navigator.mediaSession.setActionHandler("seekto", (event) => {
+            document.documentElement.dispatchEvent(
+                new CustomEvent("jenner:audioseeked")
+            );
             if (event.fastSeek && "fastSeek" in audio) {
+                log("Audio Fast Seek");
                 audio.fastSeek(event.seekTime);
                 return;
             }
+            log("Audio Seek");
             audio.currentTime = event.seekTime;
             updatePositionState();
         });
     } catch (ex) {}
-
-    audio.dataset.mediaSessionEnhanced = true;
 };
 
+document.documentElement.addEventListener("jenner:load", enhanceAudioPlayer);
+
 document.documentElement.addEventListener(
-    "jenner:load",
-    enhanceAudioPlayerWithMediaSession
+    "jenner:audiochanged",
+    enhanceAudioPlayer
 );
