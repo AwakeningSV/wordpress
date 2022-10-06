@@ -68,9 +68,12 @@
 .archive-date {
     color: #555;
     @include archive-metadata;
+}
+
+.archive-u {
     a {
         padding-bottom: 0;
-        border-bottom: 0;
+        text-decoration: none;
     }
 }
 

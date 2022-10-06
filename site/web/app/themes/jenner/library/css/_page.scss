@@ -22,21 +22,25 @@ $accent_color: #58585b;
 $content_width: 976px;
 $content_wide_width: 1280px;
 
+@mixin underline-link {
+    text-decoration: underline;
+    text-decoration-color: $accent_color;
+    text-decoration-thickness: 2px;
+}
+
 a {
     color: #000;
     text-decoration: none;
 
     &.esv-crossref-link {
         color: #000 !important;
-        border-bottom: 1px solid #58585b;
+        @include underline-link;
     }
 }
 
 p > a,
-.footer li > a:not(.wp-block-getwid-social-links__link),
 em > a {
-    padding-bottom: 1px;
-    border-bottom: 1px solid $accent_color;
+    @include underline-link;
 }
 
 .wp-block-outermost-social-sharing-link {
@@ -138,7 +142,6 @@ h2.has-large-font-size.f-accent {
 
 a.esv-crossref-link {
     color: #000 !important;
-    border-bottom: 1px solid #58585b;
 }
 
 .wp-block-getwid-section img,

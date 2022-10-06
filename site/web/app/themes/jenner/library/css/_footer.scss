@@ -17,6 +17,12 @@
     }
     a {
         color: #fff;
+        &:hover {
+            @include underline-link;
+        }
+    }
+    p > a {
+        text-decoration: none;
     }
     address {
         font-style: normal;
@@ -39,6 +45,7 @@
 
 .footer li {
     list-style: none;
+    padding: 0.2em 0;
 }
 
 .footer {

@@ -15,7 +15,7 @@ Add transition to containers so they can push in and out.
 
     li > a {
         font-weight: 400;
-        border-bottom: 0;
+        text-decoration: none;
         justify-content: flex-end;
 
         & span {
