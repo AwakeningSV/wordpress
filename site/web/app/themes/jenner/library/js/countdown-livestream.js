@@ -26,7 +26,9 @@ document.documentElement.addEventListener("jenner:load", () => {
                         .addClass("announce-sunday")
                         .addClass("announce-sunday-live");
                     stream.find("b:first").html("Live");
-                    stream.find(".announce-when:first").html("now");
+                    stream
+                        .find(".announce-when:first")
+                        .html("Live stream starting now");
                 }
             }
 
