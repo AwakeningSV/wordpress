@@ -47,6 +47,7 @@ module.exports = {
     plugins: [
         new GoogleFontsPlugin({
             fonts,
+            apiUrl: "https://gwfh.mranftl.com/api/fonts",
             filename: `fonts.${fonthash}.css`,
             formats: ["woff2"],
         }),
