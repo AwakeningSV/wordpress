@@ -154,7 +154,7 @@
     "roots/wp-stage-switcher": "^2.1",
     "wpackagist-plugin/esv-crossref": "^2.1",
     "awakeningsv/authorizer": "^1.2",
-    "roots/wordpress": "^6.0",
+    "roots/wordpress": "^6.1",
     "wpackagist-plugin/gutenberg": "^14.1",
     "wpackagist-plugin/social-sharing-block": "^0.6.0",
     "wpackagist-plugin/modal-builder-block": "^1.0",
