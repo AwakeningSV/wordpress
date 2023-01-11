@@ -1,182 +1,193 @@
 {
-  "name": "roots/bedrock",
-  "type": "project",
-  "license": "UNLICENSED",
-  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
-  "homepage": "https://roots.io/bedrock/",
-  "authors": [
-    {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
-    },
-    {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
-    }
-  ],
-  "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
-  ],
-  "support": {
-    "issues": "https://github.com/roots/bedrock/issues",
-    "forum": "https://discourse.roots.io/category/bedrock"
-  },
-  "config": {
-    "preferred-install": "dist",
-    "allow-plugins": {
-      "composer/installers": true,
-      "roots/wordpress-core-installer": true
-    }
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    },
-    {
-        "type": "package",
-        "package": {
-            "name": "matomo-org/google-analytics-importer",
-            "version": "4.1.1",
-            "type": "wordpress-plugin",
-            "dist": {
-                "url": "https://plugins.matomo.org/api/2.0/plugins/GoogleAnalyticsImporter/download/4.1.1",
-                "type": "zip"
-            },
-            "require": {
-                "composer/installers": "^1.4"
-            },
-            "extra": {
-                "installer-name": "GoogleAnalyticsImporter"
-            }
+    "name": "roots/bedrock",
+    "type": "project",
+    "license": "UNLICENSED",
+    "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+    "homepage": "https://roots.io/bedrock/",
+    "authors": [
+        {
+            "name": "Scott Walkinshaw",
+            "email": "scott.walkinshaw@gmail.com",
+            "homepage": "https://github.com/swalkinshaw"
+        },
+        {
+            "name": "Ben Word",
+            "email": "ben@benword.com",
+            "homepage": "https://github.com/retlehs"
         }
-    },
-    {
-        "type": "package",
-        "package": {
-            "name": "wpackagist-plugin/wpcustom-category-image",
-            "version": "2.1.13",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wpcustom-category-image/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpcustom-category-image.zip?timestamp=1516124414"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wpcustom-category-image/"
-        }
-    },
-    {
-        "type": "package",
-        "package": {
-            "name": "awakeningsv/authorizer",
-            "version": "1.2.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/AwakeningSV/authorizer/archive/1ab1351fdbaafa94d5ba2c1b54f79db4e4fe22f5.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin"
-        }
-    },
-    {
-      "type": "vcs",
-      "url": "git@ssh.dev.azure.com:v3/awakeningsv/azure-cdn-rewrite-plugin/azure-cdn-rewrite-plugin"
-    },
-    {
-      "type": "vcs",
-      "url": "git@ssh.dev.azure.com:v3/awakeningsv/remove-socialize-plugin/remove-socialize-plugin"
-    },
-    {
-      "type": "vcs",
-      "url": "git@ssh.dev.azure.com:v3/awakeningsv/live-plugin/live-plugin"
-    },
-    {
-      "type": "vcs",
-      "url": "git@ssh.dev.azure.com:v3/awakeningsv/teaching-plugin/teaching-plugin"
-    },
-    {
-      "type": "vcs",
-      "url": "git@ssh.dev.azure.com:v3/awakeningsv/upcoming-events-plugin/upcoming-events-plugin"
-    },
-    {
-      "type": "vcs",
-      "url": "git@ssh.dev.azure.com:v3/awakeningsv/oembed-image-plugin/oembed-image-plugin"
-    },
-    {
-      "type": "vcs",
-      "url": "git@ssh.dev.azure.com:v3/awakeningsv/leadership-plugin/leadership-plugin"
-    }
-  ],
-  "require": {
-    "php": ">=7.1",
-    "awakeningsv/azure-cdn-rewrite-plugin": "dev-master",
-    "awakeningsv/remove-socialize-plugin": "dev-master",
-    "awakeningsv/oembed-image-plugin": "dev-master",
-    "awakeningsv/live-plugin": "dev-master",
-    "awakeningsv/teaching-plugin": "dev-master",
-    "awakeningsv/leadership-plugin": "dev-master",
-    "awakeningsv/upcoming-events-plugin": "dev-master",
-    "composer/installers": "^1.4",
-    "vlucas/phpdotenv": "^3.0.0",
-    "oscarotero/env": "^1.1.0",
-    "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/autodescription": "^4.0",
-    "wpackagist-plugin/page-excerpt": "^1.3",
-    "wpackagist-plugin/manual-image-crop": "^1.12",
-    "wpackagist-plugin/powerpress": "^8.0",
-    "wpackagist-plugin/regenerate-thumbnails": "^3.1",
-    "wpackagist-plugin/zoninator": "^0.8.0",
-    "wpackagist-plugin/quick-featured-images": "^13.3",
-    "wpackagist-plugin/windows-azure-storage": "^4.1",
-    "wpackagist-plugin/post-type-converter": "^0.6.0",
-    "wpackagist-plugin/simple-history": "^3.0",
-    "wpackagist-plugin/redirection": "^5.0",
-    "wpackagist-plugin/getwid": "^1.5",
-    "wpackagist-plugin/unsplash": "^1.0",
-    "wpackagist-plugin/matomo": "^4.2",
-    "matomo-org/google-analytics-importer": "^4.1",
-    "wpackagist-plugin/cloudflare": "^4.2",
-    "wpackagist-plugin/ductile-responsive-video": "^1.3",
-    "wpackagist-plugin/wpcustom-category-image": "2.1.13",
-    "wpackagist-plugin/wp-dashboard-notes": "^1.0",
-    "roots/wp-stage-switcher": "^2.1",
-    "wpackagist-plugin/esv-crossref": "^2.1",
-    "awakeningsv/authorizer": "^1.2",
-    "roots/wordpress": "^6.1",
-    "wpackagist-plugin/social-sharing-block": "^0.6.0",
-    "wpackagist-plugin/modal-builder-block": "^1.0",
-    "wpackagist-plugin/icon-block": "^1.3"
-  },
-  "require-dev": {
-    "squizlabs/php_codesniffer": "^3.0.2",
-    "roave/security-advisories": "dev-master"
-  },
-  "extra": {
-    "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
-    },
-    "wordpress-install-dir": "web/wp"
-  },
-  "scripts": {
-    "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
     ],
-    "test": [
-      "phpcs"
-    ]
-  }
+    "keywords": [
+        "bedrock",
+        "composer",
+        "roots",
+        "wordpress",
+        "wp",
+        "wp-config"
+    ],
+    "support": {
+        "issues": "https://github.com/roots/bedrock/issues",
+        "forum": "https://discourse.roots.io/category/bedrock"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "composer/installers": true,
+            "roots/wordpress-core-installer": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "matomo-org/google-analytics-importer",
+                "version": "4.1.1",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "url": "https://plugins.matomo.org/api/2.0/plugins/GoogleAnalyticsImporter/download/4.1.1",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "^1.4"
+                },
+                "extra": {
+                    "installer-name": "GoogleAnalyticsImporter"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "wpackagist-plugin/wpcustom-category-image",
+                "version": "2.1.13",
+                "source": {
+                    "type": "svn",
+                    "url": "https://plugins.svn.wordpress.org/wpcustom-category-image/",
+                    "reference": "trunk"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.wordpress.org/plugin/wpcustom-category-image.zip?timestamp=1516124414"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                },
+                "type": "wordpress-plugin",
+                "homepage": "https://wordpress.org/plugins/wpcustom-category-image/"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "awakeningsv/authorizer",
+                "version": "1.3.0",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/AwakeningSV/authorizer/archive/a9a6e803f93959b44aefb87101988edd8e27c1a0.zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                },
+                "type": "wordpress-plugin"
+            }
+        },
+        {
+            "type": "vcs",
+            "url": "git@ssh.dev.azure.com:v3/awakeningsv/azure-cdn-rewrite-plugin/azure-cdn-rewrite-plugin"
+        },
+        {
+            "type": "vcs",
+            "url": "git@ssh.dev.azure.com:v3/awakeningsv/remove-socialize-plugin/remove-socialize-plugin"
+        },
+        {
+            "type": "vcs",
+            "url": "git@ssh.dev.azure.com:v3/awakeningsv/live-plugin/live-plugin"
+        },
+        {
+            "type": "vcs",
+            "url": "git@ssh.dev.azure.com:v3/awakeningsv/teaching-plugin/teaching-plugin"
+        },
+        {
+            "type": "vcs",
+            "url": "git@ssh.dev.azure.com:v3/awakeningsv/upcoming-events-plugin/upcoming-events-plugin"
+        },
+        {
+            "type": "vcs",
+            "url": "git@ssh.dev.azure.com:v3/awakeningsv/oembed-image-plugin/oembed-image-plugin"
+        },
+        {
+            "type": "vcs",
+            "url": "git@ssh.dev.azure.com:v3/awakeningsv/leadership-plugin/leadership-plugin"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "awakeningsv/azure-cdn-rewrite-plugin": "dev-master",
+        "awakeningsv/remove-socialize-plugin": "dev-master",
+        "awakeningsv/oembed-image-plugin": "dev-master",
+        "awakeningsv/live-plugin": "dev-master",
+        "awakeningsv/teaching-plugin": "dev-master",
+        "awakeningsv/leadership-plugin": "dev-master",
+        "awakeningsv/upcoming-events-plugin": "dev-master",
+        "composer/installers": "^1.4",
+        "vlucas/phpdotenv": "^3.0.0",
+        "oscarotero/env": "^1.1.0",
+        "roots/wp-config": "1.0.0",
+        "roots/wp-password-bcrypt": "1.0.0",
+        "wpackagist-plugin/autodescription": "^4.0",
+        "wpackagist-plugin/page-excerpt": "^1.3",
+        "wpackagist-plugin/manual-image-crop": "^1.12",
+        "wpackagist-plugin/powerpress": "^8.0",
+        "wpackagist-plugin/regenerate-thumbnails": "^3.1",
+        "wpackagist-plugin/zoninator": "^0.8.0",
+        "wpackagist-plugin/quick-featured-images": "^13.3",
+        "wpackagist-plugin/windows-azure-storage": "^4.1",
+        "wpackagist-plugin/post-type-converter": "^0.6.0",
+        "wpackagist-plugin/simple-history": "^3.0",
+        "wpackagist-plugin/redirection": "^5.0",
+        "wpackagist-plugin/getwid": "^1.5",
+        "wpackagist-plugin/unsplash": "^1.0",
+        "wpackagist-plugin/matomo": "^4.2",
+        "matomo-org/google-analytics-importer": "^4.1",
+        "wpackagist-plugin/cloudflare": "^4.2",
+        "wpackagist-plugin/ductile-responsive-video": "^1.3",
+        "wpackagist-plugin/wpcustom-category-image": "2.1.13",
+        "wpackagist-plugin/wp-dashboard-notes": "^1.0",
+        "roots/wp-stage-switcher": "^2.1",
+        "wpackagist-plugin/esv-crossref": "^2.1",
+        "awakeningsv/authorizer": "^1.2",
+        "roots/wordpress": "^6.1",
+        "wpackagist-plugin/social-sharing-block": "^0.6.0",
+        "wpackagist-plugin/modal-builder-block": "^1.0",
+        "wpackagist-plugin/icon-block": "^1.3"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.0.2",
+        "roave/security-advisories": "dev-master"
+    },
+    "extra": {
+        "installer-paths": {
+            "web/app/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin"
+            ],
+            "web/app/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "web/app/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        },
+        "wordpress-install-dir": "web/wp"
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "test": [
+            "phpcs"
+        ]
+    }
 }
