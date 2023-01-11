@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "77734aa91a0d2ec43cb8adcf5df40328",
+    "content-hash": "ecb06e158221941bc9cd844d3045ad94",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1097,24 +1097,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/getwid/"
-        },
-        {
-            "name": "wpackagist-plugin/gutenberg",
-            "version": "14.1.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/14.1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.14.1.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
             "name": "wpackagist-plugin/icon-block",
