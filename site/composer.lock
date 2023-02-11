@@ -1208,15 +1208,15 @@
         },
         {
             "name": "wpackagist-plugin/powerpress",
-            "version": "8.7.14",
+            "version": "9.10",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/powerpress/",
-                "reference": "tags/8.7.14"
+                "reference": "tags/9.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/powerpress.8.7.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/powerpress.9.10.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
