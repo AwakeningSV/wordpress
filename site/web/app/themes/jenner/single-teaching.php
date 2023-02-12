@@ -116,6 +116,15 @@ function media_selection_pressed() {
     echo ($default_media == $type) ? 'true' : 'false';
 }
 
+function get_media_session_artwork($url) {
+    $key_bin = pack("H*" , env('IMGPROXY_KEY'));
+    $salt_bin = pack("H*" , env('IMGPROXY_SALT'));
+    $path = "/rs:fit:600:600/plain/{$url}";
+    $signature = rtrim(strtr(base64_encode(hash_hmac('sha256', $salt_bin.$path, $key_bin, true)), '+/', '-_'), '=');
+    $url = "https://awakeningimage.azureedge.net/{$signature}{$path}";
+
+    return array($url, '600', '600');
+}
 ?>
                             <div class="teaching-header-single">
                                 <ul class="teaching-taxonomy-header">
@@ -154,7 +163,7 @@ function media_selection_pressed() {
 
                                         <h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
-                                        <p class="byline" data-artwork='<?php echo json_encode($artwork); ?>'>
+                                        <p class="byline" data-artwork='<?php echo json_encode(get_media_session_artwork($artwork[0])); ?>'>
                                             <span class="teachers">
                                                 <?php the_terms( $post->ID, 'teachers', '', ', ', ' &bull; ' ); ?>
                                             </span>
