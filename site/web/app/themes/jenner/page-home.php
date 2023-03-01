@@ -68,38 +68,6 @@ $zone_posts = z_get_posts_in_zone('home', array(
     'post_status' => 'publish'
 ), false);
 
-$event_query = new WP_Query(array(
-    'post_type' => 'event',
-    'meta_key' => 'event-start-date',
-    'meta_query' => array(
-        array(
-            'key' => 'event-end-date',
-            'value' => strtotime('-2 days'),
-            'compare' => '>='
-        )
-    ),
-    'orderby' => 'meta_value_num',
-    'order' => 'ASC',
-    'posts_per_page' => 8
-));
-
-$event_posts = $event_query->posts;
-
-// Note: magical things are happening for teaching posts!
-// See pre_get_posts filter in teaching plugin
-
-$teaching_latest_query = new WP_Query(array(
-    'post_type' => 'teaching',
-    'meta_key' => 'teaching-date',
-    'orderby' => 'meta_value_num',
-    'order' => 'DESC',
-    'posts_per_page' => 4
-));
-
-$teaching_latest_posts = $teaching_latest_query->posts;
-
-$home_posts = array();
-
 foreach(array_chunk($zone_posts, 4) as $posts):
 ?>
                             <div class="home-section home-zone">
@@ -113,41 +81,6 @@ foreach(array_chunk($zone_posts, 4) as $posts):
                             </div>
 <?php endforeach; ?>
 
-                            <div class="home-section">
-                                <div class="home-section-header">
-                                    <h2>Sunday Sermons</h2>
-                                </div>
-<?php
-foreach(array_chunk($teaching_latest_posts, 4) as $posts):
-?>
-                                <div class="archive-g">
-                                    <?php
-                                        foreach ($posts as $post):
-                                            include 'teaching-item.php';
-                                        endforeach;
-                                    ?>
-                                </div>
-<?php endforeach; ?>
-                                <?php block_template_part( 'teaching-footer' ); ?>
-                            </div>
-<?php if(count($event_posts) > 0): ?>
-                            <div class="home-section">
-                                <div class="home-section-header">
-                                    <h2>Upcoming Events</h2>
-                                </div>
-<?php
-foreach(array_chunk($event_posts, 4) as $posts):
-?>
-                                <div class="archive-g">
-                                    <?php
-                                        foreach ($posts as $post):
-						include 'event-item.php';
-                                        endforeach;
-                                    ?>
-                                </div>
-<?php endforeach; ?>
-                            </div>
-<?php endif; ?>
 <?php wp_reset_postdata(); ?>
 
 						</div> <?php // end #main ?>
