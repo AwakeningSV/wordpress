@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "77479cdf195c9fe3ebff0d04270cdd6b",
+    "content-hash": "7b2d76ff3abebbce0785b8f2eca606d3",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1169,6 +1169,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/modal-builder-block/"
+        },
+        {
+            "name": "wpackagist-plugin/newspack-newsletters",
+            "version": "1.59.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/newspack-newsletters/",
+                "reference": "tags/1.59.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/newspack-newsletters.1.59.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/newspack-newsletters/"
         },
         {
             "name": "wpackagist-plugin/page-excerpt",
