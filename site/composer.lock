@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b2d76ff3abebbce0785b8f2eca606d3",
+    "content-hash": "3b59116df753fa982970355b5b935bcf",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1222,15 +1222,15 @@
         },
         {
             "name": "wpackagist-plugin/powerpress",
-            "version": "9.10.5",
+            "version": "10.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/powerpress/",
-                "reference": "tags/9.10.5"
+                "reference": "tags/10.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/powerpress.9.10.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/powerpress.10.2.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
