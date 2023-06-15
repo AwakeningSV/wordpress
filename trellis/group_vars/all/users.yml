@@ -9,6 +9,7 @@ users:
     keys:
       - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMbi6n3z/5GKqG7Ih/BUJf1i7NyTc8aPR3h1x+39teDsB89QDgTrxfagexaAxuhXbRgw+ai6yE6iAOB6FRPKUjY= Awakening-Web-Server@secretive.sabrina.local"
       - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOSOJLmptQmuOTp+xKVvqaWcU1EgkMS6Df6YQQ3Yw6uSgeF2DSyPLuHJBO4qbF9pgFbxjdjrzs7Tiyh3XX+bZbQ= Awakening-Web-Server@secretive.Izzi.local"
+      - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHium13pHad6tjMXbKG/seBodYv++sNgGD5VJD2ZSluIt8L4So5U3pVRJ6J4IPVeld7KdtX96cap/6h4L5T9mKM= Awakening-Web-Server@secretive.seymour.local"
       # - https://github.com/username.keys
   - name: "{{ admin_user }}"
     groups:
@@ -16,6 +17,7 @@ users:
     keys:
       - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMbi6n3z/5GKqG7Ih/BUJf1i7NyTc8aPR3h1x+39teDsB89QDgTrxfagexaAxuhXbRgw+ai6yE6iAOB6FRPKUjY= Awakening-Web-Server@secretive.sabrina.local"
       - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOSOJLmptQmuOTp+xKVvqaWcU1EgkMS6Df6YQQ3Yw6uSgeF2DSyPLuHJBO4qbF9pgFbxjdjrzs7Tiyh3XX+bZbQ= Awakening-Web-Server@secretive.Izzi.local"
+      - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHium13pHad6tjMXbKG/seBodYv++sNgGD5VJD2ZSluIt8L4So5U3pVRJ6J4IPVeld7KdtX96cap/6h4L5T9mKM= Awakening-Web-Server@secretive.seymour.local"
       # - https://github.com/username.keys
 
 web_user: web
