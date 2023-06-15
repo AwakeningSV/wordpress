@@ -4,7 +4,7 @@
   remote_user: "{{ web_user }}"
 
   environment:
-    PATH: "/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+    PATH: "/opt/homebrew/bin:/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
 
   vars:
     project: "{{ wordpress_sites[site] }}"
@@ -42,21 +42,17 @@
           state: absent
           path: "{{ project_current }}/{{ sync_file }}"
 
-      - name: PULL > Copy local dump file to development
-        connection: local
-        shell: vagrant scp {{ project_local_path }}/{{ sync_file }} :{{ project_current }}/{{ sync_file }} 
-
       - name: PULL > Backup development database
         connection: local
-        shell: vagrant ssh -- 'cd {{ project_current }} && wp db export - | gzip > {{ backup_file }}'
+        shell: trellis vm shell -- sh -c 'wp db export - | gzip > {{ backup_file }}'
 
       - name: PULL > Reset development database
         connection: local
-        shell: vagrant ssh -- 'cd {{ project_current }} && wp db reset --yes'
+        shell: trellis vm shell -- sh -c 'wp db reset --yes'
 
       - name: PULL > Import database dump on development
         connection: local
-        shell: vagrant ssh -- 'cd {{ project_current }} && gzip -c -d {{ sync_file }} | wp db import -'
+        shell: trellis vm shell -- sh -c 'gzip -c -d {{ sync_file }} | wp db import -'
 
       - name: PULL > Delete dump file on development
         connection: local
@@ -66,19 +62,19 @@
 
       - name: PULL > Replace urls "{{ url_env }}" => "{{ url_dev }}" on development
         connection: local
-        shell: vagrant ssh -- "cd {{ project_current }} && wp search-replace '{{ url_env }}' '{{ url_dev }}' --recurse-objects --skip-columns=guid --skip-tables=wp_users"
+        shell: trellis vm shell -- sh -c "wp search-replace '{{ url_env }}' '{{ url_dev }}' --recurse-objects --skip-columns=guid --skip-tables=wp_users"
 
       - name: PULL > Replace protocol-relative urls "//{{ domain_env }}" => "//{{ domain_dev }}" on development
         connection: local
-        shell: vagrant ssh -- "cd {{ project_current }} && wp search-replace '//{{ domain_env }}' '//{{ domain_dev }}' --recurse-objects --skip-columns=guid --skip-tables=wp_users"
+        shell: trellis vm shell -- sh -c "wp search-replace '//{{ domain_env }}' '//{{ domain_dev }}' --recurse-objects --skip-columns=guid --skip-tables=wp_users"
 
       - name: PULL > Replace Elementor urls "{{ url_env }}" => "{{ url_dev }}" on development
         connection: local
-        shell: vagrant ssh -- "cd {{ project_current }} && wp cli has-command 'elementor' && [ $? -eq 0 ] && wp elementor replace_urls '{{ url_env }}' '{{ url_dev }}' || cd ."
+        shell: trellis vm shell -- sh -c "wp cli has-command 'elementor' && [ $? -eq 0 ] && wp elementor replace_urls '{{ url_env }}' '{{ url_dev }}' || cd ."
 
       - name: PULL > Cache flush on development
         connection: local
-        shell: vagrant ssh -- "cd {{ project_current }} && wp cache flush"
+        shell: trellis vm shell -- sh -c "wp cache flush"
 
       when: mode is not defined or mode == "pull"
 
@@ -86,11 +82,7 @@
     - block:
       - name: PUSH > Export development database
         connection: local
-        shell: vagrant ssh -- 'cd {{ project_current }} && wp db export - | gzip > {{ sync_file }}'
-
-      - name: PULL > Copy development dump file to local
-        connection: local
-        shell: vagrant scp :{{project_current}}/{{ sync_file }} {{ project_local_path }}/{{ sync_file }}
+        shell: trellis vm shell -- sh -c 'wp db export - | gzip > {{ sync_file }}'
 
       - name: PUSH > Push dump file from local to {{ env }}
         copy:

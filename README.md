@@ -15,10 +15,15 @@ We use G Workspace SSO for login which is not available in development.
 An easy alternative is to use magic login links:
 
 ```shell
-brew install wp-cli
-cd site
-wp @development login install --activate --yes
-wp @development login as 'Reid Burke'
+trellis vm shell -- sudo -u vagrant sh -c 'wp login install --activate --yes'
+trellis vm shell -- sudo -u vagrant sh -c "wp @development login as 'Reid Burke'"
+```
+
+## Sync database
+
+```shell
+trellis exec ./bin/sync.sh production awakeningchurch.com db down
+trellis exec ./bin/sync.sh production awakeningchurch.com db up
 ```
 
 ## Azure DevOps SSH key setup
@@ -34,12 +39,6 @@ error during Composer install:
 ```
 remote: Public key authentication failed.
 ```
-
-## Vagrant issues
-
-You may need to [apply a fix][fix] for Vagrant to work correctly.
-
-    sudo curl -o /opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/plugins/hosts/darwin/cap/path.rb https://raw.githubusercontent.com/hashicorp/vagrant/42db2569e32a69e604634462b633bb14ca20709a/plugins/hosts/darwin/cap/path.rb
 
 ## License
 

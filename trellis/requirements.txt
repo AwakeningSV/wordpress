@@ -1,2 +1,5 @@
 ansible>=2.8.0,<2.9.10
+# See: https://discourse.roots.io/t/trellis-up-fails-at-task-common-load-wordpress-sites-yml-vars-into-env-sites-vars/24763/11
+jinja2<3.0 # Remove when updating Ansible!
+markupsafe==2.0.1 # Remove when updating Ansible!
 passlib
