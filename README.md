@@ -34,7 +34,7 @@ trellis provision --tags xdebug development
 Due to [known Lima VM issues with disk corruption][vmd], it is recommended to stop the VM before putting the computer to sleep.
 
 ```shell
-trellis vm stop`
+trellis vm stop
 ```
 
 [vmd]: https://github.com/lima-vm/lima/issues/1288
