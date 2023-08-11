@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b59116df753fa982970355b5b935bcf",
+    "content-hash": "047c500cd8846780fc818c975302c8f1",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1294,15 +1294,15 @@
         },
         {
             "name": "wpackagist-plugin/simple-history",
-            "version": "3.5.1",
+            "version": "4.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/simple-history/",
-                "reference": "tags/3.5.1"
+                "reference": "tags/4.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simple-history.3.5.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/simple-history.4.4.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1312,15 +1312,15 @@
         },
         {
             "name": "wpackagist-plugin/social-sharing-block",
-            "version": "0.6.0",
+            "version": "0.8.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/social-sharing-block/",
-                "reference": "tags/0.6.0"
+                "reference": "tags/0.8.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/social-sharing-block.0.6.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/social-sharing-block.0.8.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
