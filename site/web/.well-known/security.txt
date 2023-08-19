@@ -2,7 +2,7 @@
 Hash: SHA256
 
 Contact: mailto:reid@awakeningchurch.com
-Expires: Mon, 31 Aug 2026 00:00 -0700
+Expires: 2026-08-31T07:00:00.000Z
 Encryption: https://keybase.io/reid/pgp_keys.asc
 Preferred-Languages: en
 Canonical: https://awakeningchurch.com/.well-known/security.txt
