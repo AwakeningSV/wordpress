@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "047c500cd8846780fc818c975302c8f1",
+    "content-hash": "b98ff966e9e92d6fe6c3f2ab409fc2e4",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1039,6 +1039,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/cloudflare/"
+        },
+        {
+            "name": "wpackagist-plugin/display-a-meta-field-as-block",
+            "version": "1.1.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/display-a-meta-field-as-block/",
+                "reference": "tags/1.1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/display-a-meta-field-as-block.1.1.6.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/display-a-meta-field-as-block/"
         },
         {
             "name": "wpackagist-plugin/ductile-responsive-video",
