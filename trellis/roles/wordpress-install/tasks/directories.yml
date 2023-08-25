@@ -26,3 +26,6 @@
     state: directory
     recurse: yes
   with_dict: "{{ wordpress_sites }}"
+  # Disabled because of issues provisioning on Lima.
+  # See: https://github.com/roots/trellis/commit/514b7943cd199d08622b2ded63f3e5a1f3a21414
+  when: false
