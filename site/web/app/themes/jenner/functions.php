@@ -212,7 +212,8 @@ function ac_get_teaching_live_time($teaching)
 
     if ($service === 1) {
         if ($is_sunday) {
-            $teaching_local->modify("+10 hours");
+            $teaching_local->modify("+9 hours");
+            $teaching_local->modify("+30 minutes");
             return $teaching_local->getTimestamp();
         } else {
             // Special Christmas Eve service.
