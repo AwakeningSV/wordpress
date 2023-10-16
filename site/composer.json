@@ -140,7 +140,7 @@
         "wpackagist-plugin/autodescription": "^4.0",
         "wpackagist-plugin/page-excerpt": "^1.3",
         "wpackagist-plugin/manual-image-crop": "^1.12",
-        "wpackagist-plugin/powerpress": "^10.2.2",
+        "wpackagist-plugin/powerpress": "^11",
         "wpackagist-plugin/regenerate-thumbnails": "^3.1",
         "wpackagist-plugin/zoninator": "^0.8.0",
         "wpackagist-plugin/quick-featured-images": "^13.3",
