@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b98ff966e9e92d6fe6c3f2ab409fc2e4",
+    "content-hash": "b3525317434ade70ee5fae7aae4eeea1",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1186,15 +1186,15 @@
         },
         {
             "name": "wpackagist-plugin/newspack-newsletters",
-            "version": "1.68.0",
+            "version": "2.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/newspack-newsletters/",
-                "reference": "tags/1.68.0"
+                "reference": "tags/2.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/newspack-newsletters.1.68.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/newspack-newsletters.2.2.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

@@ -163,7 +163,7 @@
         "wpackagist-plugin/social-sharing-block": "~0.8.0",
         "wpackagist-plugin/modal-builder-block": "^1.0",
         "wpackagist-plugin/icon-block": "^1.3",
-        "wpackagist-plugin/newspack-newsletters": "^1.59",
+        "wpackagist-plugin/newspack-newsletters": "^2",
         "wpackagist-plugin/display-a-meta-field-as-block": "^1.1"
     },
     "require-dev": {
