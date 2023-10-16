@@ -148,7 +148,7 @@
         "wpackagist-plugin/post-type-converter": "^0.6.0",
         "wpackagist-plugin/simple-history": "^4.4",
         "wpackagist-plugin/redirection": "^5.0",
-        "wpackagist-plugin/getwid": "^1.5",
+        "wpackagist-plugin/getwid": "^2",
         "wpackagist-plugin/unsplash": "^1.0",
         "wpackagist-plugin/matomo": "^4.2",
         "matomo-org/google-analytics-importer": "^4.1",

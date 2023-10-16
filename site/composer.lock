@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3525317434ade70ee5fae7aae4eeea1",
+    "content-hash": "601298f9bff7f5743445af8a7c6b6a75",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1096,15 +1096,15 @@
         },
         {
             "name": "wpackagist-plugin/getwid",
-            "version": "1.9.1",
+            "version": "2.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/getwid/",
-                "reference": "tags/1.9.1"
+                "reference": "tags/2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/getwid.1.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/getwid.2.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
