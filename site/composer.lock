@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9bee3f9aded7388f0b655bea0dd2a3e0",
+    "content-hash": "a78b280b6937cb57f25d1dbca4510f5e",
     "packages": [
         {
             "name": "awakeningsv/authorizer",
@@ -1003,6 +1003,24 @@
                 }
             ],
             "time": "2021-12-12T23:02:06+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/activitypub",
+            "version": "1.0.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/activitypub/",
+                "reference": "tags/1.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/activitypub.1.0.7.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/activitypub/"
         },
         {
             "name": "wpackagist-plugin/autodescription",
