@@ -144,7 +144,7 @@
         "wpackagist-plugin/regenerate-thumbnails": "^3.1",
         "wpackagist-plugin/zoninator": "^0.8.0",
         "wpackagist-plugin/quick-featured-images": "^13.3",
-        "wpackagist-plugin/windows-azure-storage": "^4.1",
+        "wpackagist-plugin/windows-azure-storage": "4.3.5",
         "wpackagist-plugin/post-type-converter": "^0.6.0",
         "wpackagist-plugin/simple-history": "^4.4",
         "wpackagist-plugin/redirection": "^5.0",
