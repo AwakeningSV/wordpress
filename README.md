@@ -94,6 +94,18 @@ Apply config: https://gist.github.com/oanhnn/112f68e5b91a7dac7641bcd8b0ab13ac
 }
 ```
 
+## Problems running php
+
+When composer fails with this error:
+
+```
+Library not loaded: /opt/homebrew/opt/libavif/lib/libavif.15.dylib
+```
+
+You need to reinstall `gd` with `brew reinstall gd`.
+
+See: https://stackoverflow.com/a/77222642
+
 ## Azure DevOps SSH key setup
 
 You may have issues working with Azure DevOps repos if
