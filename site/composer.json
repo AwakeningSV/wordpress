@@ -159,7 +159,7 @@
         "roots/wp-stage-switcher": "^2.1",
         "wpackagist-plugin/esv-crossref": "^2.1",
         "roots/wordpress": "^6.1",
-        "wpackagist-plugin/social-sharing-block": "^0.9",
+        "wpackagist-plugin/social-sharing-block": "^1",
         "wpackagist-plugin/modal-builder-block": "^1.0",
         "wpackagist-plugin/icon-block": "^1.3",
         "wpackagist-plugin/newspack-newsletters": "^2",

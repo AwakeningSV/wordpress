@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ea12a17a07026abb5e769b942e95e90",
+    "content-hash": "457372b343e024e5be058d5190753b7f",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -1351,15 +1351,15 @@
         },
         {
             "name": "wpackagist-plugin/social-sharing-block",
-            "version": "0.9.0",
+            "version": "1.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/social-sharing-block/",
-                "reference": "tags/0.9.0"
+                "reference": "tags/1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/social-sharing-block.0.9.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/social-sharing-block.1.0.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
