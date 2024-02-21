@@ -4,20 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a18e79dc9149506f3e5c6b92df07ad0",
+    "content-hash": "8bc4a68c6e6ec8b6fad0171b90fa2757",
     "packages": [
-        {
-            "name": "awakeningsv/authorizer",
-            "version": "1.4.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/AwakeningSV/authorizer/archive/73fa18210c8c597bc16998153a9019e75e269d83.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin"
-        },
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
             "version": "dev-master",
@@ -1020,6 +1008,24 @@
             "homepage": "https://wordpress.org/plugins/activitypub/"
         },
         {
+            "name": "wpackagist-plugin/authorizer",
+            "version": "3.6.3.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/authorizer/",
+                "reference": "tags/3.6.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/authorizer.3.6.3.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/authorizer/"
+        },
+        {
             "name": "wpackagist-plugin/autodescription",
             "version": "5.0.4",
             "source": {
@@ -1165,15 +1171,15 @@
         },
         {
             "name": "wpackagist-plugin/matomo",
-            "version": "4.15.3",
+            "version": "5.0.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/matomo/",
-                "reference": "tags/4.15.3"
+                "reference": "tags/5.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/matomo.4.15.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/matomo.5.0.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
