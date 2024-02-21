@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bc4a68c6e6ec8b6fad0171b90fa2757",
+    "content-hash": "1ea12a17a07026abb5e769b942e95e90",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
@@ -1441,15 +1441,15 @@
         },
         {
             "name": "wpackagist-plugin/zoninator",
-            "version": "0.8",
+            "version": "0.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/zoninator/",
-                "reference": "tags/0.8"
+                "reference": "tags/0.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/zoninator.0.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/zoninator.0.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
