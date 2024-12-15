@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a437a4493ba4ec9fef0b9cb75334aa49",
+    "content-hash": "47b8027793b1f7577c9f77e7cdb9a69b",
     "packages": [
         {
             "name": "awakeningsv/azure-cdn-rewrite-plugin",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/azure-cdn-rewrite-plugin/azure-cdn-rewrite-plugin",
+                "url": "git@github.com:AwakeningSV/azure-cdn-rewrite-plugin.git",
                 "reference": "7458ff8eb2c45ac1ead6d417a7098353d200be5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AwakeningSV/azure-cdn-rewrite-plugin/zipball/7458ff8eb2c45ac1ead6d417a7098353d200be5a",
+                "reference": "7458ff8eb2c45ac1ead6d417a7098353d200be5a",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
@@ -31,6 +37,10 @@
                 "plugin",
                 "wordpress"
             ],
+            "support": {
+                "source": "https://github.com/AwakeningSV/azure-cdn-rewrite-plugin/tree/master",
+                "issues": "https://github.com/AwakeningSV/azure-cdn-rewrite-plugin/issues"
+            },
             "time": "2019-11-09T22:42:30+00:00"
         },
         {
@@ -38,8 +48,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/leadership-plugin/leadership-plugin",
+                "url": "git@github.com:AwakeningSV/leadership-plugin.git",
                 "reference": "070558e13533a582b7b285b87365815c6b1990f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AwakeningSV/leadership-plugin/zipball/070558e13533a582b7b285b87365815c6b1990f2",
+                "reference": "070558e13533a582b7b285b87365815c6b1990f2",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
@@ -58,6 +74,10 @@
                 "plugin",
                 "wordpress"
             ],
+            "support": {
+                "source": "https://github.com/AwakeningSV/leadership-plugin/tree/master",
+                "issues": "https://github.com/AwakeningSV/leadership-plugin/issues"
+            },
             "time": "2019-11-09T22:31:54+00:00"
         },
         {
@@ -65,8 +85,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/live-plugin/live-plugin",
+                "url": "git@github.com:AwakeningSV/live-plugin.git",
                 "reference": "745266cc3cf7dcfafa9bd5f70e2b68350fd80757"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AwakeningSV/live-plugin/zipball/745266cc3cf7dcfafa9bd5f70e2b68350fd80757",
+                "reference": "745266cc3cf7dcfafa9bd5f70e2b68350fd80757",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
@@ -85,6 +111,10 @@
                 "plugin",
                 "wordpress"
             ],
+            "support": {
+                "source": "https://github.com/AwakeningSV/live-plugin/tree/master",
+                "issues": "https://github.com/AwakeningSV/live-plugin/issues"
+            },
             "time": "2019-11-17T08:44:20+00:00"
         },
         {
@@ -92,8 +122,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/oembed-image-plugin/oembed-image-plugin",
+                "url": "git@github.com:AwakeningSV/oembed-image-plugin.git",
                 "reference": "0de8dc52431dac02d1d492741731e50817024dd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AwakeningSV/oembed-image-plugin/zipball/0de8dc52431dac02d1d492741731e50817024dd6",
+                "reference": "0de8dc52431dac02d1d492741731e50817024dd6",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
@@ -112,6 +148,10 @@
                 "plugin",
                 "wordpress"
             ],
+            "support": {
+                "source": "https://github.com/AwakeningSV/oembed-image-plugin/tree/master",
+                "issues": "https://github.com/AwakeningSV/oembed-image-plugin/issues"
+            },
             "time": "2019-11-17T08:26:10+00:00"
         },
         {
@@ -119,8 +159,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/remove-socialize-plugin/remove-socialize-plugin",
+                "url": "git@github.com:AwakeningSV/remove-socialize-plugin.git",
                 "reference": "b6c3d7afd6304eee128f45d7461ff0b7ecd90bb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AwakeningSV/remove-socialize-plugin/zipball/b6c3d7afd6304eee128f45d7461ff0b7ecd90bb4",
+                "reference": "b6c3d7afd6304eee128f45d7461ff0b7ecd90bb4",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
@@ -139,6 +185,10 @@
                 "plugin",
                 "wordpress"
             ],
+            "support": {
+                "source": "https://github.com/AwakeningSV/remove-socialize-plugin/tree/master",
+                "issues": "https://github.com/AwakeningSV/remove-socialize-plugin/issues"
+            },
             "time": "2019-11-09T22:47:13+00:00"
         },
         {
@@ -146,8 +196,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/teaching-plugin/teaching-plugin",
+                "url": "git@github.com:AwakeningSV/teaching-plugin.git",
                 "reference": "40d0d85fb0bdd5c9a0147e7e880ea6dfb26b5b90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AwakeningSV/teaching-plugin/zipball/40d0d85fb0bdd5c9a0147e7e880ea6dfb26b5b90",
+                "reference": "40d0d85fb0bdd5c9a0147e7e880ea6dfb26b5b90",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
@@ -166,6 +222,10 @@
                 "plugin",
                 "wordpress"
             ],
+            "support": {
+                "source": "https://github.com/AwakeningSV/teaching-plugin/tree/master",
+                "issues": "https://github.com/AwakeningSV/teaching-plugin/issues"
+            },
             "time": "2020-03-03T17:07:14+00:00"
         },
         {
@@ -173,8 +233,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@ssh.dev.azure.com:v3/awakeningsv/upcoming-events-plugin/upcoming-events-plugin",
+                "url": "git@github.com:AwakeningSV/upcoming-events-plugin.git",
                 "reference": "786de1af27cf1f8424f809953dd567d5ec34dda2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AwakeningSV/upcoming-events-plugin/zipball/786de1af27cf1f8424f809953dd567d5ec34dda2",
+                "reference": "786de1af27cf1f8424f809953dd567d5ec34dda2",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
@@ -193,6 +259,10 @@
                 "plugin",
                 "wordpress"
             ],
+            "support": {
+                "source": "https://github.com/AwakeningSV/upcoming-events-plugin/tree/master",
+                "issues": "https://github.com/AwakeningSV/upcoming-events-plugin/issues"
+            },
             "time": "2021-02-24T05:57:51+00:00"
         },
         {
@@ -991,15 +1061,15 @@
         },
         {
             "name": "wpackagist-plugin/activitypub",
-            "version": "3.3.3",
+            "version": "4.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/activitypub/",
-                "reference": "tags/3.3.3"
+                "reference": "tags/4.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/activitypub.3.3.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/activitypub.4.4.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1135,15 +1205,15 @@
         },
         {
             "name": "wpackagist-plugin/icon-block",
-            "version": "1.9.0",
+            "version": "2.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/icon-block/",
-                "reference": "tags/1.9.0"
+                "reference": "tags/2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/icon-block.1.9.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/icon-block.2.0.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

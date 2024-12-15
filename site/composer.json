@@ -96,31 +96,31 @@
         },
         {
             "type": "vcs",
-            "url": "git@ssh.dev.azure.com:v3/awakeningsv/azure-cdn-rewrite-plugin/azure-cdn-rewrite-plugin"
+            "url": "git@github.com:AwakeningSV/azure-cdn-rewrite-plugin.git"
         },
         {
             "type": "vcs",
-            "url": "git@ssh.dev.azure.com:v3/awakeningsv/remove-socialize-plugin/remove-socialize-plugin"
+            "url": "git@github.com:AwakeningSV/remove-socialize-plugin.git"
         },
         {
             "type": "vcs",
-            "url": "git@ssh.dev.azure.com:v3/awakeningsv/live-plugin/live-plugin"
+            "url": "git@github.com:AwakeningSV/live-plugin.git"
         },
         {
             "type": "vcs",
-            "url": "git@ssh.dev.azure.com:v3/awakeningsv/teaching-plugin/teaching-plugin"
+            "url": "git@github.com:AwakeningSV/teaching-plugin.git"
         },
         {
             "type": "vcs",
-            "url": "git@ssh.dev.azure.com:v3/awakeningsv/upcoming-events-plugin/upcoming-events-plugin"
+            "url": "git@github.com:AwakeningSV/upcoming-events-plugin.git"
         },
         {
             "type": "vcs",
-            "url": "git@ssh.dev.azure.com:v3/awakeningsv/oembed-image-plugin/oembed-image-plugin"
+            "url": "git@github.com:AwakeningSV/oembed-image-plugin.git"
         },
         {
             "type": "vcs",
-            "url": "git@ssh.dev.azure.com:v3/awakeningsv/leadership-plugin/leadership-plugin"
+            "url": "git@github.com:AwakeningSV/leadership-plugin.git"
         }
     ],
     "require": {
@@ -161,10 +161,10 @@
         "roots/wordpress": "^6.1",
         "wpackagist-plugin/social-sharing-block": "^1",
         "wpackagist-plugin/modal-builder-block": "^1.0",
-        "wpackagist-plugin/icon-block": "^1.3",
+        "wpackagist-plugin/icon-block": "^2",
         "wpackagist-plugin/newspack-newsletters": "^3",
         "wpackagist-plugin/display-a-meta-field-as-block": "^1.1",
-        "wpackagist-plugin/activitypub": "^3",
+        "wpackagist-plugin/activitypub": "^4",
         "wpackagist-plugin/authorizer": "^3.6"
     },
     "require-dev": {
